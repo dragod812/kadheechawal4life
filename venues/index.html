@@ -380,7 +380,10 @@ h1,h2,h3,h4,.reg-name,.city-name,.vision p,.city-why,.lede,.sub,.statement p{
 .sitenav .sep{opacity:.45}
 .sitenav .here{opacity:.8}
 .toolbar{top:44px}
-table.cmp th{top:44px}
+/* .cmp-wrap sets overflow-x:auto, so overflow-y computes to auto and the wrapper
+   becomes the sticky containing block. A top offset there does not clear the page
+   nav - it just pushes the header down inside the wrapper and hides the first row. */
+table.cmp th{top:0}
 @media (max-width:760px){.sitenav{padding:12px 18px}}
 </style>
 </head><body><nav class="sitenav"><a href="/">← Sacred Grove</a><span class="sep">/</span><span class="here">The venue study</span></nav><header><div class="wrap hd">
