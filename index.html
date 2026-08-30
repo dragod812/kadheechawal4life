@@ -104,6 +104,19 @@
     .need p { margin: 0; font-size: 15px; line-height: 1.62; }
     .need.hard { border-color: var(--leaf); border-left-width: 4px; }
 
+    .study { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center;
+      padding: 54px; background: var(--leaf); color: var(--ivory); }
+    .study h2 { margin-bottom: 16px; }
+    .study p { margin: 0 0 18px; font-size: 16px; line-height: 1.65; max-width: 54ch; }
+    .study .eyebrow { opacity: .8; }
+    .cta { display: inline-block; margin-top: 6px; padding: 13px 22px; background: var(--marigold);
+      color: #231a06; text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: .03em; }
+    .cta:hover { background: #f0ab2c; }
+    .tally { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(242,231,210,.28); }
+    .tally div { background: var(--leaf); padding: 22px 18px; }
+    .tally b { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 40px; line-height: 1; }
+    .tally span { display: block; margin-top: 7px; font-size: 12px; letter-spacing: .11em; text-transform: uppercase; opacity: .75; }
+
     footer { margin: 80px 0 0; padding: 34px 0 0; border-top: 1px solid #c8bdab; font-size: 13.5px; line-height: 1.7; color: #5c6459; }
     footer p { margin: 0 0 10px; max-width: 78ch; }
 
@@ -112,7 +125,7 @@
       header, .statement, .hero-grid, .chapters, .triptych, .rules { grid-template-columns: 1fr; }
       .meta { border-left: 0; border-top: 1px solid rgba(242,231,210,.45); padding: 22px 0 0; }
       .chips { grid-template-columns: repeat(3, 1fr); }
-      .days, .needs { grid-template-columns: 1fr; }
+      .days, .needs, .study { grid-template-columns: 1fr; }
       .hero-grid figure:first-child, .hero-grid figure, .chapter figure, .triptych figure { min-height: 520px; }
     }
     @media print {
@@ -223,9 +236,9 @@
       quoting on it — venue, planner or decorator.</p>
     <div class="needs">
       <div class="need hard"><span class="num">01 · The ceremony ground</span><h3>Open to the sky</h3>
-        <p>Private, level, seating <strong>80</strong>, and usable in full darkness. It does not have to be a lawn.
-          A courtyard or <em>aangan</em> — enclosed on its sides, open above — counts, and in several ways is better:
-          the smoke clears, the walls hold an unamplified ceremony in, and the colonnade is instant rain cover.</p></div>
+        <p>Private, level, seating <strong>80</strong>, and usable in full darkness. A lawn, a terrace or a
+          courtyard — whichever the property actually has. What matters is that it is open above, that the ground
+          is level, and that there is room for a fire at the centre of it.</p></div>
       <div class="need hard"><span class="num">02 · Sound</span><h3>Unamplified after midnight</h3>
         <p>Amplified sound outdoors is unlawful between 10 pm and 6 am, and the cultural-occasion permit stops at
           midnight. So the ceremony runs with <strong>no PA and no microphone</strong> — which, at eighty seated guests,
@@ -245,6 +258,25 @@
     </div>
   </section>
 
+  <section class="study">
+    <div>
+      <div class="eyebrow">The search</div>
+      <h2>Thirty-nine properties, seven regions</h2>
+      <p>Every candidate tested against the same requirements, with its own case for and against — and
+        every photograph opened and tagged by the part of the wedding it could actually host, because a
+        capacity chart has never once shown us a ceremony ground.</p>
+      <p>Coorg and Ooty survive cleanly. Nashik and Bengaluru are real trade-offs. Coonoor and Chikmagalur
+        fail on rooms alone. Mussoorie holds the two largest single properties in the study.</p>
+      <a class="cta" href="/venues/">Browse the venue study →</a>
+    </div>
+    <div class="tally">
+      <div><b>39</b><span>Properties</span></div>
+      <div><b>7</b><span>Regions</span></div>
+      <div><b>484</b><span>Photographs</span></div>
+      <div><b>45</b><span>Rooms needed</span></div>
+    </div>
+  </section>
+
   <section>
     <div class="eyebrow">Event language</div>
     <h2>One system, four moods</h2>
@@ -259,7 +291,7 @@
       </article>
       <article class="chapter">
         <figure><img loading="lazy" decoding="async" src="images/mandap-canopy.webp" alt="Traditional mandap under transparent weather canopy"></figure>
-        <div class="copy"><div class="tag">Wedding · 00:44</div><h3>Protected openness</h3><p>A light, engineered canopy keeps the garden feeling while solving rain and wind — or an <em>aangan</em> does the same in stone. Either way it stays open to the sky. Ventilation and havan clearance are non-negotiable, and at this hour every bit of light is fire, candle or lamp.</p></div>
+        <div class="copy"><div class="tag">Wedding · 00:44</div><h3>Protected openness</h3><p>A light, engineered canopy keeps the garden feeling while solving rain and wind, and still leaves the ceremony open to the sky. Ventilation and havan clearance are non-negotiable, and at this hour every bit of light is fire, candle or lamp.</p></div>
       </article>
       <article class="chapter">
         <figure><img loading="lazy" decoding="async" src="images/candlelit-mirror.webp" alt="Candlelit mirror sign"></figure>
@@ -286,7 +318,9 @@
   <footer>
     <p><strong>A working brief, not an invitation.</strong> The dates, the guest count and the programme are settled;
       the venue is not. Current as of 29 August 2026, and kept in step with the planning notes.</p>
-    <p>Photographs here are mood references for the creative direction. None of them is the wedding venue.</p>
+    <p>Photographs on this page are mood references for the creative direction. None of them is the wedding
+      venue. The photographs in <a href="/venues/">the venue study</a> are each property's own promotional
+      images, shown here for private planning only and not licensed for reuse.</p>
   </footer>
 
 </main>
