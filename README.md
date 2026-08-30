@@ -10,7 +10,7 @@ know what is being asked for before they quote.
 | Path | What it is |
 |---|---|
 | `/` | The facts, the three-day programme, the six things the space has to do, and the Sacred Grove mood board |
-| `/venues/` | The venue study — 39 properties across 7 regions, each with its case for and against, the verified facts, the messages to send them, and 484 photographs |
+| `/venues/` | The venue study — 46 properties across 9 regions, each with its case for and against, the verified facts, the messages to send them, and 525 photographs |
 
 `/venues/index.html` is **generated**, not hand-edited. It comes from `build-lookbook.py` in the notes
 wiki, which emits the same catalogue three ways from one set of data:
