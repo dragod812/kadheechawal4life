@@ -1,6 +1,6 @@
 # kadheechawal4life.com
 
-Static site for Sidharth & Kalyani's wedding, 27–29 March 2027. Served by GitHub Pages from `main`.
+Static site for Sidharth & Kalyani's wedding, 26–28 February 2027. Served by GitHub Pages from `main`.
 
 It is a **working brief**, not an invitation — the page a venue, planner or decorator is sent so they
 know what is being asked for before they quote.
@@ -10,7 +10,7 @@ know what is being asked for before they quote.
 | Path | What it is |
 |---|---|
 | `/` | The facts, the three-day programme, the six things the space has to do, and the Sacred Grove mood board |
-| `/venues/` | The venue study — 46 properties across 9 regions, each with its case for and against, the verified facts, the messages to send them, and 525 photographs |
+| `/venues/` | The venue study — 60 properties across 10 regions, each with its case for and against, the verified facts, the messages to send them, and 576 photographs |
 
 `/venues/index.html` is **generated**, not hand-edited. It comes from `build-lookbook.py` in the notes
 wiki, which emits the same catalogue three ways from one set of data:
@@ -22,8 +22,8 @@ python3 build-lookbook.py                 # -> venue-lookbook.md + .html (self-c
 LOOKBOOK_MODE=site LOOKBOOK_SITE_OUT=<repo>/venues python3 build-lookbook.py
 ```
 
-Site mode writes real image files to `venues/img/` instead of inlining base64, so the page is ~570 KB
-rather than 8.4 MB, and skins it to this site's palette and type. The photographs sit inside collapsed
+Site mode writes real image files to `venues/img/` instead of inlining base64, so the page is ~1.1 MB
+rather than 8.8 MB, and skins it to this site's palette and type. The photographs sit inside collapsed
 `<details>`, so a browser does not fetch them until a venue is opened.
 
 ## Deliberately not here
