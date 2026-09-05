@@ -1,6 +1,7 @@
 # kadheechawal4life.com
 
-Static site for Sidharth & Kalyani's wedding, 26–28 February 2027. Served by GitHub Pages from `main`.
+Static site for Sidharth & Kalyani's wedding, 27–28 February 2027, with a two-night Puri/Ahmedabad
+stay. Served by GitHub Pages from `main`.
 
 It is a **working brief**, not an invitation — the page a venue, planner or decorator is sent so they
 know what is being asked for before they quote.
@@ -9,7 +10,7 @@ know what is being asked for before they quote.
 
 | Path | What it is |
 |---|---|
-| `/` | The facts, the three-day programme, the six things the space has to do, and the Sacred Grove mood board |
+| `/` | The facts, the two-function-day/two-night programme, the six things the space has to do, and the Sacred Grove mood board |
 | `/venues/` | The venue study — 65 properties across 11 regions, each with its case for and against, the verified facts, the messages to send them, and 599 photographs |
 
 `/venues/index.html` is **generated**, not hand-edited. It comes from `build-lookbook.py` in the notes
