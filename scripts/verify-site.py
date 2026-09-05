@@ -19,6 +19,17 @@ with sync_playwright() as pw:
     regions = page.locator("details.region").count()
     tables = page.locator("table.cmp")
     assert tables.count() == 3
+    # Email-only commercial records must remain separate from ranked venues.
+    extras = page.locator('#additional-quotes details.msgdet')
+    assert extras.count() == 4
+    extra_text = page.locator('#additional-quotes').text_content()
+    for name in ['Club Mahindra Virajpet', 'AmitaRasa', 'Porcupine Castle Resort', 'Indo Asia Hotel, Madikeri']:
+        assert name in extra_text, name
+    assert '₹30,40,000' in extra_text and '₹15,000 + tax' in extra_text
+    body = page.locator('body').text_content()
+    for phrase in ['₹23,56,000', '₹21,55,500', '₹24,96,902', '29 February 2027 does not exist', '94, not 100']:
+        assert phrase in body, phrase
+    assert 'BANK DETAILS' not in body
     assert tables.nth(0).locator("tbody tr").count() == regions
     for table in [tables.nth(1), tables.nth(2)]:
         assert table.locator("tbody tr").count() == venues

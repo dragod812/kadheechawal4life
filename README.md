@@ -33,9 +33,12 @@ rather than 8.8 MB, and skins it to this site's palette and type. The photograph
 - `/venues/` does include **venue-specific rates supplied by the family**, normalized calculations and
   explicitly labeled counter-request scenarios. Those values are evidence for comparison, not accepted
   contract prices; unknown tax and unquoted components remain blank.
-- Commercial documents marked confidential, agent-only or not for public distribution are represented
-  only by a redacted applicability/status summary unless the user explicitly confirms that the
-  label is erroneous and the data public; that override must be recorded in the private notes wiki.
+- On 5 September 2026 the user explicitly directed publication of the exact received commercial
+  figures, including Virajpet and Indo Asia Madikeri despite their restrictive footers. This exception
+  is recorded in the notes source ledger and LOG; it does not imply the senders withdrew restrictions.
+  Bank details, personal contact blocks and raw correspondence are not published.
+- The generator loads `received-email-prices.json` for the mailbox extraction. Four additional
+  commercial-only properties are shown separately, without changing the 66-property catalogue.
 - Old modelled estimates are still removed from the public build. Only the new quote-backed cost schema
   is allowed through the generator's public-site scrub.
 
