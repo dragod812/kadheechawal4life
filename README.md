@@ -33,6 +33,8 @@ rather than 8.8 MB, and skins it to this site's palette and type. The photograph
 - `/venues/` does include **venue-specific rates supplied by the family**, normalized calculations and
   explicitly labeled counter-request scenarios. Those values are evidence for comparison, not accepted
   contract prices; unknown tax and unquoted components remain blank.
+- Commercial documents marked confidential, agent-only or not for public distribution are represented
+  only by a redacted applicability/status summary; their exact figures stay in the private notes wiki.
 - Old modelled estimates are still removed from the public build. Only the new quote-backed cost schema
   is allowed through the generator's public-site scrub.
 
