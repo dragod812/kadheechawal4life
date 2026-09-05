@@ -39,9 +39,9 @@ rather than 8.8 MB, and skins it to this site's palette and type. The photograph
 - Old modelled estimates are still removed from the public build. Only the new quote-backed cost schema
   is allowed through the generator's public-site scrub.
 
-The photographs in `/venues/` are each property's own promotional images, kept for private planning and
-**not licensed for republication** — which is why both pages carry `noindex` and `robots.txt` disallows
-everything.
+The photographs in `/venues/` are each property's own promotional images, retained as planning
+references and **not licensed for reuse**. Both pages carry `noindex` and `robots.txt` disallows
+everything; these discourage indexing but do not make the public site private or grant image rights.
 
 ## Layout
 
@@ -70,6 +70,21 @@ magick "<original>.png" -resize '1600x1600>' -strip -quality 82 "images/<slug>.w
 ```sh
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
+
+## Verification
+
+With the local server running and Python Playwright/Chromium installed:
+
+```sh
+python3 scripts/verify-site.py http://localhost:8000
+```
+
+Checks both comparison tables against the catalogue, all image files, homepage totals, sorting on
+every table, room-filter consistency, and 390px/1440px layouts. The 5 September 2026 content audit
+also corrected composite room totals, current Gateway Coorg branding, unsupported capacity passes,
+the historical March climate labels and the sound-permission wording. A verified property total
+does not establish availability for the wedding dates; dated inventory and 100-seat layouts remain
+venue-confirmation items.
 
 ## Deploy
 
