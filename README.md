@@ -11,7 +11,7 @@ know what is being asked for before they quote.
 | Path | What it is |
 |---|---|
 | `/` | The facts, the two-function-day/two-night programme, the six things the space has to do, and the Sacred Grove mood board |
-| `/venues/` | The venue study — 65 properties across 11 regions, each with its case for and against, the verified facts, the messages to send them, and 599 photographs |
+| `/venues/` | The venue study — 65 properties across 11 regions, with verified facts, quote-backed cost analysis, outreach messages, and 599 photographs |
 
 `/venues/index.html` is **generated**, not hand-edited. It comes from `build-lookbook.py` in the notes
 wiki, which emits the same catalogue three ways from one set of data:
@@ -27,12 +27,14 @@ Site mode writes real image files to `venues/img/` instead of inlining base64, s
 rather than 8.8 MB, and skins it to this site's palette and type. The photographs sit inside collapsed
 `<details>`, so a browser does not fetch them until a venue is opened.
 
-## Deliberately not here
+## Cost-data boundary
 
-- **Budget, in any form.** Venues read this. The numbers stay in the notes wiki, and the budget work is
-  on hold until real quotations come back.
-- **Anything that reads as a negotiating position.** The study says what is unresolved about each
-  property; it does not say what we would pay.
+- **No whole-wedding budget or private ceiling.** Venues can read this public repository.
+- `/venues/` does include **venue-specific rates supplied by the family**, normalized calculations and
+  explicitly labeled counter-request scenarios. Those values are evidence for comparison, not accepted
+  contract prices; unknown tax and unquoted components remain blank.
+- Old modelled estimates are still removed from the public build. Only the new quote-backed cost schema
+  is allowed through the generator's public-site scrub.
 
 The photographs in `/venues/` are each property's own promotional images, kept for private planning and
 **not licensed for republication** — which is why both pages carry `noindex` and `robots.txt` disallows
