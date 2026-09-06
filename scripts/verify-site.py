@@ -30,6 +30,10 @@ with sync_playwright() as pw:
     for phrase in ['₹23,56,000', '₹21,55,500', '₹24,96,902', '29 February 2027 does not exist', '94, not 100']:
         assert phrase in body, phrase
     assert 'BANK DETAILS' not in body
+    fortune_text = page.locator('details.vdet').filter(has=page.locator('summary', has_text='Fortune Beachfront, Puri')).first.text_content()
+    for phrase in ['₹11,800', '₹1,770–2,655', '₹17–18 lakh', '₹12,98,000', '80 guests / 2 nights', 'feedback is mixed']:
+        assert phrase in fortune_text, phrase
+    assert 'rooms only' in page.locator('table.costcmp tr').filter(has_text='Fortune Beachfront, Puri').text_content()
     ummed = page.locator('details.vdet').filter(has=page.locator('summary', has_text='The Ummed Ahmedabad')).first
     ummed_text = ummed.text_content()
     for phrase in ['₹21,26,950', '₹12,77,350', '₹8,49,600', '150 × ₹1,750', '30 rooms × ₹8,000 × 3 nights', 'cleaning and maintenance']:
