@@ -19,6 +19,13 @@ with sync_playwright() as pw:
     regions = page.locator("details.region").count()
     tables = page.locator("table.cmp")
     assert tables.count() == 3
+    oleander = page.locator('details.vdet').filter(has=page.locator('summary', has_text='Oleander Farms Luxury Resort, Karjat'))
+    assert oleander.count() == 1
+    assert oleander.get_attribute('data-rooms') == 'ok'
+    oleander_text = oleander.text_content()
+    for phrase in ['120+', '250 seated', '350 seated', 'snm@oleanderfarms.com', '26 February–1 March 2027']:
+        assert phrase in oleander_text, phrase
+    assert 'Awaiting quote' in page.locator('table.costcmp tr').filter(has_text='Oleander Farms Luxury Resort, Karjat').text_content()
     # Email-only commercial records must remain separate from ranked venues.
     extras = page.locator('#additional-quotes details.msgdet')
     assert extras.count() == 4

@@ -11,7 +11,7 @@ know what is being asked for before they quote.
 | Path | What it is |
 |---|---|
 | `/` | The facts, the two-function-day/two-night programme, the six things the space has to do, and the Sacred Grove mood board |
-| `/venues/` | The venue study — 66 properties across 12 regions, with verified facts, quote-backed cost analysis, outreach messages, and 613 photographs |
+| `/venues/` | The venue study — 67 properties across 13 regions, with verified facts, quote-backed cost analysis, outreach messages, and 618 photographs |
 
 `/venues/index.html` is **generated**, not hand-edited. It comes from `build-lookbook.py` in the notes
 wiki, which emits the same catalogue three ways from one set of data:
@@ -38,7 +38,7 @@ rather than 8.8 MB, and skins it to this site's palette and type. The photograph
   is recorded in the notes source ledger and LOG; it does not imply the senders withdrew restrictions.
   Bank details, personal contact blocks and raw correspondence are not published.
 - The generator loads `received-email-prices.json` for the mailbox extraction. Four additional
-  commercial-only properties are shown separately, without changing the 66-property catalogue.
+  commercial-only properties are shown separately from the ranked catalogue.
 - Old modelled estimates are still removed from the public build. Only the new quote-backed cost schema
   is allowed through the generator's public-site scrub.
 
