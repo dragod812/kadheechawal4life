@@ -30,6 +30,11 @@ with sync_playwright() as pw:
     for phrase in ['₹23,56,000', '₹21,55,500', '₹24,96,902', '29 February 2027 does not exist', '94, not 100']:
         assert phrase in body, phrase
     assert 'BANK DETAILS' not in body
+    ummed = page.locator('details.vdet').filter(has=page.locator('summary', has_text='The Ummed Ahmedabad')).first
+    ummed_text = ummed.text_content()
+    for phrase in ['₹21,26,950', '₹12,77,350', '₹8,49,600', '150 × ₹1,750', '30 rooms × ₹8,000 × 3 nights', 'cleaning and maintenance']:
+        assert phrase in ummed_text, phrase
+    assert '₹21,26,950' in page.locator('table.costcmp tr').filter(has_text='The Ummed Ahmedabad').text_content()
     assert tables.nth(0).locator("tbody tr").count() == regions
     for table in [tables.nth(1), tables.nth(2)]:
         assert table.locator("tbody tr").count() == venues
