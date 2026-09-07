@@ -19,6 +19,11 @@ with sync_playwright() as pw:
     regions = page.locator("details.region").count()
     tables = page.locator("table.cmp")
     assert tables.count() == 3
+    chanakya = page.locator('details.vdet').filter(has=page.locator('summary', has_text='The Chanakya BNR Hotel'))
+    assert chanakya.count() == 1 and chanakya.get_attribute('data-rooms') == 'no'
+    for phrase in ['₹22,40,000', '₹25,00,000', '₹4,50,000, not ₹6,00,000', 'tentative interpretation', 'Inventory unresolved']:
+        assert phrase in chanakya.text_content(), phrase
+    assert 'unreconciled' in page.locator('table.costcmp tr').filter(has_text='The Chanakya BNR Hotel').text_content()
     oleander = page.locator('details.vdet').filter(has=page.locator('summary', has_text='Oleander Farms Luxury Resort, Karjat'))
     assert oleander.count() == 1
     assert oleander.get_attribute('data-rooms') == 'ok'
