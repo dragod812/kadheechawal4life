@@ -12,6 +12,12 @@ know what is being asked for before they quote.
 |---|---|
 | `/` | The facts, the two-function-day/two-night programme, the six things the space has to do, and the Sacred Grove mood board |
 | `/venues/` | The venue study — 67 properties across 13 regions, with verified facts, quote-backed cost analysis, outreach messages, and 618 photographs |
+| `/guest-estimation/` | Guest party register, tentative headcounts, single-sharing pools and five room configurations; published at the user’s request, with Meehika deduplicated |
+
+The guest page and its downloadable Markdown are generated together by `python3 scripts/build-guests.py`.
+Pass `--wiki <wedding-folder>` to also refresh the wiki Markdown. This page is publicly accessible,
+with `noindex, nofollow`; it has no authentication. Its newer guest estimate is not a revision of the
+existing venue brief: overnight attendance and final rooming remain to be decided.
 
 `/venues/index.html` is **generated**, not hand-edited. It comes from `build-lookbook.py` in the notes
 wiki, which emits the same catalogue three ways from one set of data:
