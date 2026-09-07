@@ -4,17 +4,18 @@ Updated 2026-09-07 · Source: Sidharth’s supplied guest list. Planning scenari
 
 ## Headcount at a glance
 
-| Guest group | Excluding tentative | Including tentative | Singles excl. tentative | Singles incl. tentative |
-| --- | --- | --- | --- | --- |
-| Sidharth family | 18 | 18 | 0 | 0 |
-| Sidharth friends | 40 | 40 | 18 | 18 |
-| Sidharth group blocks | 20 | 20 | 0 | 0 |
-| Kalyani family | 21–23 | 21–23 | 0 | 0 |
-| Kalyani friends | 31 | 35 | 13 | 15 |
-| Kanch friends | 9 | 9 | 9 | 9 |
-| TOTAL | 139–141 | 143–145 | 40 | 42 |
+| Guest group | People | Singles available for grouping |
+| --- | --- | --- |
+| Sidharth family | 18 | 0 |
+| Sidharth friends | 35 | 15 |
+| Maa's Friends | 10 | 0 |
+| Sourav's Friends | 10 | 0 |
+| Kalyani family | 21–23 | 0 |
+| Kalyani friends | 23 | 11 |
+| Kanch friends | 8 | 8 |
+| TOTAL | 125–127 | 34 |
 
-Base list: 139–141 people. Including Shreeja, Prithvi’s party and Sonia: 143–145. None is treated as an attendance confirmation. Meehika’s two-person party is shared by both sides and counted once under Sidharth friends. Kanch’s nine people are included provisionally. Single sharing pool: 40 people, or 42 with tentative singles; the two ten-person blocks are additional and their composition is unknown.
+Current list: 125–127 people. No tentative parties remain in this version; listed does not mean RSVP-confirmed. Meehika’s two-person party is shared by both sides and counted once under Sidharth friends. Kanch’s eight people are included provisionally. Single sharing pool: 34 people; Maa's Friends and Sourav's Friends add ten people each, with composition still unknown.
 
 This list is larger than the earlier roughly 100-guest venue brief. It is a new planning estimate; the existing brief and venue enquiries have not been revised. Confirm overnight attendance before changing contracted numbers.
 
@@ -30,56 +31,46 @@ Two-person parties stay together in one D. Families remain separate from other p
 
 Families split into D rooms; singles share twins; each ten-person block uses 5 D.
 
-| Attendance case | Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- | --- |
-| Excluding tentative | 3 each | 139 | 74 D | 74 | 148 | 9 |
-| Excluding tentative | 4 each | 141 | 74 D | 74 | 148 | 7 |
-| Including tentative | 3 each | 143 | 76 D | 76 | 152 | 9 |
-| Including tentative | 4 each | 145 | 76 D | 76 | 152 | 7 |
+| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| 3 each | 125 | 67 D | 67 | 134 | 9 |
+| 4 each | 127 | 67 D | 67 | 134 | 7 |
 
 ### B · Family rooms + twin-sharing singles
 
 Families of 3 use T, families of 4 use Q, families of 5 use T + D; singles share twins; blocks use 5 D each.
 
-| Attendance case | Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- | --- |
-| Excluding tentative | 3 each | 139 | 54 D + 7 T + 3 Q | 64 | 128 | 2 |
-| Excluding tentative | 4 each | 141 | 54 D + 5 T + 5 Q | 64 | 128 | 2 |
-| Including tentative | 3 each | 143 | 56 D + 7 T + 3 Q | 66 | 132 | 2 |
-| Including tentative | 4 each | 145 | 56 D + 5 T + 5 Q | 66 | 132 | 2 |
+| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| 3 each | 125 | 47 D + 7 T + 3 Q | 57 | 114 | 2 |
+| 4 each | 127 | 47 D + 5 T + 5 Q | 57 | 114 | 2 |
 
 ### C · Triples for families + four-sharing singles
 
 Families use up to 3 per room; singles use Q with smaller remainder rooms; blocks use 5 D each.
 
-| Attendance case | Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- | --- |
-| Excluding tentative | 3 each | 139 | 39 D + 10 T + 9 Q | 58 | 116 | 5 |
-| Excluding tentative | 4 each | 141 | 41 D + 10 T + 9 Q | 60 | 120 | 7 |
-| Including tentative | 3 each | 143 | 39 D + 11 T + 9 Q | 59 | 118 | 4 |
-| Including tentative | 4 each | 145 | 41 D + 11 T + 9 Q | 61 | 122 | 6 |
+| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| 3 each | 125 | 32 D + 12 T + 7 Q | 51 | 102 | 3 |
+| 4 each | 127 | 34 D + 12 T + 7 Q | 53 | 106 | 5 |
 
 ### D · Family rooms + four-sharing singles
 
 Families use T/Q (5 = T + D); singles use Q; blocks use 5 D each.
 
-| Attendance case | Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- | --- |
-| Excluding tentative | 3 each | 139 | 36 D + 7 T + 12 Q | 55 | 110 | 2 |
-| Excluding tentative | 4 each | 141 | 36 D + 5 T + 14 Q | 55 | 110 | 2 |
-| Including tentative | 3 each | 143 | 36 D + 8 T + 12 Q | 56 | 112 | 1 |
-| Including tentative | 4 each | 145 | 36 D + 6 T + 14 Q | 56 | 112 | 1 |
+| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| 3 each | 125 | 29 D + 9 T + 10 Q | 48 | 96 | 0 |
+| 4 each | 127 | 29 D + 7 T + 12 Q | 48 | 96 | 0 |
 
 ### E · Also share the two group blocks
 
 Same as D, plus each ten-person block uses 2 Q + 1 D. Only feasible if its internal relationships permit it.
 
-| Attendance case | Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- | --- |
-| Excluding tentative | 3 each | 139 | 28 D + 7 T + 16 Q | 51 | 102 | 2 |
-| Excluding tentative | 4 each | 141 | 28 D + 5 T + 18 Q | 51 | 102 | 2 |
-| Including tentative | 3 each | 143 | 28 D + 8 T + 16 Q | 52 | 104 | 1 |
-| Including tentative | 4 each | 145 | 28 D + 6 T + 18 Q | 52 | 104 | 1 |
+| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| 3 each | 125 | 21 D + 9 T + 14 Q | 44 | 88 | 0 |
+| 4 each | 127 | 21 D + 7 T + 16 Q | 44 | 88 | 0 |
 
 Use D as the first room-mix request for hotels, with A as the comfort fallback. E is an aggressive sharing scenario, not an assignment. Spare capacity is fragmented across rooms and cannot automatically accommodate extra guests. Counts exclude vendor rooms, a separate bridal/getting-ready room, and any additional couple room not already covered by the family parties.
 
@@ -103,11 +94,11 @@ For a five-person family, 3 + 2 avoids a person sleeping alone. Other choices ar
 
 ## Single guests available for later grouping
 
-Sidharth friends: Vikram, Vaibhav, Nilay, Nishant, Vibhor, Mantek, Felipe, Mrinal, Jha, Goyal, Singhal, Nishil, Nishchay, Darshil, Sagar Rusia, Rivu, Aditya VT, Kriti.
+Sidharth friends: Vikram, Nilay, Nishant, Vibhor, Felipe, Mrinal, Jha, Goyal, Singhal, Nishil, Nishchay, Darshil, Sagar Rusia, Rivu, Aditya VT.
 
-Kalyani friends: Varsha, Vinit, Aditi, Dimri, Ankur, Shreeja (tentative), Sonia (tentative), Anshika, Stuti, Ayush, Niyati, Geetika, Gouri, Noorul, Kashmala.
+Kalyani friends: Varsha, Aditi, Dimri, Ankur, Anshika, Stuti, Ayush, Niyati, Geetika, Gouri, Noorul.
 
-Kanch friends: Anand, Zeel, pt, raag, snigi, tanvee, disha, rowena, priti.
+Kanch friends: Zeel, pt, raag, snigi, tanvee, disha, rowena, priti.
 
 For gender/friendship grouping, assign a sharing-group label after confirming preferences, then calculate each group separately: sum(ceil(group size / room capacity)). For example, 5 people in one group and 3 in another need 3 four-person rooms, although 8 freely mixable people need only 2. Smaller remainder rooms can reduce the number of Q rooms needed without reducing total rooms.
 
@@ -139,13 +130,10 @@ Stable IDs distinguish similarly named parties. Gender, sharing group, hotel sta
 | G013 | Meehika | 2 | Together in 1 D | Listed | Shared by both sides; counted once here, per Sidharth’s confirmation |
 | G014 | Tarun | 2 | Together in 1 D | Listed | — |
 | G015 | Priyanshu | 2 | Together in 1 D | Listed | — |
-| G016 | Manish | 2 | Together in 1 D | Listed | — |
 | G017 | Vikram | 1 | Single pool | Listed | — |
-| G018 | Vaibhav | 1 | Single pool | Listed | — |
 | G019 | Nilay | 1 | Single pool | Listed | — |
 | G020 | Nishant | 1 | Single pool | Listed | — |
 | G021 | Vibhor | 1 | Single pool | Listed | — |
-| G022 | Mantek | 1 | Single pool | Listed | — |
 | G023 | Felipe | 1 | Single pool | Listed | — |
 | G024 | Mrinal | 1 | Single pool | Listed | — |
 | G025 | Jha | 1 | Single pool | Listed | — |
@@ -157,14 +145,18 @@ Stable IDs distinguish similarly named parties. Gender, sharing group, hotel sta
 | G031 | Sagar Rusia | 1 | Single pool | Listed | — |
 | G032 | Rivu | 1 | Single pool | Listed | — |
 | G033 | Aditya VT | 1 | Single pool | Listed | — |
-| G034 | Kriti | 1 | Single pool | Listed | — |
 
-### Sidharth group blocks
+### Maa's Friends
 
 | ID | Party / person | People | Rooming category | Attendance | Notes |
 | --- | --- | --- | --- | --- | --- |
-| G035 | Maa friends | 10 | Unresolved group block | Listed | Composition unknown; keep each block separate |
-| G036 | Sourav Friends | 10 | Unresolved group block | Listed | Composition unknown; keep each block separate |
+| G035 | Maa's Friends | 10 | Unresolved group block | Listed | Composition unknown; keep each block separate |
+
+### Sourav's Friends
+
+| ID | Party / person | People | Rooming category | Attendance | Notes |
+| --- | --- | --- | --- | --- | --- |
+| G036 | Sourav's Friends | 10 | Unresolved group block | Listed | Composition unknown; keep each block separate |
 
 ### Kalyani family
 
@@ -183,35 +175,26 @@ Stable IDs distinguish similarly named parties. Gender, sharing group, hotel sta
 | --- | --- | --- | --- | --- | --- |
 | G043 | Divya | 2 | Together in 1 D | Listed | — |
 | G044 | Varsha | 1 | Single pool | Listed | — |
-| G045 | Vineeth | 2 | Together in 1 D | Listed | — |
-| G046 | Vinit | 1 | Single pool | Listed | — |
-| G047 | Rohit | 2 | Together in 1 D | Listed | — |
 | G048 | Aditi | 1 | Single pool | Listed | — |
 | G049 | Arpita | 2 | Together in 1 D | Listed | — |
 | G050 | Dimri | 1 | Single pool | Listed | — |
 | G051 | Lakshya shreya | 2 | Together in 1 D | Listed | — |
 | G052 | Ankur | 1 | Single pool | Listed | — |
 | G053 | Tirth | 2 | Together in 1 D | Listed | — |
-| G054 | Shreeja | 1 | Single pool | Tentative | — |
-| G055 | Prithvi | 2 | Together in 1 D | Tentative | — |
-| G056 | Sonia | 1 | Single pool | Tentative | — |
 | G057 | Shrijan | 2 | Together in 1 D | Listed | — |
 | G058 | Akshata | 2 | Together in 1 D | Listed | — |
 | G059 | Anshika | 1 | Single pool | Listed | — |
 | G060 | Stuti | 1 | Single pool | Listed | — |
 | G061 | Ayush | 1 | Single pool | Listed | — |
 | G062 | Niyati | 1 | Single pool | Listed | — |
-| G063 | VT | 2 | Together in 1 D | Listed | — |
 | G064 | Geetika | 1 | Single pool | Listed | — |
 | G065 | Gouri | 1 | Single pool | Listed | — |
 | G066 | Noorul | 1 | Single pool | Listed | — |
-| G067 | Kashmala | 1 | Single pool | Listed | — |
 
 ### Kanch friends
 
 | ID | Party / person | People | Rooming category | Attendance | Notes |
 | --- | --- | --- | --- | --- | --- |
-| G068 | Anand | 1 | Single pool | Listed | Assumed one person; confirm spelling/count |
 | G069 | Zeel | 1 | Single pool | Listed | Assumed one person; confirm spelling/count |
 | G070 | pt | 1 | Single pool | Listed | Assumed one person; confirm spelling/count |
 | G071 | raag | 1 | Single pool | Listed | Assumed one person; confirm spelling/count |
@@ -226,10 +209,10 @@ Stable IDs distinguish similarly named parties. Gender, sharing group, hotel sta
 | Decision | Effect on estimate |
 | --- | --- |
 | Meehika duplicate resolved | Sidharth confirmed the two entries are redundant on 2026-09-07. One two-person party is counted under Sidharth friends; the Kalyani entry is a reference to the same party. Totals already exclude the duplicate. |
-| VT and Aditya VT; other repeated first names | Kept separate; do not merge without confirmation. |
-| Kanch friends parsing | Anand = 1; Zeel, pt, raag, snigi = 4; Mumbai: tanvee, disha, rowena, priti = 4. Confirm these are nine separate singles. Relationship label retained as Kanch without interpretation. |
+| Repeated first names | Distinct remaining parties are kept separate; do not merge without confirmation. |
+| Kanch friends parsing | Zeel, pt, raag, snigi = 4; Mumbai: tanvee, disha, rowena, priti = 4. Confirm these are eight separate singles. Relationship label retained as Kanch without interpretation. |
 | Rani Aatya and Kumthekar | Each is 3–4, producing a combined 2-person range. |
-| Maa friends and Sourav Friends | 20 guests included, but not declared singles or couples. Confirm breakdown before using E. |
+| Maa's Friends and Sourav's Friends | 10 guests each, 20 total, but not declared singles or couples. Confirm breakdown before using E. |
 | Who needs accommodation, and for which nights? | Create an allocation for each night; local attendees may need zero hotel rooms. Two nights is only the current comparison baseline. |
 | Gender, friendship and comfort | Confirm sharing preferences; split pools and round separately. Ask elders about floor/access and bathrooms. |
 | Couple / bridal room and baby needs | Confirm whether Sidharth and Kalyani already appear in their family totals and whether separate rooms or a cot are needed. |

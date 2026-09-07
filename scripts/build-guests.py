@@ -25,6 +25,15 @@ for name,n,t in [('Divya',2,False),('Varsha',1,False),('Vineeth',2,False),('Vini
 for name in ['Anand','Zeel','pt','raag','snigi','tanvee','disha','rowena','priti']:
     add('Kanch friends',name,note='Assumed one person; confirm spelling/count' + ('; Mumbai group' if name in ['tanvee','disha','rowena','priti'] else ''))
 
+# Retire IDs after initial assignment so remaining parties retain their published IDs.
+removed_ids = {'G045','G046','G047','G054','G055','G056','G063','G067','G068',
+               'G034','G022','G018','G016'}
+rows = [r for r in rows if r['id'] not in removed_ids]
+for r in rows:
+    if r['kind'] == 'block':
+        r['name'] = "Maa's Friends" if r['id'] == 'G035' else "Sourav's Friends"
+        r['group'] = r['name']
+
 def span(a,b): return str(a) if a==b else f'{a}–{b}'
 for r in rows:
     if r['name']=='Meehika': r['note']='Shared by both sides; counted once here, per Sidharth’s confirmation'
@@ -64,11 +73,11 @@ heading('Headcount at a glance')
 summary=[]
 for group in groups:
     rs=[r for r in rows if r['group']==group]; base=[r for r in rs if not r['tentative']]
-    summary.append([group,span(total(base,'lo'),total(base,'hi')),span(total(rs,'lo'),total(rs,'hi')),sum(r['kind']=='single' for r in base),sum(r['kind']=='single' for r in rs)])
+    summary.append([group,span(total(rs,'lo'),total(rs,'hi')),sum(r['kind']=='single' for r in rs)])
 base=[r for r in rows if not r['tentative']]
-summary.append(['TOTAL',span(total(base,'lo'),total(base,'hi')),span(total(rows,'lo'),total(rows,'hi')),sum(r['kind']=='single' for r in base),sum(r['kind']=='single' for r in rows)])
-table(['Guest group','Excluding tentative','Including tentative','Singles excl. tentative','Singles incl. tentative'],summary)
-para('Base list: 139–141 people. Including Shreeja, Prithvi’s party and Sonia: 143–145. None is treated as an attendance confirmation. Meehika’s two-person party is shared by both sides and counted once under Sidharth friends. Kanch’s nine people are included provisionally. Single sharing pool: 40 people, or 42 with tentative singles; the two ten-person blocks are additional and their composition is unknown.')
+summary.append(['TOTAL',span(total(rows,'lo'),total(rows,'hi')),sum(r['kind']=='single' for r in rows)])
+table(['Guest group','People','Singles available for grouping'],summary)
+para(f"Current list: {span(total(rows,'lo'),total(rows,'hi'))} people. No tentative parties remain in this version; listed does not mean RSVP-confirmed. Meehika’s two-person party is shared by both sides and counted once under Sidharth friends. Kanch’s eight people are included provisionally. Single sharing pool: {sum(r['kind']=='single' for r in rows)} people; Maa's Friends and Sourav's Friends add ten people each, with composition still unknown.")
 para('This list is larger than the earlier roughly 100-guest venue brief. It is a new planning estimate; the existing brief and venue enquiries have not been revised. Confirm overnight attendance before changing contracted numbers.')
 heading('How to read the room estimates')
 para('D = one room for up to 2 guests (double bed for a couple, twin beds for unrelated sharers). T = one room with approved 3-person occupancy. Q = one room with approved 4-person occupancy and suitable beds. A two-bedroom villa may be one booking unit but two bedrooms: ask the hotel to distinguish keys, bedrooms and beds. Capacity alone does not establish a suitable sleeping arrangement.')
@@ -79,12 +88,12 @@ def mix(c): return ' + '.join(f'{n} {k}' for k,n in [('D',c[2]),('T',c[3]),('Q',
 for key,title,desc in models:
     heading(title,3); para(desc)
     data=[]
-    for inc in [False,True]:
+    for inc in [False]:
         for high in [False,True]:
             c=allocation(inc,high,key); rooms=sum(c.values()); guests=total(rows if inc else base,'hi' if high else 'lo')
             assert sum(k*v for k,v in c.items())>=guests
-            data.append(['Including tentative' if inc else 'Excluding tentative','4 each' if high else '3 each',guests,mix(c),rooms,rooms*2,sum(k*v for k,v in c.items())-guests])
-    table(['Attendance case','Rani / Kumthekar','Guests','Room mix','Rooms / night','Room-nights × 2','Spare capacity'],data)
+            data.append(['4 each' if high else '3 each',guests,mix(c),rooms,rooms*2,sum(k*v for k,v in c.items())-guests])
+    table(['Rani / Kumthekar','Guests','Room mix','Rooms / night','Room-nights × 2','Spare capacity'],data)
 para('Use D as the first room-mix request for hotels, with A as the comfort fallback. E is an aggressive sharing scenario, not an assignment. Spare capacity is fragmented across rooms and cannot automatically accommodate extra guests. Counts exclude vendor rooms, a separate bridal/getting-ready room, and any additional couple room not already covered by the family parties.')
 heading('Family-by-family room options')
 table(['Family party','People','All doubles','Family-room option'],[[r['name'],span(r['lo'],r['hi']),f"{ceil(r['lo']/2)} D" if r['lo']==r['hi'] else '2 D', {2:'1 D',3:'1 T',4:'1 Q',5:'1 T + 1 D'}[r['lo']] if r['lo']==r['hi'] else '1 T if 3; 1 Q if 4'] for r in rows if r['kind']=='family'])
@@ -102,10 +111,10 @@ for group in groups:
 heading('Decisions before reserving rooms')
 table(['Decision','Effect on estimate'],[
     ['Meehika duplicate resolved','Sidharth confirmed the two entries are redundant on 2026-09-07. One two-person party is counted under Sidharth friends; the Kalyani entry is a reference to the same party. Totals already exclude the duplicate.'],
-    ['VT and Aditya VT; other repeated first names','Kept separate; do not merge without confirmation.'],
-    ['Kanch friends parsing','Anand = 1; Zeel, pt, raag, snigi = 4; Mumbai: tanvee, disha, rowena, priti = 4. Confirm these are nine separate singles. Relationship label retained as Kanch without interpretation.'],
+    ['Repeated first names','Distinct remaining parties are kept separate; do not merge without confirmation.'],
+    ['Kanch friends parsing','Zeel, pt, raag, snigi = 4; Mumbai: tanvee, disha, rowena, priti = 4. Confirm these are eight separate singles. Relationship label retained as Kanch without interpretation.'],
     ['Rani Aatya and Kumthekar','Each is 3–4, producing a combined 2-person range.'],
-    ['Maa friends and Sourav Friends','20 guests included, but not declared singles or couples. Confirm breakdown before using E.'],
+    ["Maa's Friends and Sourav's Friends",'10 guests each, 20 total, but not declared singles or couples. Confirm breakdown before using E.'],
     ['Who needs accommodation, and for which nights?','Create an allocation for each night; local attendees may need zero hotel rooms. Two nights is only the current comparison baseline.'],
     ['Gender, friendship and comfort','Confirm sharing preferences; split pools and round separately. Ask elders about floor/access and bathrooms.'],
     ['Couple / bridal room and baby needs','Confirm whether Sidharth and Kalyani already appear in their family totals and whether separate rooms or a cot are needed.'],
