@@ -92,8 +92,8 @@ for key,title,desc in models:
         for high in [False,True]:
             c=allocation(inc,high,key); rooms=sum(c.values()); guests=total(rows if inc else base,'hi' if high else 'lo')
             assert sum(k*v for k,v in c.items())>=guests
-            data.append(['4 each' if high else '3 each',guests,mix(c),rooms,rooms*2,sum(k*v for k,v in c.items())-guests])
-    table(['Rani / Kumthekar','Guests','Room mix','Rooms / night','Room-nights × 2','Spare capacity'],data)
+            data.append([guests,mix(c),rooms,rooms*2,sum(k*v for k,v in c.items())-guests])
+    table(['Guests','Room mix','Rooms / night','Room-nights × 2','Spare capacity'],data)
 para('Use D as the first room-mix request for hotels, with A as the comfort fallback. E is an aggressive sharing scenario, not an assignment. Spare capacity is fragmented across rooms and cannot automatically accommodate extra guests. Counts exclude vendor rooms, a separate bridal/getting-ready room, and any additional couple room not already covered by the family parties.')
 heading('Family-by-family room options')
 table(['Family party','People','All doubles','Family-room option'],[[r['name'],span(r['lo'],r['hi']),f"{ceil(r['lo']/2)} D" if r['lo']==r['hi'] else '2 D', {2:'1 D',3:'1 T',4:'1 Q',5:'1 T + 1 D'}[r['lo']] if r['lo']==r['hi'] else '1 T if 3; 1 Q if 4'] for r in rows if r['kind']=='family'])

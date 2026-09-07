@@ -31,46 +31,46 @@ Two-person parties stay together in one D. Families remain separate from other p
 
 Families split into D rooms; singles share twins; each ten-person block uses 5 D.
 
-| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- |
-| 3 each | 119 | 64 D | 64 | 128 | 9 |
-| 4 each | 121 | 64 D | 64 | 128 | 7 |
+| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- |
+| 119 | 64 D | 64 | 128 | 9 |
+| 121 | 64 D | 64 | 128 | 7 |
 
 ### B · Family rooms + twin-sharing singles
 
 Families of 3 use T, families of 4 use Q, families of 5 use T + D; singles share twins; blocks use 5 D each.
 
-| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- |
-| 3 each | 119 | 44 D + 7 T + 3 Q | 54 | 108 | 2 |
-| 4 each | 121 | 44 D + 5 T + 5 Q | 54 | 108 | 2 |
+| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- |
+| 119 | 44 D + 7 T + 3 Q | 54 | 108 | 2 |
+| 121 | 44 D + 5 T + 5 Q | 54 | 108 | 2 |
 
 ### C · Triples for families + four-sharing singles
 
 Families use up to 3 per room; singles use Q with smaller remainder rooms; blocks use 5 D each.
 
-| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- |
-| 3 each | 119 | 31 D + 11 T + 7 Q | 49 | 98 | 4 |
-| 4 each | 121 | 33 D + 11 T + 7 Q | 51 | 102 | 6 |
+| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- |
+| 119 | 31 D + 11 T + 7 Q | 49 | 98 | 4 |
+| 121 | 33 D + 11 T + 7 Q | 51 | 102 | 6 |
 
 ### D · Family rooms + four-sharing singles
 
 Families use T/Q (5 = T + D); singles use Q; blocks use 5 D each.
 
-| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- |
-| 3 each | 119 | 28 D + 8 T + 10 Q | 46 | 92 | 1 |
-| 4 each | 121 | 28 D + 6 T + 12 Q | 46 | 92 | 1 |
+| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- |
+| 119 | 28 D + 8 T + 10 Q | 46 | 92 | 1 |
+| 121 | 28 D + 6 T + 12 Q | 46 | 92 | 1 |
 
 ### E · Also share the two group blocks
 
 Same as D, plus each ten-person block uses 2 Q + 1 D. Only feasible if its internal relationships permit it.
 
-| Rani / Kumthekar | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- | --- |
-| 3 each | 119 | 20 D + 8 T + 14 Q | 42 | 84 | 1 |
-| 4 each | 121 | 20 D + 6 T + 16 Q | 42 | 84 | 1 |
+| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- |
+| 119 | 20 D + 8 T + 14 Q | 42 | 84 | 1 |
+| 121 | 20 D + 6 T + 16 Q | 42 | 84 | 1 |
 
 Use D as the first room-mix request for hotels, with A as the comfort fallback. E is an aggressive sharing scenario, not an assignment. Spare capacity is fragmented across rooms and cannot automatically accommodate extra guests. Counts exclude vendor rooms, a separate bridal/getting-ready room, and any additional couple room not already covered by the family parties.
 
