@@ -27,7 +27,7 @@ for name in ['Anand','Zeel','pt','raag','snigi','tanvee','disha','rowena','priti
 
 # Retire IDs after initial assignment so remaining parties retain their published IDs.
 removed_ids = {'G045','G046','G047','G054','G055','G056','G063','G067','G068',
-               'G034','G022','G018','G016'}
+               'G034','G022','G018','G016','G011','G015','G031','G030'}
 rows = [r for r in rows if r['id'] not in removed_ids]
 for r in rows:
     if r['kind'] == 'block':
