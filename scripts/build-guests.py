@@ -53,6 +53,10 @@ def allocation(location,high,mode):
     selected=attending(location)
     def pack(n,cap):
         q,rem=divmod(n,cap)
+        if mode=='double_triple' and cap==3 and rem==1 and q:
+            counts[3]+=q-1
+            counts[2]+=2
+            return
         counts[cap]+=q
         if rem: counts[2 if rem==1 else rem]+=1
     for r in selected:
@@ -61,12 +65,12 @@ def allocation(location,high,mode):
         if r['kind']=='pair': counts[2]+=1
         elif r['kind']=='block': pack(n,4 if mode=='maximum' else 2)
         elif mode=='double': counts[2]+=ceil(n/2)
-        elif mode=='triple': pack(n,3)
+        elif mode in ['triple','double_triple']: pack(n,3)
         elif n==5: counts[3]+=1; counts[2]+=1
         else: counts[n]+=1
     for group in groups:
         n=sum(r['kind']=='single' for r in selected if r['group']==group)
-        pack(n,2 if mode in ['double','family'] else 4)
+        pack(n,3 if mode=='double_triple' else 2 if mode in ['double','family'] else 4)
     return counts
 
 md=[]; html=[]
@@ -77,7 +81,7 @@ def table(headers,data):
     html.append('<div class="table-wrap"><table><thead><tr>'+''.join('<th scope="col">'+escape(x)+'</th>' for x in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+escape(str(x))+'</td>' for x in row)+'</tr>' for row in data)+'</tbody></table></div>')
 
 heading('Wedding guest & room estimation',1)
-para('Updated 2026-09-07 · Source: Sidharth’s supplied guest list. Planning scenarios, not RSVPs or a hotel booking. All listed guests are assumed to stay on the same nights; remove day guests before booking.')
+para('Updated 2026-09-08 · Source: Sidharth’s supplied guest list. Planning scenarios, not RSVPs or a hotel booking. All listed guests are assumed to stay on the same nights; remove day guests before booking.')
 heading('Headcount at a glance')
 summary=[]
 for group in groups:
@@ -95,6 +99,7 @@ para('D = one room for up to 2 guests (double bed for a couple, twin beds for un
 para("Two-person parties stay together in one D. Families remain separate from other parties, but may split across their own rooms. Singles are pooled separately within each guest group; no cross-group sharing is assumed. Susmita Mausi and Latika Aunty are modelled in one shared twin room, subject to agreement; separate rooms add one D. Sarita uses one D alone within Maa's Friends. Unfilled last rooms stay within their pool. No gender is inferred from names. These counts are minimums before gender, friendship, accessibility and privacy constraints.")
 heading('Room configurations to compare')
 models=[('double','A · All rooms up to 2',"Families split into D rooms; singles share twins; Sourav's Friends uses 5 D."),('family','B · Family rooms + twin-sharing singles',"Families of 3 use T, families of 4 use Q, families of 5 use T + D; singles share twins; Sourav's Friends uses 5 D."),('triple','C · Triples for families + four-sharing singles',"Families use up to 3 per room; singles use Q with smaller remainder rooms; Sourav's Friends uses 5 D."),('mixed','D · Family rooms + four-sharing singles',"Families use T/Q (5 = T + D); singles use Q with smaller remainder rooms; Sourav's Friends uses 5 D."),('maximum',"E · Also share Sourav's Friends", "Same as D, plus Sourav's Friends uses 2 Q + 1 D. Only feasible if its internal relationships permit it. Maa's Friends stays as five two-person parties and one single in every Puri scenario.")]
+models.append(('double_triple','F · Doubles and triples only', "Two-person parties use 1 D; three-person families use 1 T; four-person families use 2 D; five-person families use 1 T + 1 D. Singles share rooms of up to three within their own guest group. Where four singles remain, use 2 D rather than a triple plus a room for one. Sourav's Friends stays at 5 D until its composition is known. Maa's Friends uses 6 D in Puri. No Q rooms are used."))
 def mix(c): return ' + '.join(f'{n} {k}' for k,n in [('D',c[2]),('T',c[3]),('Q',c[4])] if n)
 for key,title,desc in models:
     heading(title,3); para(desc)

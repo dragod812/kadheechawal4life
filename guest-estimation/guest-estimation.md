@@ -1,6 +1,6 @@
 # Wedding guest & room estimation
 
-Updated 2026-09-07 · Source: Sidharth’s supplied guest list. Planning scenarios, not RSVPs or a hotel booking. All listed guests are assumed to stay on the same nights; remove day guests before booking.
+Updated 2026-09-08 · Source: Sidharth’s supplied guest list. Planning scenarios, not RSVPs or a hotel booking. All listed guests are assumed to stay on the same nights; remove day guests before booking.
 
 ## Headcount at a glance
 
@@ -83,6 +83,17 @@ Same as D, plus Sourav's Friends uses 2 Q + 1 D. Only feasible if its internal r
 | Puri | 130 | 27 D + 6 T + 15 Q | 48 | 96 | 2 |
 | Elsewhere | 117 | 21 D + 8 T + 13 Q | 42 | 84 | 1 |
 | Elsewhere | 119 | 21 D + 6 T + 15 Q | 42 | 84 | 1 |
+
+### F · Doubles and triples only
+
+Two-person parties use 1 D; three-person families use 1 T; four-person families use 2 D; five-person families use 1 T + 1 D. Singles share rooms of up to three within their own guest group. Where four singles remain, use 2 D rather than a triple plus a room for one. Sourav's Friends stays at 5 D until its composition is known. Maa's Friends uses 6 D in Puri. No Q rooms are used.
+
+| Wedding location | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| Puri | 128 | 42 D + 15 T | 57 | 114 | 1 |
+| Puri | 130 | 46 D + 13 T | 59 | 118 | 1 |
+| Elsewhere | 117 | 36 D + 15 T | 51 | 102 | 0 |
+| Elsewhere | 119 | 40 D + 13 T | 53 | 106 | 0 |
 
 Use D as the first room-mix request for hotels, with A as the comfort fallback. E is an aggressive sharing scenario, not an assignment. Spare capacity is fragmented across rooms and cannot automatically accommodate extra guests. Counts exclude vendor rooms, a separate bridal/getting-ready room, and any additional couple room not already covered by the family parties.
 
