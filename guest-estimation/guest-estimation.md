@@ -4,18 +4,20 @@ Updated 2026-09-07 · Source: Sidharth’s supplied guest list. Planning scenari
 
 ## Headcount at a glance
 
-| Guest group | People | Singles available for grouping |
-| --- | --- | --- |
-| Sidharth family | 18 | 0 |
-| Sidharth friends | 29 | 13 |
-| Maa's Friends | 10 | 0 |
-| Sourav's Friends | 10 | 0 |
-| Kalyani family | 21–23 | 0 |
-| Kalyani friends | 23 | 11 |
-| Kanch friends | 8 | 8 |
-| TOTAL | 119–121 | 32 |
+| Guest group | Puri guests | Elsewhere guests | Puri singles | Elsewhere singles |
+| --- | --- | --- | --- | --- |
+| Sidharth family | 26 | 26 | 2 | 2 |
+| Sidharth friends | 29 | 29 | 13 | 13 |
+| Maa's Friends | 11 | 0 | 1 | 0 |
+| Sourav's Friends | 10 | 10 | 0 | 0 |
+| Kalyani family | 21–23 | 21–23 | 0 | 0 |
+| Kalyani friends | 23 | 23 | 11 | 11 |
+| Kanch friends | 8 | 8 | 8 | 8 |
+| TOTAL | 128–130 | 117–119 | 35 | 34 |
 
-Current list: 119–121 people. No tentative parties remain in this version; listed does not mean RSVP-confirmed. Meehika’s two-person party is shared by both sides and counted once under Sidharth friends. Kanch’s eight people are included provisionally. Single sharing pool: 32 people; Maa's Friends and Sourav's Friends add ten people each, with composition still unknown.
+Maa's Friends now contains six named parties totalling 11 people, replacing the old ten-person placeholder. They attend only if the wedding is in Puri. All other parties are included in both location scenarios. Attendance does not imply an overnight stay: these room estimates assume every attending guest needs accommodation. If all 11 of Maa's Friends are day guests in Puri, subtract 6 D rooms from each Puri scenario without reducing event headcount.
+
+Listed does not mean RSVP-confirmed. Meehika’s two-person party is counted once under Sidharth friends. Kanch’s eight people are included provisionally. Sourav’s Friends remains an unresolved ten-person block.
 
 This list is larger than the earlier roughly 100-guest venue brief. It is a new planning estimate; the existing brief and venue enquiries have not been revised. Confirm overnight attendance before changing contracted numbers.
 
@@ -23,54 +25,64 @@ This list is larger than the earlier roughly 100-guest venue brief. It is a new 
 
 D = one room for up to 2 guests (double bed for a couple, twin beds for unrelated sharers). T = one room with approved 3-person occupancy. Q = one room with approved 4-person occupancy and suitable beds. A two-bedroom villa may be one booking unit but two bedrooms: ask the hotel to distinguish keys, bedrooms and beds. Capacity alone does not establish a suitable sleeping arrangement.
 
-Two-person parties stay together in one D. Families remain separate from other parties, but may split across their own rooms. Singles are pooled separately within Sidharth friends, Kalyani friends and Kanch friends; no cross-side sharing is assumed. Unfilled last rooms stay within their pool. No gender is inferred from names. These counts are minimums before gender, friendship, accessibility and privacy constraints.
+Two-person parties stay together in one D. Families remain separate from other parties, but may split across their own rooms. Singles are pooled separately within each guest group; no cross-group sharing is assumed. Susmita Mausi and Latika Aunty are modelled in one shared twin room, subject to agreement; separate rooms add one D. Sarita uses one D alone within Maa's Friends. Unfilled last rooms stay within their pool. No gender is inferred from names. These counts are minimums before gender, friendship, accessibility and privacy constraints.
 
 ## Room configurations to compare
 
 ### A · All rooms up to 2
 
-Families split into D rooms; singles share twins; each ten-person block uses 5 D.
+Families split into D rooms; singles share twins; Sourav's Friends uses 5 D.
 
-| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- |
-| 119 | 64 D | 64 | 128 | 9 |
-| 121 | 64 D | 64 | 128 | 7 |
+| Wedding location | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| Puri | 128 | 69 D | 69 | 138 | 10 |
+| Puri | 130 | 69 D | 69 | 138 | 8 |
+| Elsewhere | 117 | 63 D | 63 | 126 | 9 |
+| Elsewhere | 119 | 63 D | 63 | 126 | 7 |
 
 ### B · Family rooms + twin-sharing singles
 
-Families of 3 use T, families of 4 use Q, families of 5 use T + D; singles share twins; blocks use 5 D each.
+Families of 3 use T, families of 4 use Q, families of 5 use T + D; singles share twins; Sourav's Friends uses 5 D.
 
-| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- |
-| 119 | 44 D + 7 T + 3 Q | 54 | 108 | 2 |
-| 121 | 44 D + 5 T + 5 Q | 54 | 108 | 2 |
+| Wedding location | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| Puri | 128 | 47 D + 7 T + 4 Q | 58 | 116 | 3 |
+| Puri | 130 | 47 D + 5 T + 6 Q | 58 | 116 | 3 |
+| Elsewhere | 117 | 41 D + 7 T + 4 Q | 52 | 104 | 2 |
+| Elsewhere | 119 | 41 D + 5 T + 6 Q | 52 | 104 | 2 |
 
 ### C · Triples for families + four-sharing singles
 
-Families use up to 3 per room; singles use Q with smaller remainder rooms; blocks use 5 D each.
+Families use up to 3 per room; singles use Q with smaller remainder rooms; Sourav's Friends uses 5 D.
 
-| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- |
-| 119 | 31 D + 11 T + 7 Q | 49 | 98 | 4 |
-| 121 | 33 D + 11 T + 7 Q | 51 | 102 | 6 |
+| Wedding location | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| Puri | 128 | 35 D + 12 T + 7 Q | 54 | 108 | 6 |
+| Puri | 130 | 37 D + 12 T + 7 Q | 56 | 112 | 8 |
+| Elsewhere | 117 | 29 D + 12 T + 7 Q | 48 | 96 | 5 |
+| Elsewhere | 119 | 31 D + 12 T + 7 Q | 50 | 100 | 7 |
 
 ### D · Family rooms + four-sharing singles
 
-Families use T/Q (5 = T + D); singles use Q; blocks use 5 D each.
+Families use T/Q (5 = T + D); singles use Q with smaller remainder rooms; Sourav's Friends uses 5 D.
 
-| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- |
-| 119 | 28 D + 8 T + 10 Q | 46 | 92 | 1 |
-| 121 | 28 D + 6 T + 12 Q | 46 | 92 | 1 |
+| Wedding location | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| Puri | 128 | 31 D + 8 T + 11 Q | 50 | 100 | 2 |
+| Puri | 130 | 31 D + 6 T + 13 Q | 50 | 100 | 2 |
+| Elsewhere | 117 | 25 D + 8 T + 11 Q | 44 | 88 | 1 |
+| Elsewhere | 119 | 25 D + 6 T + 13 Q | 44 | 88 | 1 |
 
-### E · Also share the two group blocks
+### E · Also share Sourav's Friends
 
-Same as D, plus each ten-person block uses 2 Q + 1 D. Only feasible if its internal relationships permit it.
+Same as D, plus Sourav's Friends uses 2 Q + 1 D. Only feasible if its internal relationships permit it. Maa's Friends stays as five two-person parties and one single in every Puri scenario.
 
-| Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
-| --- | --- | --- | --- | --- |
-| 119 | 20 D + 8 T + 14 Q | 42 | 84 | 1 |
-| 121 | 20 D + 6 T + 16 Q | 42 | 84 | 1 |
+| Wedding location | Guests | Room mix | Rooms / night | Room-nights × 2 | Spare capacity |
+| --- | --- | --- | --- | --- | --- |
+| Puri | 128 | 27 D + 8 T + 13 Q | 48 | 96 | 2 |
+| Puri | 130 | 27 D + 6 T + 15 Q | 48 | 96 | 2 |
+| Elsewhere | 117 | 21 D + 8 T + 13 Q | 42 | 84 | 1 |
+| Elsewhere | 119 | 21 D + 6 T + 15 Q | 42 | 84 | 1 |
 
 Use D as the first room-mix request for hotels, with A as the comfort fallback. E is an aggressive sharing scenario, not an assignment. Spare capacity is fragmented across rooms and cannot automatically accommodate extra guests. Counts exclude vendor rooms, a separate bridal/getting-ready room, and any additional couple room not already covered by the family parties.
 
@@ -89,12 +101,18 @@ Use D as the first room-mix request for hotels, with A as the comfort fallback. 
 | Kumthekar fam | 3–4 | 2 D | 1 T if 3; 1 Q if 4 |
 | Mama mami mai aai | 3 | 2 D | 1 T |
 | Tushar Trisha Baby Himanshu | 4 | 2 D | 1 Q |
+| Khuku Badama | 2 | 1 D | 1 D |
+| Manisha Nani family | 4 | 2 D | 1 Q |
 
 For a five-person family, 3 + 2 avoids a person sleeping alone. Other choices are 2 + 2 + 1 in three D rooms, 4 + 1 in Q + D if preferred, or one hotel-approved five-person suite. Five-person suites are not assumed in any total. Do not assume a baby needs no bed or does not count toward the hotel’s occupancy limit.
 
 ## Single guests available for later grouping
 
+Sidharth family: Susmita Mausi, Latika Aunty.
+
 Sidharth friends: Vikram, Nilay, Nishant, Vibhor, Felipe, Mrinal, Jha, Goyal, Singhal, Nishil, Nishchay, Rivu, Aditya VT.
+
+Maa's Friends: Sarita.
 
 Kalyani friends: Varsha, Aditi, Dimri, Ankur, Anshika, Stuti, Ayush, Niyati, Geetika, Gouri, Noorul.
 
@@ -115,6 +133,10 @@ Stable IDs distinguish similarly named parties. Gender, sharing group, hotel sta
 | G003 | Mausi | 4 | Family — see options | Listed | — |
 | G004 | Debanshu Mamu | 2 | Family — see options | Listed | — |
 | G005 | Abhishek Ritesh | 5 | Family — see options | Listed | — |
+| G077 | Susmita Mausi | 1 | Single pool | Listed | Family singles pool; sharing subject to agreement |
+| G078 | Latika Aunty | 1 | Single pool | Listed | Family singles pool; sharing subject to agreement |
+| G079 | Khuku Badama | 2 | Family — see options | Listed | — |
+| G080 | Manisha Nani family | 4 | Family — see options | Listed | — |
 
 ### Sidharth friends
 
@@ -146,7 +168,12 @@ Stable IDs distinguish similarly named parties. Gender, sharing group, hotel sta
 
 | ID | Party / person | People | Rooming category | Attendance | Notes |
 | --- | --- | --- | --- | --- | --- |
-| G035 | Maa's Friends | 10 | Unresolved group block | Listed | Composition unknown; keep each block separate |
+| G081 | Meenati | 2 | Together in 1 D | Puri only | Puri only; overnight stay TBD |
+| G082 | Sujata | 2 | Together in 1 D | Puri only | Puri only; overnight stay TBD |
+| G083 | Anjana | 2 | Together in 1 D | Puri only | Puri only; overnight stay TBD |
+| G084 | Trupti | 2 | Together in 1 D | Puri only | Puri only; overnight stay TBD |
+| G085 | Sabita | 2 | Together in 1 D | Puri only | Puri only; overnight stay TBD |
+| G086 | Sarita | 1 | Single pool | Puri only | Puri only; overnight stay TBD |
 
 ### Sourav's Friends
 
@@ -208,7 +235,7 @@ Stable IDs distinguish similarly named parties. Gender, sharing group, hotel sta
 | Repeated first names | Distinct remaining parties are kept separate; do not merge without confirmation. |
 | Kanch friends parsing | Zeel, pt, raag, snigi = 4; Mumbai: tanvee, disha, rowena, priti = 4. Confirm these are eight separate singles. Relationship label retained as Kanch without interpretation. |
 | Rani Aatya and Kumthekar | Each is 3–4, producing a combined 2-person range. |
-| Maa's Friends and Sourav's Friends | 10 guests each, 20 total, but not declared singles or couples. Confirm breakdown before using E. |
+| Maa's Friends and Sourav's Friends | Maa's Friends: 11 people, Puri only; five two-person parties plus Sarita. Sourav's Friends: 10 people, both locations, composition unknown. Confirm Sourav's breakdown before using E. |
 | Who needs accommodation, and for which nights? | Create an allocation for each night; local attendees may need zero hotel rooms. Two nights is only the current comparison baseline. |
 | Gender, friendship and comfort | Confirm sharing preferences; split pools and round separately. Ask elders about floor/access and bathrooms. |
 | Couple / bridal room and baby needs | Confirm whether Sidharth and Kalyani already appear in their family totals and whether separate rooms or a cot are needed. |
