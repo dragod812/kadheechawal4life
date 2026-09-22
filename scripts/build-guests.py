@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Build the guest planning Markdown and static page from the supplied party list."""
 from pathlib import Path
-from math import ceil
 from html import escape
 import argparse
 
@@ -48,33 +47,6 @@ for r in rows:
     if r['name']=='Meehika': r['note']='Shared by both sides; counted once here, per Sidharth’s confirmation'
 groups=['Sidharth family','Sidharth friends',"Sourav's Friends","Saurav's team",'Kalyani family','Kalyani friends','Kanch friends']
 def total(rs,field): return sum(r[field] for r in rs)
-def attending(location):
-    return [r for r in rows if location=='Puri' or r['group']!="Maa's Friends"]
-def allocation(location,high,mode):
-    counts={1:0,2:0,3:0,4:0}
-    selected=attending(location)
-    def pack(n,cap):
-        q,rem=divmod(n,cap)
-        if mode=='double_triple' and cap==3 and rem==1 and q:
-            counts[3]+=q-1
-            counts[2]+=2
-            return
-        counts[cap]+=q
-        if rem: counts[2 if rem==1 else rem]+=1
-    for r in selected:
-        n=r['hi' if high else 'lo']
-        if r['kind']=='single': continue
-        if r['kind']=='pair': counts[2]+=1
-        elif r['kind']=='block': pack(n,3 if mode=='double_triple' and r['group']=="Saurav's team" else 4 if mode=='maximum' else 2)
-        elif mode=='double': counts[2]+=ceil(n/2)
-        elif mode in ['triple','double_triple']: pack(n,3)
-        elif n==5: counts[3]+=1; counts[2]+=1
-        else: counts[n]+=1
-    for group in groups:
-        n=sum(r['kind']=='single' for r in selected if r['group']==group)
-        pack(n,3 if mode=='double_triple' else 2 if mode in ['double','family'] else 4)
-    return counts
-
 md=[]; html=[]
 def para(s): md.append(s+'\n'); html.append('<p>'+escape(s)+'</p>')
 def heading(s,level=2): md.append('#'*level+' '+s+'\n'); html.append(f'<h{level}>'+escape(s)+f'</h{level}>')
@@ -82,75 +54,57 @@ def table(headers,data):
     md.append('| '+' | '.join(headers)+' |\n| '+' | '.join(['---']*len(headers))+' |\n'+'\n'.join('| '+' | '.join(map(str,row))+' |' for row in data)+'\n')
     html.append('<div class="table-wrap"><table><thead><tr>'+''.join('<th scope="col">'+escape(x)+'</th>' for x in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+escape(str(x))+'</td>' for x in row)+'</tr>' for row in data)+'</tbody></table></div>')
 
-heading('The Ummed, Ahmedabad · Guest & room estimation',1)
-para('Updated 2026-09-21 · Venue finalized by the family: The Ummed, Ahmedabad. Wedding dates: 25–27 February 2027 (Thursday–Saturday). Check-in, checkout and number of hotel nights are TBD. Source: Sidharth’s supplied guest list. Planning scenarios, not RSVPs or a room booking. All listed guests are assumed to stay on the same nights; remove day guests before booking.')
-md.append('[Previous estimate — archived before the Ahmedabad changes](archive/pre-ahmedabad-2026-09-21/guest-estimation.md)\n')
-html.append('<p><a href="archive/pre-ahmedabad-2026-09-21/">Previous estimate — archived before the Ahmedabad changes</a></p>')
-heading('Headcount at a glance')
+heading('The Ummed, Ahmedabad',1)
+para('Guest & room plan · 25–27 February 2027')
+para('116–118 guests listed · Planning target: 120 on 26–27 February · 25 February: mainly close family, around 26 guests.')
+
+heading('Proposed nightly room plan')
+night_plan=[
+    ['25 February','Mainly close family','4 suites + 6 Premium = 10 rooms',6,26],
+    ['26 February','Main guest group','4 suites + 46 Premium = 50 rooms',20,120],
+    ['27 February','Main guest group','4 suites + 46 Premium = 50 rooms',20,120],
+]
+table(['Night','Who stays','Rooms','Extra beds','Planned guests'],night_plan)
+para('One extra bed in each selected Premium Room. This is a proposed allocation, not a confirmed booking.')
+
+heading('Room types')
+table(['Type','Guest capacity','Use'],[
+    ['Suite — 4 available','Up to 4 each','Mainly bride, groom and close family'],
+    ['Premium Room','2','Couples, families or two sharing guests'],
+    ['Premium + extra bed','3','Families or three compatible sharing guests'],
+])
+para('No standard four-person rooms. Only the four suites can accommodate four guests each.')
+para('At full occupancy, the proposed mix has capacity for 34 / 128 / 128 guests, leaving 8 spare places each night. Extra-bed needs depend on actual suite occupancy and room assignments.')
+
+heading('Guest count')
 summary=[]
 for group in groups:
     rs=[r for r in rows if r['group']==group]
-    other=[r for r in attending('Elsewhere') if r['group']==group]
-    summary.append([group,span(total(rs,'lo'),total(rs,'hi')),sum(r['kind']=='single' for r in rs)])
-other=attending('Elsewhere')
-summary.append(['TOTAL',span(total(rows,'lo'),total(rows,'hi')),sum(r['kind']=='single' for r in rows)])
-table(['Guest group','Ahmedabad guests','Singles available for grouping'],summary)
-para("Maa's Friends (11 people) is excluded because their attendance was Puri-only; their names remain in the archived estimate. Debanshu Mamu (2), Manisha Nani family (4), and Susmita Mausi (1) have been removed. Saurav's team is a new, separate block modelled at approximately 6 people. The 116–118 range holds that team at 6 and only reflects the two unresolved family counts; it is not a complete attendance uncertainty range.")
-para('Listed does not mean RSVP-confirmed. Meehika’s two-person party is counted once under Sidharth friends. Kanch’s eight people are included provisionally. Sourav’s Friends remains an unresolved ten-person block.')
-para('This list supersedes the earlier roughly 100-guest planning estimate. Earlier quotes and venue research remain historical and are not a revised hotel contract. Confirm overnight attendance before changing contracted numbers.')
-heading('How to read the room estimates')
-para('Wedding dates are 25–27 February 2027. Stay duration is unconfirmed; room-night totals below illustrate two nights only. Three nights would require rooms per night × 3. No dated hotel inventory, approved occupancy or booking is asserted.')
-para('D = one room for up to 2 guests (double bed for a couple, twin beds for unrelated sharers). T = one room with approved 3-person occupancy. Q = one room with approved 4-person occupancy and suitable beds. A two-bedroom villa may be one booking unit but two bedrooms: ask the hotel to distinguish keys, bedrooms and beds. Capacity alone does not establish a suitable sleeping arrangement.')
-para("Two-person parties stay together in one D. Families remain separate from other parties, but may split across their own rooms. Singles are pooled separately within each guest group; no cross-group sharing is assumed. Latika Aunty has one D to herself. Unfilled last rooms stay within their pool. No gender is inferred from names. These counts are minimums before gender, friendship, accessibility and privacy constraints. The Ummed’s permitted triple/quad occupancy, bed layouts and available room mix must be confirmed; T and Q are planning capacities, not verified hotel room categories.")
-heading('Room configurations to compare')
-models=[('double','A · All rooms up to 2',"Families split into D rooms; singles share twins; Sourav's Friends uses 5 D."),('family','B · Family rooms + twin-sharing singles',"Families of 3 use T, families of 4 use Q, families of 5 use T + D; singles share twins; Sourav's Friends uses 5 D."),('triple','C · Triples for families + four-sharing singles',"Families use up to 3 per room; singles use Q with smaller remainder rooms; Sourav's Friends uses 5 D."),('mixed','D · Family rooms + four-sharing singles',"Families use T/Q (5 = T + D); singles use Q with smaller remainder rooms; Sourav's Friends uses 5 D."),('maximum',"E · Also share Sourav's Friends", "Same as D, plus Sourav's Friends uses 2 Q + 1 D. Only feasible if its internal relationships permit it. Saurav's team uses 1 Q + 1 D, only if sharing is appropriate.")]
-models.append(('double_triple','F · Doubles and triples only', "Two-person parties use 1 D; three-person families use 1 T; four-person families use 2 D; five-person families use 1 T + 1 D. Singles share rooms of up to three within their own guest group. Where four singles remain, use 2 D rather than a triple plus a room for one. Sourav's Friends stays at 5 D until its composition is known. Saurav's team uses 2 T, subject to confirming sharing preferences. No Q rooms are used."))
-def mix(c): return ' + '.join(f'{n} {k}' for k,n in [('D',c[2]),('T',c[3]),('Q',c[4])] if n)
-for key,title,desc in models:
-    heading(title,3); para(desc)
-    if key not in ['maximum','double_triple']: para("Saurav’s team is modelled as 3 D, pending its breakdown.")
-    data=[]
-    for location in ['Ahmedabad · The Ummed']:
-        for high in [False,True]:
-            c=allocation(location,high,key); rooms=sum(c.values()); guests=total(attending(location),'hi' if high else 'lo')
-            assert sum(k*v for k,v in c.items())>=guests
-            data.append([location,guests,mix(c),rooms,rooms*2,sum(k*v for k,v in c.items())-guests])
-    table(['Wedding location','Guests','Room mix','Rooms / night','Illustrative room-nights × 2','Spare capacity'],data)
-para('Start with option F for The Ummed: doubles and triples only, with option A as the all-double fallback. Options B–E are retained for comparison only if the hotel approves the required occupancy. E is an aggressive sharing scenario, not an assignment. Spare capacity is fragmented across rooms and cannot automatically accommodate extra guests. Counts exclude vendor rooms, a separate bridal/getting-ready room, and any additional couple room not already covered by the family parties.')
-heading('Family-by-family room options')
-table(['Family party','People','All doubles','Family-room option'],[[r['name'],span(r['lo'],r['hi']),f"{ceil(r['lo']/2)} D" if r['lo']==r['hi'] else '2 D', {2:'1 D',3:'1 T',4:'1 Q',5:'1 T + 1 D'}[r['lo']] if r['lo']==r['hi'] else '1 T if 3; 1 Q if 4'] for r in rows if r['kind']=='family'])
-para('For a five-person family, 3 + 2 avoids a person sleeping alone. Other choices are 2 + 2 + 1 in three D rooms, 4 + 1 in Q + D if preferred, or one hotel-approved five-person suite. Five-person suites are not assumed in any total. Do not assume a baby needs no bed or does not count toward the hotel’s occupancy limit.')
-heading('Single guests available for later grouping')
+    summary.append([group,span(total(rs,'lo'),total(rs,'hi'))])
+summary.append(['TOTAL',span(total(rows,'lo'),total(rows,'hi'))])
+table(['Group','Guests'],summary)
+para('Rani Aatya and Kumthekar family are 3–4 each. Saurav’s team is approximately 6. The 120-person target allows 2–4 additional guests beyond the listed count.')
+
+heading('Guest list')
+para('33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown.')
 for group in groups:
-    rs=[r for r in rows if r['group']==group and r['kind']=='single']
-    if rs: para(group+': '+', '.join(r['name']+(' (tentative)' if r['tentative'] else '') for r in rs)+'.')
-para('For gender/friendship grouping, assign a sharing-group label after confirming preferences, then calculate each group separately: sum(ceil(group size / room capacity)). For example, 5 people in one group and 3 in another need 3 four-person rooms, although 8 freely mixable people need only 2. Smaller remainder rooms can reduce the number of Q rooms needed without reducing total rooms.')
-heading('Master guest register')
-para('Stable IDs distinguish similarly named parties. Gender, sharing group, hotel stay, arrival/departure, bed requirements and final room assignment are all TBD. “Listed” only means supplied in this conversation. A two-person party is kept together without assuming its relationship.')
-for group in groups:
-    heading(group,3)
-    table(['ID','Party / person','People','Rooming category','Attendance','Notes'],[[r['id'],r['name'],span(r['lo'],r['hi']),{'single':'Single pool','pair':'Together in 1 D','family':'Family — see options','block':'Unresolved group block'}[r['kind']], 'Puri only' if group=="Maa's Friends" else 'Listed',r['note'] or '—'] for r in rows if r['group']==group])
-heading('Decisions before reserving rooms')
-table(['Decision','Effect on estimate'],[
-    ['Meehika duplicate resolved','Sidharth confirmed the two entries are redundant on 2026-09-07. One two-person party is counted under Sidharth friends; the Kalyani entry is a reference to the same party. Totals already exclude the duplicate.'],
-    ['Repeated first names','Distinct remaining parties are kept separate; do not merge without confirmation.'],
-    ['Kanch friends parsing','Zeel, pt, raag, snigi = 4; Mumbai: tanvee, disha, rowena, priti = 4. Confirm these are eight separate singles. Relationship label retained as Kanch without interpretation.'],
-    ['Rani Aatya and Kumthekar','Each is 3–4, producing a combined 2-person range.'],
-    ["Friends and team blocks", "Maa's Friends is excluded from Ahmedabad. Sourav's Friends remains 10 people. Saurav's team is a separate approximately 6-person block; confirm names, count and sharing before using triples or quads."],
-    ['Who needs accommodation, and for which nights?','Create an allocation for each night; local attendees may need zero hotel rooms. Check-in/checkout are unconfirmed. Two-night figures are illustrative only, not the booked stay; multiply rooms per night by the actual nights.'],
-    ['Gender, friendship and comfort','Confirm sharing preferences; split pools and round separately. Ask elders about floor/access and bathrooms.'],
-    ['Couple / bridal room and baby needs','Confirm whether Sidharth and Kalyani already appear in their family totals and whether separate rooms or a cot are needed.'],
-    ['Hotel inventory and costs','Request D/T/Q counts, actual bed layouts, permitted adult/child occupancy, extra-bed charges and per-night rates. Cheapest room count is not necessarily cheapest accommodation.']])
-para('Compare quoted accommodation cost as nights × (D count × D rate + T count × T rate + Q count × Q rate), then add quoted extras and applicable taxes without double-counting occupancy charges already included in a rate. Recalculate night by night when stays differ. No prices have been assumed.')
+    rs=[r for r in rows if r['group']==group]
+    html.append('<details><summary>'+escape(group)+' · '+span(total(rs,'lo'),total(rs,'hi'))+' guests</summary>')
+    md.append('### '+group+'\n')
+    table(['ID','Party / person','Guests'],[[r['id'],r['name'],span(r['lo'],r['hi'])] for r in rs])
+    html.append('</details>')
+
+heading('To confirm')
+para('Names staying on 25 February; suite assignments; final sharing groups and extra beds; individual arrival/checkout dates; hotel availability and charges.')
 
 parser=argparse.ArgumentParser(); parser.add_argument('--wiki',type=Path); args=parser.parse_args()
 out=Path(__file__).resolve().parents[1]/'guest-estimation'; out.mkdir(exist_ok=True)
 doc='\n'.join(md)
 (out/'guest-estimation.md').write_text(doc)
 if args.wiki:
-    wiki_doc=doc.replace('archive/pre-ahmedabad-2026-09-21/guest-estimation.md','guest-estimation-backup-pre-ahmedabad-2026-09-21.md')
+    wiki_doc=doc
     (args.wiki/'guest-estimation.md').write_text(wiki_doc)
     (args.wiki/'guest-estimation-ahmedabad.md').write_text(wiki_doc)
-css='''body{margin:0;background:#f7f4ec;color:#293629;font:16px/1.65 system-ui,sans-serif}main,nav{max-width:1120px;margin:auto;padding:24px}nav{display:flex;flex-wrap:wrap;gap:20px;border-bottom:1px solid #d6dacd}a{color:#40513b}h1,h2,h3{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(32px,5vw,54px)}h2{font-size:30px;margin-top:52px}h3{font-size:23px;margin-top:32px}p{max-width:920px}.table-wrap{overflow-x:auto;margin:20px 0;background:#fffdf7;border:1px solid #d6dacd;border-radius:8px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 15px;text-align:left;border-bottom:1px solid #e2e5db;vertical-align:top;min-width:95px}th{background:#40513b;color:white}td:first-child{font-weight:600}tr:last-child td{border-bottom:0}@media(max-width:600px){main,nav{padding:18px}th,td{padding:10px;min-width:90px}}@media print{nav{display:none}.table-wrap{overflow:visible}th{color:#000;background:#eee}body{font-size:11px}h2{margin-top:24px}table{font-size:10px}th,td{min-width:0;padding:5px}}'''
+css='''body{margin:0;background:#f7f4ec;color:#293629;font:16px/1.65 system-ui,sans-serif}main,nav{max-width:1120px;margin:auto;padding:24px}nav{display:flex;flex-wrap:wrap;gap:20px;border-bottom:1px solid #d6dacd}a{color:#40513b}h1,h2,h3{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(32px,5vw,54px)}h2{font-size:26px;margin-top:32px}details{margin:10px 0;border-bottom:1px solid #d6dacd;padding:10px 0}summary{cursor:pointer;font-weight:600}h3{font-size:23px;margin-top:32px}p{max-width:920px}.table-wrap{overflow-x:auto;margin:20px 0;background:#fffdf7;border:1px solid #d6dacd;border-radius:8px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 15px;text-align:left;border-bottom:1px solid #e2e5db;vertical-align:top;min-width:95px}th{background:#40513b;color:white}td:first-child{font-weight:600}tr:last-child td{border-bottom:0}@media(max-width:600px){main,nav{padding:18px}th,td{padding:10px;min-width:90px}}@media print{nav{display:none}.table-wrap{overflow:visible}th{color:#000;background:#eee}body{font-size:11px}h2{margin-top:24px}table{font-size:10px}th,td{min-width:0;padding:5px}}'''
 (out/'index.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Guest & room estimation · Sidharth & Kalyani</title><style>'+css+'</style></head><body><nav aria-label="Main"><a href="/">Wedding brief</a><a href="/venues/">Venue study</a><a href="guest-estimation.md" download>Download Markdown</a></nav><main>'+''.join(html)+'</main></body></html>')
-print(summary[-1]); print([(key,mix(allocation('Ahmedabad',high,key)),sum(allocation('Ahmedabad',high,key).values())) for key,_,_ in models for high in [False,True]])
+print(summary[-1]); print(night_plan)

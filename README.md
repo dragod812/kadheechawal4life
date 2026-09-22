@@ -12,7 +12,7 @@ know what is being asked for before they quote.
 |---|---|
 | `/` | The facts, the two-function-day/two-night programme, the six things the space has to do, and the Sacred Grove mood board |
 | `/venues/` | The venue study — 67 properties across 13 regions, with verified facts, quote-backed cost analysis, outreach messages, and 618 photographs |
-| `/guest-estimation/` | Current The Ummed, Ahmedabad estimate for 25–27 February 2027: 116–118 guests, six room configurations including doubles/triples only. Hotel nights and approved occupancy TBD. Published at the user’s request. |
+| `/guest-estimation/` | Current The Ummed, Ahmedabad estimate for 25–27 February 2027: 116–118 listed guests; proposed nightly plan for 26 / 120 / 120 guests using 4 suites, Premium Rooms and extra beds. February 25 is mainly close family. Published at the user’s request. |
 | `/guest-estimation/archive/pre-ahmedabad-2026-09-21/` | Exact backup of the preceding Puri/elsewhere guest estimate, Markdown and generator; historical only. |
 
 The guest page and its downloadable Markdown are generated together by `python3 scripts/build-guests.py`.
