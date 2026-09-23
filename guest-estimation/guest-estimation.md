@@ -2,7 +2,7 @@
 
 Guest & room plan · 25–27 February 2027
 
-164 guests listed · Full nightly room plan to be confirmed.
+160 guests listed · Full nightly room plan to be confirmed.
 
 ## Room types
 
@@ -25,14 +25,14 @@ No standard four-person rooms. Only the four suites can accommodate four guests 
 | Kalyani family | 63 |
 | Kalyani friends | 23 |
 | Kanch friends | 8 |
-| Guruji and photographer | 6 |
-| TOTAL | 164 |
+| Guruji and photographer | 2 |
+| TOTAL | 160 |
 
 Saurav’s team remains approximately 6.
 
 ## Guest list
 
-33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown. In the roomed parties below, every extra-bed room is counted as three guests; a room without an extra bed is counted as two.
+33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown. For Kalyani family, every extra-bed room has three guests. Guruji and the photographer each occupy one regular room alone.
 
 ### Sidharth family · 19 guests
 
@@ -141,12 +141,12 @@ Saurav’s team remains approximately 6.
 | G075 | rowena | 1 |
 | G076 | priti | 1 |
 
-### Guruji and photographer · 6 guests · 2 rooms · 2 extra beds
+### Guruji and photographer · 2 guests · 2 rooms
 
 | ID | Party / person | Rooms | Extra beds | Guests |
 | --- | --- | --- | --- | --- |
-| G106 | Guruji | 1 | 1 | 3 |
-| G107 | Photographer | 1 | 1 | 3 |
+| G106 | Guruji | 1 | 0 | 1 |
+| G107 | Photographer | 1 | 0 | 1 |
 
 ## To confirm
 

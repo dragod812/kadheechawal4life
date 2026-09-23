@@ -52,11 +52,11 @@ kalyani_allocations = [
     ('Akshay Mama', 3, 0),
     ('Manisha', 1, 1),
 ]
-additional_allocations = [('Guruji', 1, 1), ('Photographer', 1, 1)]
+additional_allocations = [('Guruji', 1, 0, 1), ('Photographer', 1, 0, 1)]
 for name, rooms, extra_beds in kalyani_allocations:
     add('Kalyani family', name, rooms * 2 + extra_beds, kind='family')
-for name, rooms, extra_beds in additional_allocations:
-    add('Additional', name, rooms * 2 + extra_beds, kind='family')
+for name, rooms, extra_beds, guests in additional_allocations:
+    add('Additional', name, guests, kind='family')
 
 # Retire IDs after initial assignment so remaining parties retain their published IDs.
 removed_ids = {'G045','G046','G047','G054','G055','G056','G063','G067','G068',
@@ -85,7 +85,7 @@ def table(headers,data):
 
 heading('The Ummed, Ahmedabad',1)
 para('Guest & room plan · 25–27 February 2027')
-para('164 guests listed · Full nightly room plan to be confirmed.')
+para('160 guests listed · Full nightly room plan to be confirmed.')
 
 heading('Room types')
 table(['Type','Guest capacity','Use'],[
@@ -106,17 +106,17 @@ table(['Group','Guests'],summary)
 para('Saurav’s team remains approximately 6.')
 
 heading('Guest list')
-para('33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown. In the roomed parties below, every extra-bed room is counted as three guests; a room without an extra bed is counted as two.')
+para('33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown. For Kalyani family, every extra-bed room has three guests. Guruji and the photographer each occupy one regular room alone.')
 allocation_by_group = {
     'Kalyani family': {name: (rooms, extra_beds) for name, rooms, extra_beds in kalyani_allocations},
-    'Additional': {name: (rooms, extra_beds) for name, rooms, extra_beds in additional_allocations},
+    'Additional': {name: (rooms, extra_beds) for name, rooms, extra_beds, guests in additional_allocations},
 }
 for group in groups:
     rs=[r for r in rows if r['group']==group]
     if group == 'Kalyani family':
         label = 'Kalyani family · 63 guests · 22 rooms · 19 extra beds'
     elif group == 'Additional':
-        label = 'Guruji and photographer · 6 guests · 2 rooms · 2 extra beds'
+        label = 'Guruji and photographer · 2 guests · 2 rooms'
     else:
         label = group+' · '+span(total(rs,'lo'),total(rs,'hi'))+' guests'
     html.append('<details><summary>'+escape(label)+'</summary>')
@@ -144,4 +144,4 @@ if args.wiki:
     (args.wiki/'guest-estimation-ahmedabad.md').write_text(wiki_doc)
 css='''body{margin:0;background:#f7f4ec;color:#293629;font:16px/1.65 system-ui,sans-serif}main,nav{max-width:1120px;margin:auto;padding:24px}nav{display:flex;flex-wrap:wrap;gap:20px;border-bottom:1px solid #d6dacd}a{color:#40513b}h1,h2,h3{font-family:Georgia,serif;line-height:1.2}h1{font-size:clamp(32px,5vw,54px)}h2{font-size:26px;margin-top:32px}details{margin:10px 0;border-bottom:1px solid #d6dacd;padding:10px 0}summary{cursor:pointer;font-weight:600}h3{font-size:23px;margin-top:32px}p{max-width:920px}.table-wrap{overflow-x:auto;margin:20px 0;background:#fffdf7;border:1px solid #d6dacd;border-radius:8px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 15px;text-align:left;border-bottom:1px solid #e2e5db;vertical-align:top;min-width:95px}th{background:#40513b;color:white}td:first-child{font-weight:600}tr:last-child td{border-bottom:0}@media(max-width:600px){main,nav{padding:18px}th,td{padding:10px;min-width:90px}}@media print{nav{display:none}.table-wrap{overflow:visible}th{color:#000;background:#eee}body{font-size:11px}h2{margin-top:24px}table{font-size:10px}th,td{min-width:0;padding:5px}}'''
 (out/'index.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Guest & room estimation · Sidharth & Kalyani</title><style>'+css+'</style></head><body><nav aria-label="Main"><a href="/">Wedding brief</a><a href="/venues/">Venue study</a><a href="guest-estimation.md" download>Download Markdown</a></nav><main>'+''.join(html)+'</main></body></html>')
-print(summary[-1]); print(['Kalyani family', 22, 19, 63]); print(['Additional', 2, 2, 6])
+print(summary[-1]); print(['Kalyani family', 22, 19, 63]); print(['Additional', 2, 0, 2])
