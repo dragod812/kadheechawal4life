@@ -85,23 +85,7 @@ def table(headers,data):
 
 heading('The Ummed, Ahmedabad',1)
 para('Guest & room plan · 25–27 February 2027')
-para('164 guests listed · Kalyani family: 63 guests in 22 rooms · Guruji and photographer: 6 guests in 2 rooms.')
-
-heading('Confirmed allocation supplied 22 September')
-para('Each room normally holds two guests. Every room marked with an extra bed is counted as three guests. Stay nights and check-in/check-out dates are still to be assigned.')
-heading('Kalyani family',3)
-kalyani_table = [[name, rooms, extra_beds, rooms * 2 + extra_beds] for name, rooms, extra_beds in kalyani_allocations]
-kalyani_table.append(['Kalyani family total', 22, 19, 63])
-table(['Party','Rooms','Extra beds','Guests'], kalyani_table)
-heading('Additional rooms',3)
-additional_table = [[name, rooms, extra_beds, rooms * 2 + extra_beds] for name, rooms, extra_beds in additional_allocations]
-additional_table.append(['Additional total', 2, 2, 6])
-table(['Party','Rooms','Extra beds','Guests'], additional_table)
-para('Combined supplied allocation: 24 rooms, 21 extra beds and 69 guests.')
-
-heading('Nightly room plan needs revision')
-para('The earlier proposal was 10 rooms for 26 guests on 25 February and 50 rooms for a 120-person target on each of 26–27 February. Its maximum capacity was 34 / 128 / 128, so it cannot accommodate all 164 currently listed guests on one night. A revised whole-wedding plan depends on which guests stay on each night.')
-para('The family allocation above is a planning instruction, not a confirmed hotel booking. Hotel approval, inventory and extra-bed charges remain to be confirmed.')
+para('164 guests listed · Full nightly room plan to be confirmed.')
 
 heading('Room types')
 table(['Type','Guest capacity','Use'],[
@@ -119,19 +103,36 @@ for group in groups:
     summary.append([label,span(total(rs,'lo'),total(rs,'hi'))])
 summary.append(['TOTAL',span(total(rows,'lo'),total(rows,'hi'))])
 table(['Group','Guests'],summary)
-para('Saurav’s team remains approximately 6. The Guruji and photographer are included in the 164-person total and kept separate from family/friend groups.')
+para('Saurav’s team remains approximately 6.')
 
 heading('Guest list')
-para('33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown.')
+para('33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown. In the roomed parties below, every extra-bed room is counted as three guests; a room without an extra bed is counted as two.')
+allocation_by_group = {
+    'Kalyani family': {name: (rooms, extra_beds) for name, rooms, extra_beds in kalyani_allocations},
+    'Additional': {name: (rooms, extra_beds) for name, rooms, extra_beds in additional_allocations},
+}
 for group in groups:
     rs=[r for r in rows if r['group']==group]
-    html.append('<details><summary>'+escape(group)+' · '+span(total(rs,'lo'),total(rs,'hi'))+' guests</summary>')
-    md.append('### '+group+'\n')
-    table(['ID','Party / person','Guests'],[[r['id'],r['name'],span(r['lo'],r['hi'])] for r in rs])
+    if group == 'Kalyani family':
+        label = 'Kalyani family · 63 guests · 22 rooms · 19 extra beds'
+    elif group == 'Additional':
+        label = 'Guruji and photographer · 6 guests · 2 rooms · 2 extra beds'
+    else:
+        label = group+' · '+span(total(rs,'lo'),total(rs,'hi'))+' guests'
+    html.append('<details><summary>'+escape(label)+'</summary>')
+    md.append('### '+label+'\n')
+    if group in allocation_by_group:
+        allocations = allocation_by_group[group]
+        table(['ID','Party / person','Rooms','Extra beds','Guests'],[
+            [r['id'],r['name'],allocations[r['name']][0],allocations[r['name']][1],span(r['lo'],r['hi'])]
+            for r in rs
+        ])
+    else:
+        table(['ID','Party / person','Guests'],[[r['id'],r['name'],span(r['lo'],r['hi'])] for r in rs])
     html.append('</details>')
 
 heading('To confirm')
-para('Which parties stay on each of 25, 26 and 27 February; suite assignments; rooming for all non-Kalyani groups; individual arrival/checkout dates; hotel approval, availability and extra-bed charges.')
+para('Which parties stay on each of 25, 26 and 27 February; suite assignments; rooming for all other groups; individual arrival/checkout dates; hotel approval, availability and extra-bed charges. The former 50-room / 120-person nightly plan is superseded.')
 
 parser=argparse.ArgumentParser(); parser.add_argument('--wiki',type=Path); args=parser.parse_args()
 out=Path(__file__).resolve().parents[1]/'guest-estimation'; out.mkdir(exist_ok=True)
