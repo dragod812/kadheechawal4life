@@ -2,15 +2,15 @@
 
 Guest & room plan · 25–27 February 2027
 
-168 guests listed · 68 rooms for the full group.
+171 guests listed · 70 rooms for the full group.
 
 ## Nightly room plan
 
 | Night | Rooms required | Extra beds required | Total guests |
 | --- | --- | --- | --- |
 | 25 February | 4 suites + 6 Premium Rooms = 10 rooms | 6 extra beds, one in each Premium Room | 26 |
-| 26 February | 4 suites + 64 Premium Rooms = 68 rooms | 29 extra beds, one in each of 29 Premium Rooms | 168 |
-| 27 February | 4 suites + 64 Premium Rooms = 68 rooms | 29 extra beds, one in each of 29 Premium Rooms | 168 |
+| 26 February | 4 suites + 66 Premium Rooms = 70 rooms | 29 extra beds, one in each of 29 Premium Rooms | 171 |
+| 27 February | 4 suites + 66 Premium Rooms = 70 rooms | 29 extra beds, one in each of 29 Premium Rooms | 171 |
 
 Two suites for Sidharth family and two for Kalyani family. Planning basis: 26 guests on 25 February (two per suite, three per Premium Room); the full guest list on 26–27 February. Individual stays and sharing partners to be confirmed.
 
@@ -24,9 +24,10 @@ Two suites for Sidharth family and two for Kalyani family. Planning basis: 26 gu
 | Saurav's team | 0 | 3 | 0 | 6 |
 | Kalyani family | 2 | 20 | 17 | 63 |
 | Kalyani friends | 0 | 13 | 5 | 31 |
+| Kalyani Office | 0 | 2 | 0 | 3 |
 | Kanch friends | 0 | 3 | 2 | 8 |
 | Guruji and photographer | 0 | 2 | 0 | 2 |
-| TOTAL | 4 | 64 | 29 | 168 |
+| TOTAL | 4 | 66 | 29 | 171 |
 
 Provisional suite assignments: Mamu and Mausi for Sidharth family; one room each from Supekar–Anand and Nani mama mami for Kalyani family. All other family rooms are Premium Rooms, with extra beds for three guests. Abhishek/Ritesh’s five guests split 3 + 2. Couples stay together; friend singles share up to three within their group. Sourav’s Friends and Saurav’s team use twin sharing. Guruji and the photographer each have one room alone.
 
@@ -50,9 +51,10 @@ No standard four-person rooms. Only the four suites can accommodate four guests 
 | Saurav's team | 6 |
 | Kalyani family | 63 |
 | Kalyani friends | 31 |
+| Kalyani Office | 3 |
 | Kanch friends | 8 |
 | Guruji and photographer | 2 |
-| TOTAL | 168 |
+| TOTAL | 171 |
 
 Saurav’s team remains approximately 6.
 
@@ -161,6 +163,13 @@ Friend singles share rooms with extra beds. MDI: Saleem, Karthik and Arjun. Each
 | G109 | Saleem (MDI) | 1 |
 | G110 | Karthik (MDI) | 1 |
 | G111 | Arjun (MDI) | 1 |
+
+### Kalyani Office · 3 guests · 2 Premium Rooms
+
+| ID | Party / person | Rooms | Extra beds | Guests |
+| --- | --- | --- | --- | --- |
+| G112 | Sumeet | 1 | 0 | 1 |
+| G113 | Nimisha and Pushpa | 1 | 0 | 2 |
 
 ### Kanch friends · 8 guests
 

@@ -59,6 +59,8 @@ for name, rooms, extra_beds, guests in additional_allocations:
     add('Additional', name, guests, kind='family')
 for name in ['Meghal', 'Saleem (MDI)', 'Karthik (MDI)', 'Arjun (MDI)']:
     add('Kalyani friends', name)
+add('Kalyani Office', 'Sumeet', 1, kind='single')
+add('Kalyani Office', 'Nimisha and Pushpa', 2, kind='pair')
 
 # Retire IDs after initial assignment so remaining parties retain their published IDs.
 removed_ids = {'G045','G046','G047','G063','G068',
@@ -78,7 +80,7 @@ for r in rows:
 def span(a,b): return str(a) if a==b else f'{a}–{b}'
 for r in rows:
     if r['name']=='Meehika': r['note']='Shared by both sides; counted once here, per Sidharth’s confirmation'
-groups=['Sidharth family','Sidharth friends',"Sourav's Friends","Saurav's team",'Kalyani family','Kalyani friends','Kanch friends','Additional']
+groups=['Sidharth family','Sidharth friends',"Sourav's Friends","Saurav's team",'Kalyani family','Kalyani friends','Kalyani Office','Kanch friends','Additional']
 def total(rs,field): return sum(r[field] for r in rs)
 # Provisional party assignments preserve the supplied family room groupings.
 family_rooms = {
@@ -160,6 +162,7 @@ para('Saurav’s team remains approximately 6.')
 heading('Guest list')
 para('Friend singles share rooms with extra beds. MDI: Saleem, Karthik and Arjun. Each extra-bed room accommodates three guests.')
 allocation_by_group = {
+    'Kalyani Office': {'Sumeet': (1, 0), 'Nimisha and Pushpa': (1, 0)},
     'Additional': {name: (rooms, extra_beds) for name, rooms, extra_beds, guests in additional_allocations},
 }
 for group in groups:
@@ -169,6 +172,8 @@ for group in groups:
         label = f'{group} · {total(rs, "lo")} guests · {s} suites + {p} Premium Rooms · {e} extra beds'
     elif group == 'Additional':
         label = 'Guruji and photographer · 2 guests · 2 rooms'
+    elif group == 'Kalyani Office':
+        label = 'Kalyani Office · 3 guests · 2 Premium Rooms'
     else:
         label = group+' · '+span(total(rs,'lo'),total(rs,'hi'))+' guests'
     html.append('<details><summary>'+escape(label)+'</summary>')
