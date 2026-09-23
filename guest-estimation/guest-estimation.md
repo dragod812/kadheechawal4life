@@ -12,29 +12,29 @@ Guest & room plan · 25–27 February 2027
 | 26 February | 4 suites + 64 Premium Rooms = 68 rooms | 29 extra beds, one in each of 29 Premium Rooms | 168 |
 | 27 February | 4 suites + 64 Premium Rooms = 68 rooms | 29 extra beds, one in each of 29 Premium Rooms | 168 |
 
-Planning basis: 26 guests on 25 February (two per suite, three per Premium Room); the full guest list on 26–27 February. Individual stays and sharing partners to be confirmed.
+Two suites for Sidharth family and two for Kalyani family. Planning basis: 26 guests on 25 February (two per suite, three per Premium Room); the full guest list on 26–27 February. Individual stays and sharing partners to be confirmed.
 
 ### Room breakdown · 26–27 February
 
 | Group | Suites | Premium Rooms | Extra beds | Guests |
 | --- | --- | --- | --- | --- |
-| Sidharth family | 4 | 3 | 0 | 19 |
+| Sidharth family | 2 | 5 | 2 | 19 |
 | Sidharth friends | 0 | 13 | 3 | 29 |
 | Sourav's Friends | 0 | 5 | 0 | 10 |
 | Saurav's team | 0 | 3 | 0 | 6 |
-| Kalyani family | 0 | 22 | 19 | 63 |
+| Kalyani family | 2 | 20 | 17 | 63 |
 | Kalyani friends | 0 | 13 | 5 | 31 |
 | Kanch friends | 0 | 3 | 2 | 8 |
 | Guruji and photographer | 0 | 2 | 0 | 2 |
 | TOTAL | 4 | 64 | 29 | 168 |
 
-Calculation assumes suites for Sidharth fam (3), Mamu (4), Mausi (4) and three of Abhishek/Ritesh’s five guests. The remaining two share a Premium Room; Khuku Badama’s two share another; Latika Aunty has one alone. Couples stay together. Friend singles share up to three per room within their group; Sourav’s Friends and Saurav’s team use twin sharing. Kalyani family uses the supplied room allocation. Guruji and the photographer each have one room alone.
+Provisional suite assignments: Mamu and Mausi for Sidharth family; one room each from Supekar–Anand and Nani mama mami for Kalyani family. All other family rooms are Premium Rooms, with extra beds for three guests. Abhishek/Ritesh’s five guests split 3 + 2. Couples stay together; friend singles share up to three within their group. Sourav’s Friends and Saurav’s team use twin sharing. Guruji and the photographer each have one room alone.
 
 ## Room types
 
 | Type | Guest capacity | Use |
 | --- | --- | --- |
-| Suite — 4 available | Up to 4 each | Mainly bride, groom and close family |
+| Suite — 4 available | Up to 4 each | 2 for Sidharth family; 2 for Kalyani family |
 | Premium Room | 2 | Couples, families or two sharing guests |
 | Premium + extra bed | 3 | Families or three compatible sharing guests |
 
@@ -60,16 +60,16 @@ Saurav’s team remains approximately 6.
 
 Friend singles share rooms with extra beds. MDI: Saleem, Karthik and Arjun. Each extra-bed room accommodates three guests.
 
-### Sidharth family · 19 guests
+### Sidharth family · 19 guests · 2 suites + 5 Premium Rooms · 2 extra beds
 
-| ID | Party / person | Guests |
-| --- | --- | --- |
-| G001 | Sidharth fam | 3 |
-| G002 | Mamu | 4 |
-| G003 | Mausi | 4 |
-| G005 | Abhishek Ritesh | 5 |
-| G078 | Latika Aunty | 1 |
-| G079 | Khuku Badama | 2 |
+| ID | Party / person | Suites | Premium Rooms | Extra beds | Guests |
+| --- | --- | --- | --- | --- | --- |
+| G001 | Sidharth fam | 0 | 1 | 1 | 3 |
+| G002 | Mamu | 1 | 0 | 0 | 4 |
+| G003 | Mausi | 1 | 0 | 0 | 4 |
+| G005 | Abhishek Ritesh | 0 | 2 | 1 | 5 |
+| G078 | Latika Aunty | 0 | 1 | 0 | 1 |
+| G079 | Khuku Badama | 0 | 1 | 0 | 2 |
 
 ### Sidharth friends · 29 guests
 
@@ -109,28 +109,28 @@ Friend singles share rooms with extra beds. MDI: Saleem, Karthik and Arjun. Each
 | --- | --- | --- |
 | G087 | Saurav's team | 6 |
 
-### Kalyani family · 63 guests · 22 rooms · 19 extra beds
+### Kalyani family · 63 guests · 2 suites + 20 Premium Rooms · 17 extra beds
 
-| ID | Party / person | Rooms | Extra beds | Guests |
-| --- | --- | --- | --- | --- |
-| G088 | Supekar–Anand | 2 | 2 | 6 |
-| G089 | Nani mama mami | 2 | 2 | 6 |
-| G090 | Rani Aatya | 1 | 1 | 3 |
-| G091 | Sudesh–Baby Aatya | 1 | 1 | 3 |
-| G092 | Pramod | 1 | 1 | 3 |
-| G093 | Anil–Sunil | 1 | 1 | 3 |
-| G094 | Sanjay Patil | 1 | 1 | 3 |
-| G095 | Kumthekar | 1 | 1 | 3 |
-| G096 | Sanju–Tabu | 1 | 1 | 3 |
-| G097 | Seema | 1 | 1 | 3 |
-| G098 | Aparna | 1 | 1 | 3 |
-| G099 | Nikhil | 1 | 1 | 3 |
-| G100 | Pradeep | 1 | 1 | 3 |
-| G101 | Sunita–Bapu | 1 | 1 | 3 |
-| G102 | Shubhda | 1 | 1 | 3 |
-| G103 | Ashish–Rahul | 1 | 1 | 3 |
-| G104 | Akshay Mama | 3 | 0 | 6 |
-| G105 | Manisha | 1 | 1 | 3 |
+| ID | Party / person | Suites | Premium Rooms | Extra beds | Guests |
+| --- | --- | --- | --- | --- | --- |
+| G088 | Supekar–Anand | 1 | 1 | 1 | 6 |
+| G089 | Nani mama mami | 1 | 1 | 1 | 6 |
+| G090 | Rani Aatya | 0 | 1 | 1 | 3 |
+| G091 | Sudesh–Baby Aatya | 0 | 1 | 1 | 3 |
+| G092 | Pramod | 0 | 1 | 1 | 3 |
+| G093 | Anil–Sunil | 0 | 1 | 1 | 3 |
+| G094 | Sanjay Patil | 0 | 1 | 1 | 3 |
+| G095 | Kumthekar | 0 | 1 | 1 | 3 |
+| G096 | Sanju–Tabu | 0 | 1 | 1 | 3 |
+| G097 | Seema | 0 | 1 | 1 | 3 |
+| G098 | Aparna | 0 | 1 | 1 | 3 |
+| G099 | Nikhil | 0 | 1 | 1 | 3 |
+| G100 | Pradeep | 0 | 1 | 1 | 3 |
+| G101 | Sunita–Bapu | 0 | 1 | 1 | 3 |
+| G102 | Shubhda | 0 | 1 | 1 | 3 |
+| G103 | Ashish–Rahul | 0 | 1 | 1 | 3 |
+| G104 | Akshay Mama | 0 | 3 | 0 | 6 |
+| G105 | Manisha | 0 | 1 | 1 | 3 |
 
 ### Kalyani friends · 31 guests
 
