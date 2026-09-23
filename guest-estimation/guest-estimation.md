@@ -2,17 +2,51 @@
 
 Guest & room plan · 25–27 February 2027
 
-116–118 guests listed · Planning target: 120 on 26–27 February · 25 February: mainly close family, around 26 guests.
+164 guests listed · Kalyani family: 63 guests in 22 rooms · Guruji and photographer: 6 guests in 2 rooms.
 
-## Proposed nightly room plan
+## Confirmed allocation supplied 22 September
 
-| Night | Who stays | Rooms | Extra beds | Planned guests |
-| --- | --- | --- | --- | --- |
-| 25 February | Mainly close family | 4 suites + 6 Premium = 10 rooms | 6 | 26 |
-| 26 February | Main guest group | 4 suites + 46 Premium = 50 rooms | 20 | 120 |
-| 27 February | Main guest group | 4 suites + 46 Premium = 50 rooms | 20 | 120 |
+Each room normally holds two guests. Every room marked with an extra bed is counted as three guests. Stay nights and check-in/check-out dates are still to be assigned.
 
-One extra bed in each selected Premium Room. This is a proposed allocation, not a confirmed booking.
+### Kalyani family
+
+| Party | Rooms | Extra beds | Guests |
+| --- | --- | --- | --- |
+| Supekar–Anand | 2 | 2 | 6 |
+| Nani mama mami | 2 | 2 | 6 |
+| Rani Aatya | 1 | 1 | 3 |
+| Sudesh–Baby Aatya | 1 | 1 | 3 |
+| Pramod | 1 | 1 | 3 |
+| Anil–Sunil | 1 | 1 | 3 |
+| Sanjay Patil | 1 | 1 | 3 |
+| Kumthekar | 1 | 1 | 3 |
+| Sanju–Tabu | 1 | 1 | 3 |
+| Seema | 1 | 1 | 3 |
+| Aparna | 1 | 1 | 3 |
+| Nikhil | 1 | 1 | 3 |
+| Pradeep | 1 | 1 | 3 |
+| Sunita–Bapu | 1 | 1 | 3 |
+| Shubhda | 1 | 1 | 3 |
+| Ashish–Rahul | 1 | 1 | 3 |
+| Akshay Mama | 3 | 0 | 6 |
+| Manisha | 1 | 1 | 3 |
+| Kalyani family total | 22 | 19 | 63 |
+
+### Additional rooms
+
+| Party | Rooms | Extra beds | Guests |
+| --- | --- | --- | --- |
+| Guruji | 1 | 1 | 3 |
+| Photographer | 1 | 1 | 3 |
+| Additional total | 2 | 2 | 6 |
+
+Combined supplied allocation: 24 rooms, 21 extra beds and 69 guests.
+
+## Nightly room plan needs revision
+
+The earlier proposal was 10 rooms for 26 guests on 25 February and 50 rooms for a 120-person target on each of 26–27 February. Its maximum capacity was 34 / 128 / 128, so it cannot accommodate all 164 currently listed guests on one night. A revised whole-wedding plan depends on which guests stay on each night.
+
+The family allocation above is a planning instruction, not a confirmed hotel booking. Hotel approval, inventory and extra-bed charges remain to be confirmed.
 
 ## Room types
 
@@ -24,8 +58,6 @@ One extra bed in each selected Premium Room. This is a proposed allocation, not 
 
 No standard four-person rooms. Only the four suites can accommodate four guests each.
 
-At full occupancy, the proposed mix has capacity for 34 / 128 / 128 guests, leaving 8 spare places each night. Extra-bed needs depend on actual suite occupancy and room assignments.
-
 ## Guest count
 
 | Group | Guests |
@@ -34,12 +66,13 @@ At full occupancy, the proposed mix has capacity for 34 / 128 / 128 guests, leav
 | Sidharth friends | 29 |
 | Sourav's Friends | 10 |
 | Saurav's team | 6 |
-| Kalyani family | 21–23 |
+| Kalyani family | 63 |
 | Kalyani friends | 23 |
 | Kanch friends | 8 |
-| TOTAL | 116–118 |
+| Guruji and photographer | 6 |
+| TOTAL | 164 |
 
-Rani Aatya and Kumthekar family are 3–4 each. Saurav’s team is approximately 6. The 120-person target allows 2–4 additional guests beyond the listed count.
+Saurav’s team remains approximately 6. The Guruji and photographer are included in the 164-person total and kept separate from family/friend groups.
 
 ## Guest list
 
@@ -98,12 +131,24 @@ Rani Aatya and Kumthekar family are 3–4 each. Saurav’s team is approximately
 
 | ID | Party / person | Guests |
 | --- | --- | --- |
-| G037 | Kalyani Close fam | 5 |
-| G038 | Rani Aatya | 3–4 |
-| G039 | Akshay fam | 3 |
-| G040 | Kumthekar fam | 3–4 |
-| G041 | Mama mami mai aai | 3 |
-| G042 | Tushar Trisha Baby Himanshu | 4 |
+| G088 | Supekar–Anand | 6 |
+| G089 | Nani mama mami | 6 |
+| G090 | Rani Aatya | 3 |
+| G091 | Sudesh–Baby Aatya | 3 |
+| G092 | Pramod | 3 |
+| G093 | Anil–Sunil | 3 |
+| G094 | Sanjay Patil | 3 |
+| G095 | Kumthekar | 3 |
+| G096 | Sanju–Tabu | 3 |
+| G097 | Seema | 3 |
+| G098 | Aparna | 3 |
+| G099 | Nikhil | 3 |
+| G100 | Pradeep | 3 |
+| G101 | Sunita–Bapu | 3 |
+| G102 | Shubhda | 3 |
+| G103 | Ashish–Rahul | 3 |
+| G104 | Akshay Mama | 6 |
+| G105 | Manisha | 3 |
 
 ### Kalyani friends
 
@@ -140,6 +185,13 @@ Rani Aatya and Kumthekar family are 3–4 each. Saurav’s team is approximately
 | G075 | rowena | 1 |
 | G076 | priti | 1 |
 
+### Additional
+
+| ID | Party / person | Guests |
+| --- | --- | --- |
+| G106 | Guruji | 3 |
+| G107 | Photographer | 3 |
+
 ## To confirm
 
-Names staying on 25 February; suite assignments; final sharing groups and extra beds; individual arrival/checkout dates; hotel availability and charges.
+Which parties stay on each of 25, 26 and 27 February; suite assignments; rooming for all non-Kalyani groups; individual arrival/checkout dates; hotel approval, availability and extra-bed charges.
