@@ -2,7 +2,33 @@
 
 Guest & room plan · 25–27 February 2027
 
-160 guests listed · Full nightly room plan to be confirmed.
+168 guests listed · 68 rooms for the full group.
+
+## Nightly room plan
+
+| Night | Rooms required | Extra beds required | Total guests |
+| --- | --- | --- | --- |
+| 25 February | 4 suites + 6 Premium Rooms = 10 rooms | 6 extra beds, one in each Premium Room | 26 |
+| 26 February | 4 suites + 64 Premium Rooms = 68 rooms | 29 extra beds, one in each of 29 Premium Rooms | 168 |
+| 27 February | 4 suites + 64 Premium Rooms = 68 rooms | 29 extra beds, one in each of 29 Premium Rooms | 168 |
+
+Planning basis: 26 guests on 25 February (two per suite, three per Premium Room); the full guest list on 26–27 February. Individual stays and sharing partners to be confirmed.
+
+### Room breakdown · 26–27 February
+
+| Group | Suites | Premium Rooms | Extra beds | Guests |
+| --- | --- | --- | --- | --- |
+| Sidharth family | 4 | 3 | 0 | 19 |
+| Sidharth friends | 0 | 13 | 3 | 29 |
+| Sourav's Friends | 0 | 5 | 0 | 10 |
+| Saurav's team | 0 | 3 | 0 | 6 |
+| Kalyani family | 0 | 22 | 19 | 63 |
+| Kalyani friends | 0 | 13 | 5 | 31 |
+| Kanch friends | 0 | 3 | 2 | 8 |
+| Guruji and photographer | 0 | 2 | 0 | 2 |
+| TOTAL | 4 | 64 | 29 | 168 |
+
+Calculation assumes suites for Sidharth fam (3), Mamu (4), Mausi (4) and three of Abhishek/Ritesh’s five guests. The remaining two share a Premium Room; Khuku Badama’s two share another; Latika Aunty has one alone. Couples stay together. Friend singles share up to three per room within their group; Sourav’s Friends and Saurav’s team use twin sharing. Kalyani family uses the supplied room allocation. Guruji and the photographer each have one room alone.
 
 ## Room types
 
@@ -23,16 +49,16 @@ No standard four-person rooms. Only the four suites can accommodate four guests 
 | Sourav's Friends | 10 |
 | Saurav's team | 6 |
 | Kalyani family | 63 |
-| Kalyani friends | 23 |
+| Kalyani friends | 31 |
 | Kanch friends | 8 |
 | Guruji and photographer | 2 |
-| TOTAL | 160 |
+| TOTAL | 168 |
 
 Saurav’s team remains approximately 6.
 
 ## Guest list
 
-33 individual guests can be grouped by friendship and sharing preference; gender is not assumed. Group blocks need a breakdown. For Kalyani family, every extra-bed room has three guests. Guruji and the photographer each occupy one regular room alone.
+Friend singles share rooms with extra beds. MDI: Saleem, Karthik and Arjun. Each extra-bed room accommodates three guests.
 
 ### Sidharth family · 19 guests
 
@@ -106,7 +132,7 @@ Saurav’s team remains approximately 6.
 | G104 | Akshay Mama | 3 | 0 | 6 |
 | G105 | Manisha | 1 | 1 | 3 |
 
-### Kalyani friends · 23 guests
+### Kalyani friends · 31 guests
 
 | ID | Party / person | Guests |
 | --- | --- | --- |
@@ -118,6 +144,9 @@ Saurav’s team remains approximately 6.
 | G051 | Lakshya shreya | 2 |
 | G052 | Ankur | 1 |
 | G053 | Tirth | 2 |
+| G054 | Shreeja | 1 |
+| G055 | Prithvi | 1 |
+| G056 | Sonia | 1 |
 | G057 | Shrijan | 2 |
 | G058 | Akshata | 2 |
 | G059 | Anshika | 1 |
@@ -127,6 +156,11 @@ Saurav’s team remains approximately 6.
 | G064 | Geetika | 1 |
 | G065 | Gouri | 1 |
 | G066 | Noorul | 1 |
+| G067 | Kashmala | 1 |
+| G108 | Meghal | 1 |
+| G109 | Saleem (MDI) | 1 |
+| G110 | Karthik (MDI) | 1 |
+| G111 | Arjun (MDI) | 1 |
 
 ### Kanch friends · 8 guests
 
@@ -150,4 +184,4 @@ Saurav’s team remains approximately 6.
 
 ## To confirm
 
-Which parties stay on each of 25, 26 and 27 February; suite assignments; rooming for all other groups; individual arrival/checkout dates; hotel approval, availability and extra-bed charges. The former 50-room / 120-person nightly plan is superseded.
+Individual arrival/checkout dates, suite assignments, sharing partners and hotel availability. Saurav’s team count is approximate.
