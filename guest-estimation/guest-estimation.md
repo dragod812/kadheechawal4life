@@ -2,195 +2,147 @@
 
 Guest & room plan · 25–27 February 2027
 
-171 guests listed · 70 rooms for the full group.
+143 guests listed · 57 rooms for the full list.
 
 ## Nightly room plan
 
 | Night | Rooms required | Extra beds required | Total guests |
 | --- | --- | --- | --- |
-| 25 February | 4 suites + 6 Premium Rooms = 10 rooms | 6 extra beds, one in each Premium Room | 26 |
-| 26 February | 4 suites + 66 Premium Rooms = 70 rooms | 29 extra beds, one in each of 29 Premium Rooms | 171 |
-| 27 February | 4 suites + 66 Premium Rooms = 70 rooms | 29 extra beds, one in each of 29 Premium Rooms | 171 |
+| 25 February | 4 suites + 14 Premium Rooms = 18 rooms | 5 extra beds | 48 |
+| 26 February | 4 suites + 53 Premium Rooms = 57 rooms | 22 extra beds | 143 |
+| 27 February | 4 suites + 53 Premium Rooms = 57 rooms | 22 extra beds | 143 |
 
-Two suites for Sidharth family and two for Kalyani family. Planning basis: 26 guests on 25 February (two per suite, three per Premium Room); the full guest list on 26–27 February. Individual stays and sharing partners to be confirmed.
+Planning scenario, not confirmed bookings: tracker dates where supplied; Sidharth family assumed 25–28 February, other undated guests 26–28 February. Two suites per family. Each extra bed is in a separate Premium Room.
 
-### Room breakdown · 26–27 February
+### Room breakdown and planning assumptions
 
 | Group | Suites | Premium Rooms | Extra beds | Guests |
 | --- | --- | --- | --- | --- |
-| Sidharth family | 2 | 5 | 2 | 19 |
-| Sidharth friends | 0 | 13 | 3 | 29 |
-| Sourav's Friends | 0 | 5 | 0 | 10 |
-| Saurav's team | 0 | 3 | 0 | 6 |
-| Kalyani family | 2 | 20 | 17 | 63 |
-| Kalyani friends | 0 | 13 | 5 | 31 |
-| Kalyani Office | 0 | 2 | 0 | 3 |
-| Kanch friends | 0 | 3 | 2 | 8 |
-| Guruji and photographer | 0 | 2 | 0 | 2 |
-| TOTAL | 4 | 66 | 29 | 171 |
+| Sidharth family | 2 | 4 | 3 | 19 |
+| Sidharth friends | 0 | 12 | 3 | 27 |
+| Sourav's Friends | 0 | 4 | 2 | 10 |
+| Saurav's team | 0 | 2 | 2 | 6 |
+| Kalyani family | 2 | 12 | 4 | 35 |
+| Guruji and photographer | 0 | 4 | 0 | 8 |
+| Kanch friends | 0 | 4 | 3 | 11 |
+| Kalyani friends | 0 | 11 | 5 | 27 |
+| TOTAL | 4 | 53 | 22 | 143 |
 
-Provisional suite assignments: Mamu and Mausi for Sidharth family; one room each from Supekar–Anand and Nani mama mami for Kalyani family. All other family rooms are Premium Rooms, with extra beds for three guests. Abhishek/Ritesh’s five guests split 3 + 2. Couples stay together; friend singles share up to three within their group. Sourav’s Friends and Saurav’s team use twin sharing. Guruji and the photographer each have one room alone.
+Kalyani’s tracker is the complete replacement for her old estimate: 73 bride-side guests plus 8 common vendors. Meehika & Rochak are counted only on her side. Phone numbers are not published.
 
-## Room types
+The tracker has 32 confirmed guests, 22 marked “No” and 27 with blank RSVP. All 81 remain in this planning scenario while “No” is clarified. Groom RSVPs are unconfirmed; Saurav’s team remains approximately 6.
 
-| Type | Guest capacity | Use |
-| --- | --- | --- |
-| Suite — 4 available | Up to 4 each | 2 for Sidharth family; 2 for Kalyani family |
-| Premium Room | 2 | Couples, families or two sharing guests |
-| Premium + extra bed | 3 | Families or three compatible sharing guests |
+Proposed suites: Mamu and Mausi; Kanchan/Kalyani/Akshay and Tushar Puranik family. Other family accommodation is Premium. Four-person Premium parties use two rooms; children count in capacity until the hotel confirms infant/bed rules. All sharing is proposed.
 
-No standard four-person rooms. Only the four suites can accommodate four guests each.
+## Guest list and room groups
 
-## Guest count
+Sidharth’s rows are proposed room groups. Kalyani’s parties are reproduced from her tracker without changing her sheet; room counts below are planning allocations.
 
-| Group | Guests |
-| --- | --- |
-| Sidharth family | 19 |
-| Sidharth friends | 29 |
-| Sourav's Friends | 10 |
-| Saurav's team | 6 |
-| Kalyani family | 63 |
-| Kalyani friends | 31 |
-| Kalyani Office | 3 |
-| Kanch friends | 8 |
-| Guruji and photographer | 2 |
-| TOTAL | 171 |
+### Sidharth family · 19 guests · 6 rooms
 
-Saurav’s team remains approximately 6.
-
-## Guest list
-
-Friend singles share rooms with extra beds. MDI: Saleem, Karthik and Arjun. Each extra-bed room accommodates three guests.
-
-### Sidharth family · 19 guests · 2 suites + 5 Premium Rooms · 2 extra beds
-
-| ID | Party / person | Suites | Premium Rooms | Extra beds | Guests |
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
 | --- | --- | --- | --- | --- | --- |
-| G001 | Sidharth fam | 0 | 1 | 1 | 3 |
-| G002 | Mamu | 1 | 0 | 0 | 4 |
-| G003 | Mausi | 1 | 0 | 0 | 4 |
-| G005 | Abhishek Ritesh | 0 | 2 | 1 | 5 |
-| G078 | Latika Aunty | 0 | 1 | 0 | 1 |
-| G079 | Khuku Badama | 0 | 1 | 0 | 2 |
+| G-F01 | Sidharth fam | 3 | 0 | 1 | 1 |
+| G-F02 | Mamu | 4 | 1 | 0 | 0 |
+| G-F03 | Mausi | 4 | 1 | 0 | 0 |
+| G-F04 | Abhishek Ritesh — room 1 of 2 | 3 | 0 | 1 | 1 |
+| G-F05 | Abhishek Ritesh — room 2 of 2 | 2 | 0 | 1 | 0 |
+| G-F06 | Latika Aunty, Khuku Badama | 3 | 0 | 1 | 1 |
 
-### Sidharth friends · 29 guests
+Abhishek/Ritesh: 3 + 2 across two rooms. Latika Aunty (1) shares provisionally with Khuku Badama’s party (2).
 
-| ID | Party / person | Guests |
-| --- | --- | --- |
-| G006 | Shivang | 2 |
-| G007 | Murtuza | 2 |
-| G008 | Akshat | 2 |
-| G009 | Aditya | 2 |
-| G010 | Kanupriya | 2 |
-| G012 | Saikia | 2 |
-| G013 | Meehika | 2 |
-| G014 | Tarun | 2 |
-| G017 | Vikram | 1 |
-| G019 | Nilay | 1 |
-| G020 | Nishant | 1 |
-| G021 | Vibhor | 1 |
-| G023 | Felipe | 1 |
-| G024 | Mrinal | 1 |
-| G025 | Jha | 1 |
-| G026 | Goyal | 1 |
-| G027 | Singhal | 1 |
-| G028 | Nishil | 1 |
-| G029 | Nishchay | 1 |
-| G032 | Rivu | 1 |
-| G033 | Aditya VT | 1 |
+### Sidharth friends · 27 guests · 12 rooms
 
-### Sourav's Friends · 10 guests
-
-| ID | Party / person | Guests |
-| --- | --- | --- |
-| G036 | Sourav's Friends | 10 |
-
-### Saurav's team · 6 guests
-
-| ID | Party / person | Guests |
-| --- | --- | --- |
-| G087 | Saurav's team | 6 |
-
-### Kalyani family · 63 guests · 2 suites + 20 Premium Rooms · 17 extra beds
-
-| ID | Party / person | Suites | Premium Rooms | Extra beds | Guests |
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
 | --- | --- | --- | --- | --- | --- |
-| G088 | Supekar–Anand | 1 | 1 | 1 | 6 |
-| G089 | Nani mama mami | 1 | 1 | 1 | 6 |
-| G090 | Rani Aatya | 0 | 1 | 1 | 3 |
-| G091 | Sudesh–Baby Aatya | 0 | 1 | 1 | 3 |
-| G092 | Pramod | 0 | 1 | 1 | 3 |
-| G093 | Anil–Sunil | 0 | 1 | 1 | 3 |
-| G094 | Sanjay Patil | 0 | 1 | 1 | 3 |
-| G095 | Kumthekar | 0 | 1 | 1 | 3 |
-| G096 | Sanju–Tabu | 0 | 1 | 1 | 3 |
-| G097 | Seema | 0 | 1 | 1 | 3 |
-| G098 | Aparna | 0 | 1 | 1 | 3 |
-| G099 | Nikhil | 0 | 1 | 1 | 3 |
-| G100 | Pradeep | 0 | 1 | 1 | 3 |
-| G101 | Sunita–Bapu | 0 | 1 | 1 | 3 |
-| G102 | Shubhda | 0 | 1 | 1 | 3 |
-| G103 | Ashish–Rahul | 0 | 1 | 1 | 3 |
-| G104 | Akshay Mama | 0 | 3 | 0 | 6 |
-| G105 | Manisha | 0 | 1 | 1 | 3 |
+| G-P01 | Shivang | 2 | 0 | 1 | 0 |
+| G-P02 | Murtuza | 2 | 0 | 1 | 0 |
+| G-P03 | Akshat | 2 | 0 | 1 | 0 |
+| G-P04 | Aditya | 2 | 0 | 1 | 0 |
+| G-P05 | Kanupriya | 2 | 0 | 1 | 0 |
+| G-P06 | Saikia | 2 | 0 | 1 | 0 |
+| G-P07 | Tarun | 2 | 0 | 1 | 0 |
+| G-S01 | Vikram, Nilay, Nishant | 3 | 0 | 1 | 1 |
+| G-S02 | Vibhor, Felipe, Mrinal | 3 | 0 | 1 | 1 |
+| G-S03 | Jha, Goyal, Singhal | 3 | 0 | 1 | 1 |
+| G-S04 | Nishil, Nishchay | 2 | 0 | 1 | 0 |
+| G-S05 | Rivu, Aditya VT | 2 | 0 | 1 | 0 |
 
-### Kalyani friends · 31 guests
+### Sourav's Friends · 10 guests · 4 rooms
 
-| ID | Party / person | Guests |
-| --- | --- | --- |
-| G043 | Divya | 2 |
-| G044 | Varsha | 1 |
-| G048 | Aditi | 1 |
-| G049 | Arpita | 2 |
-| G050 | Dimri | 1 |
-| G051 | Lakshya shreya | 2 |
-| G052 | Ankur | 1 |
-| G053 | Tirth | 2 |
-| G054 | Shreeja | 1 |
-| G055 | Prithvi | 1 |
-| G056 | Sonia | 1 |
-| G057 | Shrijan | 2 |
-| G058 | Akshata | 2 |
-| G059 | Anshika | 1 |
-| G060 | Stuti | 1 |
-| G061 | Ayush | 1 |
-| G062 | Niyati | 1 |
-| G064 | Geetika | 1 |
-| G065 | Gouri | 1 |
-| G066 | Noorul | 1 |
-| G067 | Kashmala | 1 |
-| G108 | Meghal | 1 |
-| G109 | Saleem (MDI) | 1 |
-| G110 | Karthik (MDI) | 1 |
-| G111 | Arjun (MDI) | 1 |
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
+| --- | --- | --- | --- | --- | --- |
+| G-B01 | Sourav's Friends — room 1 of 4 | 3 | 0 | 1 | 1 |
+| G-B02 | Sourav's Friends — room 2 of 4 | 3 | 0 | 1 | 1 |
+| G-B03 | Sourav's Friends — room 3 of 4 | 2 | 0 | 1 | 0 |
+| G-B04 | Sourav's Friends — room 4 of 4 | 2 | 0 | 1 | 0 |
 
-### Kalyani Office · 3 guests · 2 Premium Rooms
+10 unnamed guests split provisionally 3 + 3 + 2 + 2. Names and sharing compatibility to confirm.
 
-| ID | Party / person | Rooms | Extra beds | Guests |
-| --- | --- | --- | --- | --- |
-| G112 | Sumeet | 1 | 0 | 1 |
-| G113 | Nimisha and Pushpa | 1 | 0 | 2 |
+### Saurav's team · 6 guests · 2 rooms
 
-### Kanch friends · 8 guests
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
+| --- | --- | --- | --- | --- | --- |
+| G-T01 | Saurav's team — room 1 of 2 | 3 | 0 | 1 | 1 |
+| G-T02 | Saurav's team — room 2 of 2 | 3 | 0 | 1 | 1 |
 
-| ID | Party / person | Guests |
-| --- | --- | --- |
-| G069 | Zeel | 1 |
-| G070 | pt | 1 |
-| G071 | raag | 1 |
-| G072 | snigi | 1 |
-| G073 | tanvee | 1 |
-| G074 | disha | 1 |
-| G075 | rowena | 1 |
-| G076 | priti | 1 |
+Approximately 6 unnamed guests split provisionally 3 + 3. Names, count and sharing compatibility to confirm.
 
-### Guruji and photographer · 2 guests · 2 rooms
+### Kalyani family · 35 guests · 14 rooms
 
-| ID | Party / person | Rooms | Extra beds | Guests |
-| --- | --- | --- | --- | --- |
-| G106 | Guruji | 1 | 0 | 1 |
-| G107 | Photographer | 1 | 0 | 1 |
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
+| --- | --- | --- | --- | --- | --- |
+| K001 | Kishore & Kalpana Supekar | 2 | 0 | 1 | 0 |
+| K002 | Kanchan Kalyani Akshay | 3 | 1 | 0 | 0 |
+| K003 | Rajesh Puranik family | 3 | 0 | 1 | 1 |
+| K004 | Tushar Puranik family | 4 | 1 | 0 | 0 |
+| K005 | Sanjay Patil family | 4 | 0 | 2 | 0 |
+| K006 | Rani Pathak family | 3 | 0 | 1 | 1 |
+| K007 | Promod Supekar family | 2 | 0 | 1 | 0 |
+| K012 | Atul Kumthekar family | 3 | 0 | 1 | 1 |
+| K013 | Sunil Supekar family | 3 | 0 | 1 | 1 |
+| K014 | Sanju Bajaj Family | 2 | 0 | 1 | 0 |
+| K015 | Tabbu Family | 2 | 0 | 1 | 0 |
+| K016 | Pradeep Supekar famiily | 2 | 0 | 1 | 0 |
+| K017 | Sudesh Supekar family | 2 | 0 | 1 | 0 |
+
+Sanjay Patil family (3 adults + 1 child): two Premium Rooms, provisionally 2 + 2. Tushar Puranik family (3 adults + 1 child): proposed second suite.
+
+### Guruji and photographer · 8 guests · 4 rooms
+
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
+| --- | --- | --- | --- | --- | --- |
+| K008 | Guruji - set 1 | 2 | 0 | 1 | 0 |
+| K009 | Guruji - set 2 | 2 | 0 | 1 | 0 |
+| K010 | Photographer - set 1 | 2 | 0 | 1 | 0 |
+| K011 | Photographer - set 2 | 2 | 0 | 1 | 0 |
+
+### Kanch friends · 11 guests · 4 rooms
+
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
+| --- | --- | --- | --- | --- | --- |
+| K018 | Swati & Yash | 2 | 0 | 1 | 0 |
+| K019 | Disha, Priti, Tanvee | 3 | 0 | 1 | 1 |
+| K020 | Gowande & Lana | 3 | 0 | 1 | 1 |
+| K021 | Vedashri Kaustubh | 3 | 0 | 1 | 1 |
+
+### Kalyani friends · 27 guests · 11 rooms
+
+| Group ID | Guests / party | Guests | Suites | Premium Rooms | Extra beds |
+| --- | --- | --- | --- | --- | --- |
+| K022 | Divya, Varsha, Amey, Aditi | 4 | 0 | 2 | 0 |
+| K023 | Dimri, Lakshya, Shreya | 3 | 0 | 1 | 1 |
+| K024 | Arpita & Piyush | 2 | 0 | 1 | 0 |
+| K025 | Meehika & Rochak | 2 | 0 | 1 | 0 |
+| K026 | Tirth & Pooja | 2 | 0 | 1 | 0 |
+| K027 | Akshata & Siddharth | 2 | 0 | 1 | 0 |
+| K028 | Ankur, Noorul, Himadri | 3 | 0 | 1 | 1 |
+| K029 | Stuti, Gauri, Anshika | 3 | 0 | 1 | 1 |
+| K030 | Shreejan, Salim, Aayush | 3 | 0 | 1 | 1 |
+| K031 | Niyati, Aashi, Geetika | 3 | 0 | 1 | 1 |
+
+Divya, Varsha, Amey, Aditi: two Premium Rooms, provisionally 2 + 2. Their tracker party stays intact.
 
 ## To confirm
 
-Individual arrival/checkout dates, suite assignments, sharing partners and hotel availability. Saurav’s team count is approximate.
+Missing stays and RSVPs; meaning of tracker RSVP “No”; suite assignments and hotel capacity for children; sharing compatibility and unnamed guests. Room totals are exact for this scenario, not a confirmed booking count.
