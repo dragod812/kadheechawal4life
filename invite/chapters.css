@@ -86,13 +86,13 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
   will-change: auto;
 }
 .js-motion [data-parallax].is-near { will-change: transform; }
-.motion-paused [data-parallax] { transform: none; will-change: auto; }
+
 .js-motion .hero-copy { opacity: var(--hero-copy-opacity, 1); }
 .js-motion .hero-portrait { translate: var(--portrait-x, 0px) var(--portrait-y, 0px); rotate: var(--portrait-turn, 0deg); }
 .js-motion .chapter-copy.reveal { transition: opacity .8s ease; }
 .js-motion .joining-photos { translate: var(--join-pointer-x, 0px) var(--join-pointer-y, 0px); rotate: var(--join-turn, 0deg); scale: var(--join-scale, 1); }
-.motion-paused .joining-photos { translate: none; rotate: none; scale: none; }
-.motion-paused [data-drift] { translate: none; rotate: none; scale: none; }
+
+
 
 @media (max-width: 1000px) {
   .hero-botanicals { bottom: auto; aspect-ratio: 3 / 2; }

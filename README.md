@@ -139,7 +139,8 @@ desktop portrait is limited to 390 px. Raw footage is not part of this repo.
 Flowers, brass bells, the architectural garden/pillars, closing background, photographs and copy
 respond at different depths to scroll and mouse movement. Text movement stays very small;
 phone and tablet lateral movement is restrained to preserve the layout. Touch movement does not
-act as a mouse pointer, and the pause/reduced-motion composition remains fully readable.
+act as a mouse pointer. Motion starts automatically on page load, with no Enable/Pause button.
+Videos remain muted, play once and pause offscreen; the animation loop stops when settled.
 
 Visual review and interaction evidence, including the current browser-access status:
 [design-qa.md](design-qa.md).

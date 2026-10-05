@@ -1,8 +1,14 @@
 # Invitation design QA — 2026-10-05
 
-Current local reference version: `20261004-16`. The latest revision improves the proposal still; the passed v15 opening and story/motion implementation are retained. No unresolved P0/P1/P2 issues remain in the reviewed local surfaces.
+Current local reference version: `20261005-17`. The latest revision improves the proposal still; the passed v15 opening and story/motion implementation are retained. No unresolved P0/P1/P2 issues remain in the reviewed local surfaces.
 
-## Latest proposal revision
+## Automatic motion revision — 2026-10-05
+
+The user requested automatic motion and removal of the Enable/Pause button. Removed the control, its CSS and toggle/preference-gating JavaScript. Motion now starts on page load without any click, including under the current browser’s reduced-motion setting, as requested. Visibility/offscreen pausing, touch-pointer exclusion, brief muted once-through videos, native scrolling and idle RAF stop remain.
+
+Chrome verified `button=false`, `js-motion=true` and distinct live architecture/botanical transforms at desktop width 1001 px. Phone width 390 px has zero overflow and no control; the opening capture `qa/invite-motion-default-phone-v17.png` was visually reviewed. The existing proposal image, story and art layers are unchanged. Older pause/reduced-motion controls described in prior QA are superseded by this explicit request.
+
+## Previous proposal revision
 
 - Inspected the exact supplied dim/sideways photo, the prior timestamped proposal review and a fresh native-resolution extraction at 235 seconds. Selected the kneeling proposal moment with Kalyani smiling.
 - A first AI upscale recreated faces and scenery too aggressively and was rejected. A second, gentler built-in image_gen pass improves exposure, shadows and colour while retaining facial softness more closely. This is AI-assisted restoration, not a claim of recovered original facial detail.
@@ -29,6 +35,6 @@ The opening was not changed in this revision. Passed v15 desktop/tablet/phone bo
 
 All 74 local HTML references, CSS/font references, 13 gallery targets and anchors resolve. Current local HTTP HTML/CSS/JS match disk. JavaScript syntax, Python builder parsing and `git diff --check` pass. Five existing H.264 excerpts remain muted/playsinline, without audio streams, controls or looping. No application-code error was observed; the previously seen Chrome extension asynchronous-listener warning is unrelated to the invitation code.
 
-Physical Mobile Safari, WhatsApp webviews and live social previews remain untested. No deployment or remote push occurred. The local preview remains open with normal desktop mode restored and motion enabled.
+Physical Mobile Safari, WhatsApp webviews and live social previews remain untested. The previous version 16 was published at commit 5b9e694 and its Pages build/live assets verified. This revision is ready for the requested subsequent publication.
 
 final result: passed

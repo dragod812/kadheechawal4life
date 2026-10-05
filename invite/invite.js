@@ -1,10 +1,6 @@
 (() => {
   'use strict';
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const saveData = navigator.connection?.saveData === true;
-  const toggle = document.querySelector('.motion-toggle');
   const videos = [...document.querySelectorAll('.memory-video video')];
-  let paused = reducedMotion.matches || saveData;
   let framePending = false;
   let pointerX = 0;
   let pointerY = 0;
@@ -54,35 +50,25 @@
     scheduleDepth();
   }
 
-  function setMotionState() {
-    document.documentElement.classList.toggle('js-motion', !paused);
-    document.documentElement.classList.toggle('motion-paused', paused);
-    document.body.classList.toggle('js-motion', !paused);
-    document.body.classList.toggle('motion-paused', paused);
-    toggle.textContent = paused ? 'Enable motion' : 'Pause motion';
-    toggle.setAttribute('aria-pressed', String(paused));
-    videos.forEach(video => {
-      if (paused) {
-        video.pause();
-        video.parentElement.classList.remove('is-playing');
-      } else if (visibleVideos.has(video)) playMoment(video);
-    });
+  function startMotion() {
+    // The invitation starts moving automatically, with no guest-facing switch.
+    document.documentElement.classList.add('js-motion');
+    document.body.classList.add('js-motion');
+    visibleVideos.forEach(playMoment);
     smoothScroll = scrollY;
     lastFrame = 0;
-    if (paused) {
-      join.style.setProperty('--join-gap', '0px');
-    } else scheduleDepth();
+    scheduleDepth();
   }
 
   function playMoment(video) {
-    if (paused || completed.has(video)) return;
+    if (completed.has(video)) return;
     if (!video.src) {
       video.src = video.dataset.src;
       video.load();
     }
     video.muted = true;
     video.play().then(() => {
-      if (!paused && visibleVideos.has(video)) video.parentElement.classList.add('is-playing');
+      if (visibleVideos.has(video)) video.parentElement.classList.add('is-playing');
       else video.pause();
     }).catch(() => video.parentElement.classList.remove('is-playing'));
   }
@@ -142,7 +128,7 @@
 
   function renderDepth(time = performance.now()) {
     framePending = false;
-    if (paused || document.hidden) return;
+    if (document.hidden) return;
     // Settle between native scroll frames, then stop RAF completely when idle.
     const delta = lastFrame ? Math.min(64, time - lastFrame) : 16;
     const damping = 1 - Math.exp(-delta / 85);
@@ -210,7 +196,7 @@
   }
 
   function scheduleDepth() {
-    if (!paused && !document.hidden && !framePending) {
+    if (!document.hidden && !framePending) {
       framePending = true;
       requestAnimationFrame(renderDepth);
     }
@@ -232,15 +218,6 @@
     if (!event.relatedTarget) resetPointer();
   }, {passive: true});
   addEventListener('blur', resetPointer);
-  toggle.hidden = false;
-  toggle.addEventListener('click', () => {
-    paused = !paused;
-    setMotionState();
-  });
-  reducedMotion.addEventListener('change', event => {
-    paused = event.matches || saveData;
-    setMotionState();
-  });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) videos.forEach(video => video.pause());
     else {
@@ -253,7 +230,7 @@
   measureScenes();
   document.fonts.ready.then(measureScenes);
   if ('ResizeObserver' in window) new ResizeObserver(measureScenes).observe(document.querySelector('main'));
-  setMotionState();
+  startMotion();
 
   const dialog = document.querySelector('.photo-dialog');
   const enlarged = document.querySelector('#enlarged-photo');
