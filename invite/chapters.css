@@ -7,6 +7,16 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 /* Leave a little travel room for the full-width lines' mouse response. */
 .opening-line, .mumbai-postscript { width: calc(100% - 16px); margin-inline: auto; }
 
+/* Architecture, botanical wings and hanging brass are separate image planes. */
+.hero-botanicals { position: absolute; inset: -28px -20px; z-index: 2; pointer-events: none; }
+.hero-botanicals img { width: 100%; height: 100%; object-fit: cover; }
+.hero-canopy { z-index: 1; }
+.hero-botanicals--left { clip-path: inset(0 50% 0 0); transform-origin: 0 0; }
+.hero-botanicals--right { clip-path: inset(0 0 0 50%); transform-origin: 100% 0; }
+.hero-bell { position: absolute; top: -35px; z-index: 4; height: clamp(230px, 21vw, 300px); width: auto; max-width: none; pointer-events: none; transform-origin: 50% 0; }
+.hero-bell--left { left: 3%; }
+.hero-bell--right { right: 3%; height: clamp(255px, 25vw, 355px); }
+
 .school-photos { min-height: 760px; }
 .school-photo { width: 46%; left: 0; }
 .young-photo { width: 55%; top: 205px; right: 0; }
@@ -85,6 +95,9 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 .motion-paused [data-drift] { translate: none; rotate: none; scale: none; }
 
 @media (max-width: 1000px) {
+  .hero-botanicals { bottom: auto; aspect-ratio: 3 / 2; }
+  .hero-botanicals img { object-fit: contain; }
+  .hero-ground { top: auto; bottom: -28px; }
   .hero-inner { gap: 35px; }
   h1 { font-size: clamp(62px, 7vw, 78px); }
   .school-section { gap: 50px; }
@@ -106,6 +119,13 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 }
 
 @media (max-width: 700px) {
+  .site-header nav { gap: 14px; padding: 0 11px; border-radius: 24px; background: #fcf8efeb; }
+  .hero-botanicals { inset: -18px -12px auto; aspect-ratio: 3 / 2; }
+  .hero-botanicals img { object-fit: contain; }
+  .hero-ground { inset: auto -12px -20px; }
+  .hero-bell { top: -28px; height: 145px; }
+  .hero-bell--left { left: 2px; }
+  .hero-bell--right { top: -25px; right: 5px; height: 170px; }
   .hero-inner { padding-left: 26px; padding-right: 26px; gap: 38px; }
   h1 { font-size: clamp(43px, 14vw, 56px); }
   .name-and { font-size: 25px; }

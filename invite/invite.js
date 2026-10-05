@@ -29,6 +29,7 @@
     depth: Number(element.dataset.depth) || 0,
     pointer: Number(element.dataset.pointer) || 0,
     turn: Number(element.dataset.turn) || 0,
+    swing: Number(element.dataset.swing) || 0,
     zoom: Number(element.dataset.zoom) || 1,
     mobileZoom: Number(element.dataset.mobileZoom) || 1
   }));
@@ -171,7 +172,7 @@
       const distance = Math.max(-innerHeight, Math.min(smoothScroll - metric.top, metric.height));
       layer.element.style.setProperty('--parallax-x', `${smoothPointerX * layer.pointer * amplitude}px`);
       layer.element.style.setProperty('--parallax-y', `${(distance * layer.depth + smoothPointerY * layer.pointer * .65) * amplitude}px`);
-      layer.element.style.setProperty('--parallax-turn', `${smoothPointerX * layer.turn * amplitude}deg`);
+      layer.element.style.setProperty('--parallax-turn', `${(smoothPointerX * layer.turn + distance * layer.swing) * amplitude}deg`);
       layer.element.style.setProperty('--parallax-scale', String(mobile ? layer.mobileZoom : layer.zoom));
     });
 

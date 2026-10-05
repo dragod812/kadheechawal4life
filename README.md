@@ -141,3 +141,10 @@ act as a mouse pointer, and the pause/reduced-motion composition remains fully r
 
 Visual review and interaction evidence, including the current browser-access status:
 [design-qa.md](design-qa.md).
+
+
+The latest opening separates the former combined illustration into a clean architectural base,
+sparse canopy vines, fine jasmine strands, light lower foliage and two individual brass bells.
+Six botanical wings and both bells move at different depths; tablet/phone layouts keep the
+corner artwork visible without crowding names or navigation. Exact built-in generation prompts,
+originals and asset paths are recorded in [the layer manifest](invite/assets/art/hero-layers.md).

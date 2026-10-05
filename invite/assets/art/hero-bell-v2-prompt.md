@@ -1,0 +1,7 @@
+# Independent brass bell layer
+
+Built-in `image_gen` edit using `hero-garden-original.png` as reference, with `transparent_background: true`. Original output preserved; WebP quality 90, alpha quality 100. The chain and bell are one natural hanging object, independently positioned and animated in CSS.
+
+## Exact prompt
+
+Use case: background-extraction. Asset type: an isolated hanging brass bell foreground for the same Indian wedding invitation. Edit reference: use the aged brass temple bells from the supplied hero garden as the exact material and design reference. Extract/recreate ONE elegant antique brass hanging temple bell with its slender chain into a genuinely transparent background. Portrait canvas, approximately 1:3 aspect. Bell near lower end with long vertical chain continuing right up to the top edge, centered horizontally. Full uncut bell silhouette and small clapper. The bell itself occupies about 65 percent of canvas width and bottom 23 percent of canvas height; chain extends remaining height. Warm softly lit engraved floral bands, patinated golden brass, refined painterly three-dimensional craft matching the source. No greenery, no flowers, no arch, no floor, no glow, no backdrop, no castgroundshadow, no person or letters, no baked checkerboard. Real alpha transparency. This is a compact reusable parallax layer; preserve delicate chain links and crisp natural alpha edges, calm vertical hanging orientation.
