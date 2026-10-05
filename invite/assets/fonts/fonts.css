@@ -55,9 +55,9 @@
   src: url(./manrope-600-normal.woff2) format('woff2');
 }
 @font-face {
-  font-family: 'Pinyon Script';
+  font-family: 'Allura';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(./pinyon-script-400-normal.woff2) format('woff2');
+  src: url(./allura-400-normal.woff2) format('woff2');
 }

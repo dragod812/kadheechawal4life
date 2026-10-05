@@ -1,57 +1,63 @@
-# Invitation design QA — 2026-10-04
+# Invitation revision design QA — 2026-10-04
 
-**Findings**
-- No open P0, P1 or P2 visual findings remain in the reviewed local implementation.
-- [P2, fixed] The initial two-city crop cut off parts of both faces. Changed the vertical focal point from 36% to 76%. Both halves now clip an identical full-size image canvas, preventing differing crop calculations. Evidence: `qa/comparison-crop-fix.jpg`, combining the actual source photo, original desktop crop and final desktop/phone crops. Both faces and the continuous composition are preserved at 1440px and 390px.
-- [Verification recovered] Chrome computer-use temporarily returned `cgWindowNotFound` while saving evidence. The native window later became available; the final 1440px capture was saved and reviewed against the source. This no longer blocks the visual gate.
-- [P2, fixed] The wordmark lost contrast over jasmine. Added an ivory backing. Evidence: `qa/comparison-before.jpg` and `qa/comparison-final.jpg`.
-- [P2, fixed] Phone controls had small tap areas and supporting text was too small. Actions now have a 44px minimum height; mobile body text is 14px, brass text is #896333. Evidence: `qa/mobile-full-final.png` and the browser overflow checks.
-- [P2, fixed] Overlapping childhood photographs obscured part of the school caption. Replaced it with the short left-aligned “School days.” caption. Final phone sequence preserves the caption and both young-years photographs.
+This report supersedes the earlier passed baseline review for commit 57ea678. The current font/photo/film/scroll revision is implemented locally. Final visual re-capture is blocked by native Chrome window access, not by a build or asset failure.
 
-**Comparison target and evidence**
-- Source visual truth: `qa/source-aesthetic-reference.jpeg`, 1024 × 1536 pixels. The user supplied this as an aesthetic reference and explicitly said its dates were wrong. The written brief requests a new story website; this is an authorized adaptation, not a literal poster clone. Full names and bride-first order supersede the sample.
-- Additional visual truth for the photo crop: `invite/assets/photos/embrace-1440.webp`.
-- Implementation: `http://127.0.0.1:4173/invite/`.
-- Full-view combined input: `qa/comparison-final.jpg`, containing the source poster, desktop opening and final phone opening in one image.
-- Focused combined input: `qa/comparison-crop-fix.jpg`; names, captions, programme and closing also inspected at readable scale.
-- Desktop opening: `qa/desktop-opening-final.png`, 1440 × 900 CSS/pixel dimensions, DPR 1. Final full desktop file `qa/desktop-full-final.png` is 1440 × 10533 pixels, captured after the clipping refinement with all photographs loaded. The complete chapter sequence and focused two-city crop were inspected at readable scale.
-- Final phone: `qa/mobile-full-final.png`, 390 × 11152 pixels, viewport 390 × 844 CSS px, DPR 1, captured after scrolling through every chapter. `qa/mobile-opening-final.png` is its 390 × 844 opening crop.
-- Tablet opening: `qa/tablet-opening-final.png`, 768 × 844 CSS/pixel dimensions, DPR 1, latest code.
-- Original desktop evidence was 2880 × 1688 at 1440 × 844 CSS px, DPR 2. Initial phone evidence was 780 × 1688 at 390 × 844, DPR 2. These were proportionally downsampled for the earlier comparison; source poster scaling is independent because its composition differs intentionally.
-- State: device reduced-motion preference, complete still composition, closed gallery. Generated art preserves the botanical/stone/brass language; real photography replaces the illustrative couple as requested.
+## Findings
 
-**Required fidelity surfaces**
-- Fonts/typography: self-hosted Pinyon Script for names, Cormorant Garamond for headings and captions, Manrope for supporting text. Browser font check passed; full names are untruncated at 320, 390, 768 and 1440px. Formal names read Kalyani Supekar, then Sidharth Padhee. Display scales intentionally differ from the poster to accommodate both full names.
-- Spacing/layout: ornate opening alternates with open story chapters. Phone stacks, tablet two-column opening and three-day programme are legible. Browser horizontal-overflow checks passed at 320, 390, 768 and 1440px. The final desktop capture has consistent chapter spacing, complete photographs and no visible crop seam.
-- Colors/tokens: ivory, deep leaf, honey stone, brass and burgundy retain the supplied art direction. Ivory behind initials fixes the floral contrast collision; darkened brass supports small type. The closing uses matching candlelit garden art.
-- Image quality: correct school and young formalwear photographs stay in the young chapter. Authentic photo colors are retained; HDR clips are tone-mapped to SDR. Real raster artwork and transparent botanical/Ganesha assets are used. No placeholder drawings substitute for the source art. Desktop/phone subject crops and the final continuous two-city composition were inspected against source.
-- Copy/content: childhood affection → continued WhatsApp/video contact → Mumbai/Marine Drive and the broken leg → shared life across cities → recurring music and songwriting → adventures → proposal callback → invitation. No unsupported milestone dates or proposal-performance claims. Programme is 25–27 February 2027, The Ummed Ahmedabad, with close-family Mehendi identified. Precise ceremony times are omitted at the user’s direction.
+- [P2, fixed and captured] Pinyon Script’s r forms did not suit the couple’s names. Allura now renders the full names in bride-first order. Verified actual computed `Allura, cursive` and a loaded Allura FontFace in Chrome, not just a fallback font-check result.
+- [P2, fixed and captured] Added childhood snapshots initially covered the school/formalwear captions. Increased collage spacing, kept the two added photos small and cropped to the couple. Final v3 desktop and phone captures show all four captions clearly.
+- [P2, changed; final recapture pending] The café photo partly hid “Together again” in the Mumbai album. Increased album height and lowered both small companion photos at desktop, tablet and phone breakpoints. This final v4 change needs visual recapture.
+- [P2, changed; final recapture pending] The proposal crop devoted too much room to the floor. Rebuilt the poster and silent excerpt with a tighter 620 × 720 crop at (160, 750); reviewed the resulting upright poster at full size. A final in-page capture remains necessary.
+- [Verification issue, fixed] Normal Chrome reload reused the old CSS/JS. Added versioned static references; actual font family, CSS version and motion behavior were then checked. Current CSS/JS version is `20261004-4`; refreshed proposal URLs carry the same version.
+- [Blocking verification issue] Native Chrome controls repeatedly return `cgWindowNotFound`, including after resetting the computer-use session. The inventory sees Chrome running, but no controlled Chrome browser provider is available. Final v4 capture, 320/768 checks and phone motion review cannot be completed until window access returns.
 
-**Interactions and technical checks**
-- Motion toggle changes Enable/Pause, respects reduced-motion and Save-Data initially, and supports explicit user enablement. Four short H.264 excerpts are 2.83–3.83 seconds and contain zero audio streams; full source videos are not served.
-- Childhood viewer opened in a native modal. Escape closed it and restored focus to the original photo button.
-- Copy address displayed “Address copied. See you there!”
-- Calendar download was exercised; its renamed final file and final contents are verified separately. All-day dates start 25 February and end exclusively 28 February. UTF-8 line folding/CRLF, full names/order, date-only programme and weekday labels checked.
-- Local image, source-set, motion, gallery and anchor targets checked. JS syntax and asset-builder compilation passed. Git whitespace checks preserve required calendar CRLF/folding and downloaded upstream license text through file-specific attributes.
-- Last refreshed page and tablet/phone captures had zero console errors. The recovered desktop session showed an asynchronous listener/channel warning consistent with a browser extension; the invitation code has no messaging listeners. After clearing that warning, the desktop readiness/capture checks produced no application console errors. Early preview-server connection resets were resolved by increasing its request backlog; redundant font preloads were removed after a deep-link warning.
-- Lazy photos must be scrolled into view before full-page capture. Cold full-page captures contain unpainted offscreen images and were excluded from the final verdict. The browser reported zero unloaded rendered images at 390, 768 and 1440px before the accepted captures.
+## Reference and comparison evidence
 
-**Open questions / residual gaps**
-- Mobile Safari/WhatsApp webview and live social-link previews have not been tested. The implementation is local; no publish or remote push occurred.
-- RSVP collection and finer guest arrangements remain unconfigured, as established in the brief.
+The user’s illustrated invitation is aesthetic direction, with explicitly incorrect sample dates. This is an authorized story-site adaptation, not a literal poster clone. Full names and bride-first order supersede the poster.
 
-**Implementation checklist**
-- [x] Build /invite/ and link it from the existing root brief.
-- [x] Preserve original photo/video sources; serve optimized derivatives.
-- [x] Apply full names, bride-first order and date-only programme/calendar.
-- [x] Check phone/tablet layouts, primary actions and silent assets.
-- [x] Restore Chrome and capture the final 1440 × 900 desktop state with every photograph loaded.
-- [x] Compare that capture to the source and recheck the two-city crop; update this report.
+- Source: `qa/source-aesthetic-reference.jpeg`, 1024 × 1536.
+- Supplied eight-photo review: `qa/revision/supplied-photos.jpg`.
+- Lettering comparison: `qa/revision/lettering.jpg`.
+- Combined source/desktop/phone opening: `qa/revision/comparison-revision.jpg`, reviewed in one input.
+- Combined archive/young-chapter crop comparison: `qa/revision/comparison-photo-revision.jpg`, reviewed in one input.
+- Latest completed desktop capture: `qa/revision/desktop-full-final.png`, 1440 × 12039, viewport 1440 × 900, DPR 1, **v3**. Opening, young, Mumbai, music, proposal and future details were inspected. It predates the last Mumbai spacing/proposal crop refinement.
+- Latest completed phone capture: `qa/revision/mobile-full-final.png`, 390 × 13239, viewport 390 × 844, DPR 1, **v3**. Opening and readable detail crops inspected. It predates the same two refinements.
+- Proposal review: coarse full-duration samples and nearby 235/237/239/241-second frames, plus the latest `invite/assets/photos/proposal-960.webp` full-size derivative. Final poster preserves the embrace, candlelit table and fairy lights.
+- State: still composition, closed gallery, photos decoded before capture. Cold screenshots with offscreen lazy images unpainted are excluded.
 
-**Follow-up polish**
-- Optional original musical line/song title can replace generic music captions once supplied.
-- Full WebGL is unnecessary for this version; layered raster art and clipped photo transforms provide depth without a large runtime.
+## Five fidelity surfaces
 
-The local visual gate covers the supplied aesthetic adaptation, responsive desktop/phone compositions, tablet opening, confirmed copy and primary interactions. The residual platform/live-preview checks above remain outside this local review.
+1. **Fonts/typography:** Allura replaces name calligraphy; Cormorant Garamond and Manrope are retained. Captured full names fit at 1440 and 390. Initials, supporting labels and story text remain selectable HTML. The earlier baseline checked 320/768; those widths have not yet been rechecked for this revision.
+2. **Spacing/layout:** Four-photo childhood composition, three-photo Mumbai album, two musical frames and expanded travel montage are implemented. The future portrait is capped at 390 px CSS width on desktop and 280 px on phones. No horizontal overflow at 1440/390 in the reviewed v3 state. Mumbai’s final spacing refinement needs capture; no claim is made that all current responsive widths have passed.
+3. **Colors/tokens:** Ivory, leaf green, honey stone, brass and burgundy preserve the approved garden language. The proposal chapter uses a quieter deep green. Existing generated art is reused; no stage imagery or placeholder art has been added.
+4. **Images:** Eight supplied photos were added. The two older snapshots are deliberately small and have no enlargement action. Both faces are visible in the reviewed crops. HEIC sources were orientation-corrected for WebP derivatives. Six short silent H.264 clips are used; proposal and porch footage are tone-mapped from HDR. Raw originals remain untouched and are not served.
+5. **Copy/content:** Childhood affection → continued calls → Mumbai/Marine Drive and the broken leg → two cities/shared life → songs/covers/original writing → adventures → proposal → future → celebration. Exact proposal song/form is not invented. Kalyani Supekar is first, then Sidharth Padhee. Dates remain 25–27 February 2027 at The Ummed Ahmedabad. The programme and calendar contain no precise ceremony hours.
 
-final result: passed
+## Motion and interactions actually checked
+
+- Desktop Enable/Pause toggled correctly despite the device’s reduced-motion preference. Pause produced a complete still composition and paused every clip. Save-Data/default handling was reviewed in source; no live Save-Data device was exercised.
+- An instrumented desktop scroll showed the young blue photo easing from 20.37 px of horizontal drift to 0 px over approximately 476 ms. The app made zero additional RAF callbacks while idle. This is local desktop evidence, not a physical-phone frame-rate guarantee.
+- New proposal playback was muted, advancing, visible in its frame, and active at approximately 0.92 seconds. New porch duet was muted, advancing, visible at approximately 1.54 seconds; proposal was paused offscreen. These checks used the earlier proposal crop, with unchanged playback code.
+- Smaller mobile motion amplitude and absent touch-pointer parallax are implemented. **Final phone animation review remains pending.**
+- The baseline native photo dialog, Escape/focus return, copy-address success and calendar download passed earlier review. New asset targets are verified structurally; a new-photo dialog action remains to be exercised in the restored browser.
+
+## Technical checks
+
+- All 67 local HTML references, CSS/font targets, 13 gallery targets and section anchors exist.
+- JS syntax and Python asset-builder compilation pass.
+- All six public MP4 files are H.264 with zero audio streams and no source location metadata: another-song 3.83 s; garden 3.83 s; her/his umbrella 2.83 s each; our-song 3.83 s; proposal 4.21 s.
+- Silent clips have muted/playsinline attributes, no controls and no loop.
+- All-day calendar preserves CRLF/folding and 25 February start / exclusive 28 February end. Formal names/order and the omission of exact ceremony times are preserved.
+- The running local server serves the exact current HTML/CSS/JS bytes. Both 1440/390 v3 captures reported all rendered images decoded. Current v4 static targets pass; these checks do not replace browser review.
+- A Chrome asynchronous listener/channel warning appeared during review; the invitation code has no message listeners. One intentional QA query used a nonexistent selector and caused a TypeError; it was corrected, and subsequent page checks succeeded. Neither is an observed application-code failure.
+
+## Remaining local gate
+
+- Restore Chrome window control and capture v4 at 1440 and 390.
+- Recheck Mumbai captions, the tighter proposal crop, 320/768 overflow/full names, and phone scroll motion.
+- Open one new gallery photo and verify Escape/focus return.
+- Compare current captures to source; record passed only after those checks complete.
+
+Mobile Safari, WhatsApp webviews and live social previews remain outside the local review. No deployment or remote push occurred. The local preview server is still running.
+
+final result: blocked

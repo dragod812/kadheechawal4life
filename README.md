@@ -101,11 +101,15 @@ Push to `main`. GitHub Pages publishes within a minute or two.
 
 ## Invitation
 
-`invite/index.html`, `invite/invite.css` and `invite/invite.js` are a dependency-free static addition.
-The page uses self-hosted fonts, responsive WebP photographs, generated garden artwork and four
-2.8–3.8-second H.264 excerpts with **no audio streams**. Motion runs once when each memory enters
+`invite/index.html`, `invite/invite.css`, `invite/chapters.css` and `invite/invite.js` are a dependency-free static addition.
+The page uses self-hosted fonts, responsive WebP photographs, generated garden artwork and six
+2.8–4.2-second H.264 excerpts with **no audio streams**. Each silent film plays once when its memory enters
 the viewport; reduced-motion and Save-Data begin with stills. The guest can pause or explicitly
-enable motion. Real photos open in a keyboard-accessible native dialog.
+enable motion. Nearby photo scenes follow native scroll with eased translations and slight turns,
+chapter backgrounds open gently, and the two-city image halves join. Layout measurements are
+cached, mobile amplitude is reduced, and drawing stops when settled. Selected photos open in
+a keyboard-accessible native dialog; the two small older snapshots stay small. Names use
+self-hosted Allura, with Cormorant Garamond headings and Manrope supporting text.
 
 The date-range `.ics` saves 25–27 February as all-day dates, with 28 February as the exclusive end.
 The invitation and calendar give dates and celebrations without precise ceremony hours. RSVP collection remains unconfigured.
@@ -115,6 +119,8 @@ Build selected derivatives with Python, Pillow, fonttools[woff] and imageio-ffmp
 
 ```sh
 python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki"
+# Rebuild only new/changed assets while retaining the rest of the manifest:
+python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki" --only proposal another-song
 ```
 
 The builder leaves sources untouched, tone-maps HLG footage to SDR, strips metadata and audio,
@@ -122,4 +128,9 @@ and records selected sources/timestamps in `invite/assets/manifest.json`. Upstre
 URLs and OFL licenses are preserved. Generated artwork provenance and exact prompts live in
 `invite/assets/art/*-prompt.md`; the PNG originals are retained alongside WebP derivatives.
 
-Visual review and interaction evidence: [design-qa.md](design-qa.md).
+The 4 October revision adds eight archive photos, a second duet, and a dedicated proposal
+chapter. Proposal footage is correctly rotated, tone-mapped and cropped around the embrace;
+the shared-future desktop portrait is limited to 390 px. Raw footage is not part of this repo.
+
+Visual review and interaction evidence, including the current browser-access status:
+[design-qa.md](design-qa.md).

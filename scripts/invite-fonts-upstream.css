@@ -55,9 +55,9 @@
   src: url(https://fonts.gstatic.com/s/manrope/v20/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk4jE-_F.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Pinyon Script';
+  font-family: 'Allura';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/pinyonscript/v24/6xKpdSJbL9-e9LuoeQiDRQR8aOI.ttf) format('truetype');
+  src: url(https://raw.githubusercontent.com/google/fonts/main/ofl/allura/Allura-Regular.ttf) format('truetype');
 }

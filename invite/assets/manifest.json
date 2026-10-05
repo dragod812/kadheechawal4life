@@ -78,5 +78,55 @@
     "start": 2.1,
     "duration": 2.8,
     "poster_time": 4.0
+  },
+  "early-night": {
+    "source": "IMG_20160608_204247908.jpg",
+    "kind": "photograph"
+  },
+  "early-blue": {
+    "source": "IMG-20150723-WA0006.jpg",
+    "kind": "photograph"
+  },
+  "mumbai-evening": {
+    "source": "IMG_3107.HEIC",
+    "kind": "photograph"
+  },
+  "mumbai-cafe": {
+    "source": "IMG_3115.HEIC",
+    "kind": "photograph"
+  },
+  "mumbai-quiet": {
+    "source": "IMG_6988.HEIC",
+    "kind": "photograph"
+  },
+  "japan-night": {
+    "source": "IMG_1524.JPG",
+    "kind": "photograph"
+  },
+  "fairy-lights": {
+    "source": "IMG_8711.HEIC",
+    "kind": "photograph"
+  },
+  "lanterns": {
+    "source": "IMG_9105.HEIC",
+    "kind": "photograph"
+  },
+  "another-song": {
+    "source": "FDB14FDE-65F3-40BB-9B09-234843B65FDC.mp4",
+    "kind": "silent excerpt / extracted still",
+    "start": 2.4,
+    "duration": 3.8,
+    "poster_time": 5.7,
+    "crop_filters": "crop=960:800:120:890",
+    "orientation": "source display rotation applied"
+  },
+  "proposal": {
+    "source": "IMG_1326.MOV",
+    "kind": "silent excerpt / extracted still",
+    "start": 237.2,
+    "duration": 4.2,
+    "poster_time": 241.0,
+    "crop_filters": "hqdn3d=2:2:3:3,eq=brightness=0.035,crop=620:720:160:750",
+    "orientation": "source display rotation applied"
   }
 }
