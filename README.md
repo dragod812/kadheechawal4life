@@ -1,15 +1,14 @@
 # kadheechawal4life.com
 
-Static site for Sidharth & Kalyani's wedding, 27–28 February 2027, with a two-night Puri/Ahmedabad
-stay. Served by GitHub Pages from `main`.
-
-It is a **working brief**, not an invitation — the page a venue, planner or decorator is sent so they
-know what is being asked for before they quote.
+Static site for Kalyani Supekar & Sidharth Padhee’s wedding, 25–27 February 2027 at The Ummed, Ahmedabad.
+Served by GitHub Pages from `main`. The guest invitation is `/invite/`; the root page remains the
+Sacred Grove planning and décor brief.
 
 ## Pages
 
 | Path | What it is |
 |---|---|
+| `/invite/` | Illustrated garden invitation, chronological story, silent memories, celebrations, directions and calendar download |
 | `/` | The facts, the two-function-day/two-night programme, the six things the space has to do, and the Sacred Grove mood board |
 | `/venues/` | The venue study — 67 properties across 13 regions, with verified facts, quote-backed cost analysis, outreach messages, and 618 photographs |
 | `/guest-estimation/` | Tracker-based plan, updated 25 September 2026: 143 listed guests (81 bride/common + 62 groom), 4 suites + 53 Premium Rooms / 22 extra beds for the full list. Nightly scenario clearly labels missing stays, RSVP interpretation, suite assignments and proposed sharing. |
@@ -99,3 +98,28 @@ venue-confirmation items.
 ## Deploy
 
 Push to `main`. GitHub Pages publishes within a minute or two.
+
+## Invitation
+
+`invite/index.html`, `invite/invite.css` and `invite/invite.js` are a dependency-free static addition.
+The page uses self-hosted fonts, responsive WebP photographs, generated garden artwork and four
+2.8–3.8-second H.264 excerpts with **no audio streams**. Motion runs once when each memory enters
+the viewport; reduced-motion and Save-Data begin with stills. The guest can pause or explicitly
+enable motion. Real photos open in a keyboard-accessible native dialog.
+
+The date-range `.ics` saves 25–27 February as all-day dates, with 28 February as the exclusive end.
+The invitation and calendar give dates and celebrations without precise ceremony hours. RSVP collection remains unconfigured.
+Venue address source: [The Ummed’s official contact page](https://www.ummedhotels.com/hotel-in-ahmedabad/contact-us).
+
+Build selected derivatives with Python, Pillow, fonttools[woff] and imageio-ffmpeg installed:
+
+```sh
+python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki"
+```
+
+The builder leaves sources untouched, tone-maps HLG footage to SDR, strips metadata and audio,
+and records selected sources/timestamps in `invite/assets/manifest.json`. Upstream font source
+URLs and OFL licenses are preserved. Generated artwork provenance and exact prompts live in
+`invite/assets/art/*-prompt.md`; the PNG originals are retained alongside WebP derivatives.
+
+Visual review and interaction evidence: [design-qa.md](design-qa.md).

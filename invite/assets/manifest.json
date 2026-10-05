@@ -1,0 +1,82 @@
+{
+  "together": {
+    "source": "IMG_2281 Copy.JPG",
+    "kind": "photograph"
+  },
+  "school": {
+    "source": "IMG_3709.JPG",
+    "kind": "photograph"
+  },
+  "young": {
+    "source": "IMG_2294.JPG",
+    "kind": "photograph"
+  },
+  "ordinary": {
+    "source": "IMG_5982.HEIC",
+    "kind": "photograph"
+  },
+  "embrace": {
+    "source": "IMG_9617.HEIC",
+    "kind": "photograph"
+  },
+  "japan": {
+    "source": "IMG_1548.JPG",
+    "kind": "photograph"
+  },
+  "blossoms": {
+    "source": "IMG_9415.JPG",
+    "kind": "photograph"
+  },
+  "city-lights": {
+    "source": "IMG_1321.HEIC",
+    "kind": "photograph"
+  },
+  "fuji": {
+    "source": "IMG_9963.HEIC",
+    "kind": "photograph"
+  },
+  "picnic": {
+    "source": "IMG_8464.JPG",
+    "kind": "photograph"
+  },
+  "laughter": {
+    "source": "IMG_9627.HEIC",
+    "kind": "photograph"
+  },
+  "home": {
+    "source": "IMG_6208.HEIC",
+    "kind": "photograph"
+  },
+  "lake": {
+    "source": "IMG_9684.JPG",
+    "kind": "photograph"
+  },
+  "garden": {
+    "source": "IMG_8779.MOV",
+    "kind": "silent excerpt / extracted still",
+    "start": 2.1,
+    "duration": 3.8,
+    "poster_time": 4.0
+  },
+  "our-song": {
+    "source": "20d7242538cf4d08a34d38db5112a987.mp4",
+    "kind": "silent excerpt / extracted still",
+    "start": 64.0,
+    "duration": 3.8,
+    "poster_time": 69.8
+  },
+  "her-umbrella": {
+    "source": "IMG_0568.MOV",
+    "kind": "silent excerpt / extracted still",
+    "start": 2.1,
+    "duration": 2.8,
+    "poster_time": 3.5
+  },
+  "his-umbrella": {
+    "source": "WhatsApp Video 2026-10-04 at 18.09.49.mp4",
+    "kind": "silent excerpt / extracted still",
+    "start": 2.1,
+    "duration": 2.8,
+    "poster_time": 4.0
+  }
+}

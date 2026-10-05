@@ -1,0 +1,5 @@
+# iCalendar uses CRLF and folded lines can retain a literal trailing space.
+invite/*.ics -text whitespace=-blank-at-eol
+
+# Preserve downloaded upstream license text verbatim.
+invite/assets/fonts/*-OFL.txt whitespace=-blank-at-eol

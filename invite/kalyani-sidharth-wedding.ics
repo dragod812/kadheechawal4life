@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Kalyani and Sidharth//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:kalyani-sidharth-wedding-20270225@kadheechawal4life.com
+DTSTAMP:20261005T010000Z
+DTSTART;VALUE=DATE:20270225
+DTEND;VALUE=DATE:20270228
+SUMMARY:Kalyani Supekar & Sidharth Padhee — Wedding celebrations
+LOCATION:The Ummed\, Airport Circle\, Hansol\, Ahmedabad\, Gujarat
+DESCRIPTION:25 February: close-family Mehendi. 26 February: Var vadhu puja 
+ / engagement\, Haldi and Sangeet. 27 February: wedding.
+URL:https://kadheechawal4life.com/invite/
+END:VEVENT
+END:VCALENDAR
