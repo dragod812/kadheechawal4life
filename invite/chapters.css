@@ -68,7 +68,7 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 .proposal-section .eyebrow, .proposal-section .aside { color: #d3ba80; }
 .proposal-film { width: 100%; max-width: 360px; padding: 10px 10px 45px; background: #e8dfca; transform: rotate(3deg); box-shadow: 0 22px 65px #09170e35; position: relative; justify-self: center; border-radius: 200px 200px 2px 2px; }
 .proposal-photo-window { position: relative; overflow: hidden; border-radius: 190px 190px 1px 1px; aspect-ratio: 4 / 5; }
-.proposal-photo-window > img { position: absolute; left: 50%; top: 50%; max-width: none; width: 125%; height: 80%; object-fit: cover; object-position: 75% 50%; transform: translate(-50%, -50%) rotate(90deg) scale(1.65); }
+.proposal-photo-window > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; transform: scale(1.5); transform-origin: 65% 10%; }
 .proposal-film figcaption { position: absolute; bottom: 13px; left: 8px; right: 8px; text-align: center; font: italic 17px/1.2 var(--serif); color: var(--leaf); }
 
 .forever-section { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 90px; min-height: 0; padding: 125px max(55px, calc((100vw - 1080px) / 2)); }

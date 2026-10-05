@@ -125,5 +125,13 @@
   "proposal-photo": {
     "source": "proposal-photo-2026-10-04.png",
     "kind": "photograph"
+  },
+  "proposal-restored-v2": {
+    "source": "IMG_1326.MOV",
+    "kind": "AI-assisted lighting restoration / extracted still",
+    "frame_time": 235.0,
+    "restoration_source": "source-assets/proposal/proposal-restored-v2.png",
+    "provenance": "source-assets/proposal/README.md",
+    "orientation": "upright; source display rotation applied"
   }
 }

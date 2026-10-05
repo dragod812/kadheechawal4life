@@ -1,49 +1,34 @@
-# Invitation design QA — 2026-10-04
+# Invitation design QA — 2026-10-05
 
-Current local reference version: `20261004-15`. The latest revision replaces the opening's painted-in plants/bells with sparse independent image planes. No unresolved P0/P1/P2 issues remain in the reviewed local surfaces.
+Current local reference version: `20261004-16`. The latest revision improves the proposal still; the passed v15 opening and story/motion implementation are retained. No unresolved P0/P1/P2 issues remain in the reviewed local surfaces.
 
-## Final design and resolved findings
+## Latest proposal revision
 
-- The architectural base now contains only the warm ivory/honey arch, bare pillars, terrace and neutral distant light. Plants, flowers, garlands, bells/chains and their shadows were removed with the built-in image generation tool.
-- Three separate transparent botanical assets provide high canopy vines, fine hanging jasmine and light low-corner foliage/flowers. Each is split through its empty centre into left/right wings: six botanical elements at different depths, plus two independent brass bells. The page has 29 parallax groups in total; existing photo/story movement remains.
-- The first full-frame extraction was too dense for the refined request. It was superseded by sparse v3 assets and two smaller bells. The larger four-bell trial crowded the first name; it is not used.
-- Tablet framing initially cropped away most hanging decoration. Top/bottom planes now retain their natural aspect ratio at widths up to 1000 px. Mobile navigation has an ivory backing so fine greenery cannot reduce its contrast. Names and portrait keep generous clear space.
-- All generated originals and exact prompts are linked in [the artwork manifest](invite/assets/art/hero-layers.md). Botanicals and bells have genuine alpha; checked against ivory with no visible haze or rectangular backgrounds. Personal photographs and original source artwork remain unchanged.
+- Inspected the exact supplied dim/sideways photo, the prior timestamped proposal review and a fresh native-resolution extraction at 235 seconds. Selected the kneeling proposal moment with Kalyani smiling.
+- A first AI upscale recreated faces and scenery too aggressively and was rejected. A second, gentler built-in image_gen pass improves exposure, shadows and colour while retaining facial softness more closely. This is AI-assisted restoration, not a claim of recovered original facial detail.
+- Preserved the selected 1106 × 1422 PNG, exact 640 × 822 edit input, prompt and hashes in [proposal source assets](source-assets/proposal/README.md). The original supplied still and raw video SHA-256 hashes match their existing archive records.
+- The image is now upright in the asset. Removed the old CSS 90-degree rotation and fitted a 1.5× crop within the same arched ivory frame. Both people, the kneeling gesture and candlelit context remain visible. Updated alt text to describe this frame truthfully.
+- The proposal remains photo-only. Its frame, caption, text and gentle existing motion are preserved. The asset builder reads the selected restoration so full rebuilds retain it.
 
-## Reference and capture evidence
+## Visual evidence and fidelity
 
-The original supplied invitation is aesthetic direction with explicitly incorrect sample dates. The latest user direction intentionally makes its botanical density lighter; this is not a literal poster clone.
+All captures are local Chrome at DPR 1, version 16, with the selected image decoded. Static captures use the complete paused composition.
 
-- Source: `qa/source-aesthetic-reference.jpeg`, 1024 × 1536.
-- Final desktop: `qa/layers/desktop-final.png`, 1440 × 844, DPR 1, v15.
-- Final tablet: `qa/layers/tablet-final.png`, 768 × 844, DPR 1, v15.
-- Final phone: `qa/layers/phone-final.png`, 390 × 1070 opening crop from the refreshed 390 × 13319 full capture, viewport 390 × 844, DPR 1, v15. Only the opening crop is evidence for this revision; offscreen chapters were not re-reviewed from this lazy-loaded capture.
-- `qa/layers/comparison-final.jpg`: source and final desktop/phone openings were viewed together in one input. Tablet was separately inspected at full size.
-- State: decoded opening images, loaded fonts, complete paused composition and closed gallery. An incorrectly scaled DevTools phone screenshot following a temporary 1 px viewport was discarded; refreshed capture and DOM scale=1 measurements resolved it.
+- `qa/proposal-enhancement/invite-proposal-desktop-v16.png`: 1440 × 844; full side-by-side chapter reviewed. Frame width is 360 px.
+- `qa/proposal-enhancement/invite-proposal-phone-v16.png`: 390 × 844; chapter heading/copy and photo reviewed.
+- `qa/proposal-enhancement/invite-proposal-phone-photo-v16.png`: 390 × 844; complete photo/caption reviewed. Both faces and bodies fit within the arch.
+- `qa/proposal-enhancement/comparison.jpg`: source crop, selected restoration and rendered phone composition inspected together. The warmer/brighter result is visibly clearer while remaining softly photographic.
 
-## Five fidelity surfaces
+Five fidelity surfaces: **typography** remains the existing Allura/Cormorant Garamond/Manrope system; **layout** retains the compact 360 px desktop / 295 px phone frame and clear caption; **colour** improves the dim green-yellow source toward warm candlelight against the forest-green chapter; **imagery** keeps a static authentic proposal moment with a restrained restoration; **content** preserves the bride-first full names, factual proposal writing, date-only programme and story chronology.
 
-1. **Typography:** Self-hosted Allura, Cormorant Garamond and Manrope retained. Full formal names remain Kalyani Supekar first, then Sidharth Padhee. Names fit at 320, 390, 768 and 1440 px; no ornament covers them in reviewed compositions.
-2. **Layout:** Layer registration preserves the architectural opening and portrait position. Botanical corners stay visible at tablet/phone widths without stretching. 320/390/768/1440 checks showed zero horizontal overflow; 320 navigation fits. On the 390 phone, bells end at y117/y145 and the names begin at y219, leaving clear space.
-3. **Color:** Luminous ivory, warm carved stone, muted mature greenery, cream jasmine, subdued blush and aged brass preserve the established art direction. More bare architecture and negative space make the opening calmer.
-4. **Imagery:** Architecture, canopy, jasmine, low foliage and bells are separate assets. The denser v2 botanical frame is unconsumed provenance. The revised umbrella excerpt and exact proposal still from the previous passed review remain unchanged.
-5. **Content:** Bride-first full names, 25–27 February 2027 at The Ummed Ahmedabad, date-only programme/calendar and chronological story are unchanged. No precise ceremony hours were introduced.
+DOM checks at 320, 390 and 1440 px show zero horizontal overflow. At 320 px with motion enabled, the photo window stays within the viewport (x43.4–289.6). There is no proposal video. The page requests the 480 or 960 px derivative according to display size; assets are approximately 44/98 KB.
 
-## Motion and interactions
+## Carried-forward review and technical checks
 
-- Desktop pointer at 80%/30% of viewport plus 150 px scrolling produced distinct positions: architecture x−2.40/y6.28 px; left canopy x3.00/y−5.05 px; right canopy x4.20/y−6.61 px. Jasmine, lower foliage and bells use successively different depth coefficients, verified from the active scene variables and visible composition. Small bell rotation is anchored at the chain top.
-- In the 390 phone viewport at 350 px scroll, measured y offsets were architecture +6.73 px, canopy −4.81/−6.16, jasmine −10.58/−13.08, low foliage −15.39/−17.32 and bells −11.55/−14.43. Horizontal overflow remained zero.
-- Pause restored `transform: none` on every opening scenery/decorative element. Reduced-motion still state remains complete; explicit Enable/Pause works. Native scrolling, touch-pointer exclusion and the existing damped idle-stopping engine are retained.
-- Previous passed v11 evidence remains in `qa/layers/pre-layer-qa.md` and `qa/parallax/`: full journey captures, nine-position phone/tablet motion sweeps, zero idle RAF calls, gallery focus return, calendar/address actions, new umbrella clip playing muted then ending once at four seconds. Those unchanged features were not redundantly retested in full.
+The opening was not changed in this revision. Passed v15 desktop/tablet/phone botanical-depth, bell-clearance and pause checks are preserved in `qa/proposal-enhancement/pre-proposal-qa.md` and `qa/layers/`. Earlier full journey, gallery, calendar, address, idle RAF and silent-video checks remain in `qa/layers/pre-layer-qa.md` and `qa/parallax/`.
 
-## Technical checks and limits
+All 74 local HTML references, CSS/font references, 13 gallery targets and anchors resolve. Current local HTTP HTML/CSS/JS match disk. JavaScript syntax, Python builder parsing and `git diff --check` pass. Five existing H.264 excerpts remain muted/playsinline, without audio streams, controls or looping. No application-code error was observed; the previously seen Chrome extension asynchronous-listener warning is unrelated to the invitation code.
 
-- All 75 local HTML references, CSS/font references, 13 gallery targets and anchors resolve. Current local HTTP HTML/CSS/JS match disk.
-- JavaScript syntax and Python asset-builder parsing pass; `git diff --check` passes.
-- Five public H.264 clips still contain zero audio streams and have muted/playsinline attributes, no controls and no loop. The proposal contains no video.
-- No application-code error was observed during the review. Browser screenshot scaling/viewport-control issues were corrected and excluded from evidence.
-- Physical Mobile Safari, WhatsApp webviews and live social previews remain untested. These are browser-emulated responsive checks, not a physical-device performance guarantee.
-
-The preview is local; no deployment or remote push occurred.
+Physical Mobile Safari, WhatsApp webviews and live social previews remain untested. No deployment or remote push occurred. The local preview remains open with normal desktop mode restored and motion enabled.
 
 final result: passed

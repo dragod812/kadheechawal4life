@@ -43,10 +43,14 @@ PHOTO_SOURCES = {
     'proposal-photo': 'proposal-photo-2026-10-04.png',
 }
 
+RESTORED_PHOTOS = {
+    'proposal-restored-v2': REPO / 'source-assets/proposal/proposal-restored-v2.png',
+}
 
-def web_images(image, slug):
+
+def web_images(image, slug, widths=(480, 960, 1440)):
     image = ImageOps.exif_transpose(image).convert('RGB')
-    for width in (480, 960, 1440):
+    for width in widths:
         frame = image.copy()
         frame.thumbnail((width, width * 2))
         frame.save(OUT / 'photos' / f'{slug}-{width}.webp', quality=86, method=6)
@@ -75,6 +79,20 @@ def main():
             with Image.open(image_path) as image:
                 web_images(image, slug)
             manifest[slug] = {'source': filename, 'kind': 'photograph'}
+
+        for slug, source in RESTORED_PHOTOS.items():
+            if selected is not None and slug not in selected:
+                continue
+            with Image.open(source) as image:
+                web_images(image, slug, widths=(480, 960))
+            manifest[slug] = {
+                'source': 'IMG_1326.MOV',
+                'kind': 'AI-assisted lighting restoration / extracted still',
+                'frame_time': 235.0,
+                'restoration_source': str(source.relative_to(REPO)),
+                'provenance': 'source-assets/proposal/README.md',
+                'orientation': 'upright; source display rotation applied',
+            }
 
         ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
         # HLG -> linear light -> tone map -> BT.709. Public excerpts contain no audio.

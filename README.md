@@ -120,7 +120,7 @@ Build selected derivatives with Python, Pillow, fonttools[woff] and imageio-ffmp
 ```sh
 python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki"
 # Rebuild only new/changed assets while retaining the rest of the manifest:
-python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki" --only proposal-photo his-umbrella
+python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki" --only proposal-restored-v2 his-umbrella
 ```
 
 The builder leaves sources untouched, tone-maps HLG footage to SDR, strips metadata and audio,
@@ -129,8 +129,10 @@ URLs and OFL licenses are preserved. Generated artwork provenance and exact prom
 `invite/assets/art/*-prompt.md`; the PNG originals are retained alongside WebP derivatives.
 
 The 4 October revision adds eight archive photos, a second duet, and a dedicated proposal
-chapter. The proposal now uses the supplied photograph, displayed upright and cropped inside its
-frame with CSS; it contains no video. The later umbrella excerpt (6.8–10.8 seconds) shows Sidharth
+chapter. The proposal now uses a brighter AI-assisted restoration of the 235-second proposal
+frame, displayed upright and cropped inside its arched frame; it contains no video. The original
+photo and footage remain untouched. [Selected output, prompt and provenance](source-assets/proposal/README.md)
+record the gentle restoration and rejected over-reconstructed trial. The later umbrella excerpt (6.8–10.8 seconds) shows Sidharth
 stepping toward the camera and gesturing with the umbrella, with a 9.9-second still. The shared-future
 desktop portrait is limited to 390 px. Raw footage is not part of this repo.
 
