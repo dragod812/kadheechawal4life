@@ -4,6 +4,8 @@ body { overflow-x: clip; }
 h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.015em; }
 .name-and { margin: 5px 0; }
 .closing-names { line-height: 1.2; }
+/* Leave a little travel room for the full-width lines' mouse response. */
+.opening-line, .mumbai-postscript { width: calc(100% - 16px); margin-inline: auto; }
 
 .school-photos { min-height: 760px; }
 .school-photo { width: 46%; left: 0; }
@@ -55,9 +57,8 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 .proposal-section h2, .proposal-section h2 em { color: var(--paper); }
 .proposal-section .eyebrow, .proposal-section .aside { color: #d3ba80; }
 .proposal-film { width: 100%; max-width: 360px; padding: 10px 10px 45px; background: #e8dfca; transform: rotate(3deg); box-shadow: 0 22px 65px #09170e35; position: relative; justify-self: center; border-radius: 200px 200px 2px 2px; }
-.film-window { overflow: hidden; border-radius: 190px 190px 1px 1px; }
-.film-window > img { width: 100%; aspect-ratio: 620 / 720; object-fit: cover; }
-.film-window > video { border-radius: inherit; }
+.proposal-photo-window { position: relative; overflow: hidden; border-radius: 190px 190px 1px 1px; aspect-ratio: 4 / 5; }
+.proposal-photo-window > img { position: absolute; left: 50%; top: 50%; max-width: none; width: 125%; height: 80%; object-fit: cover; object-position: 75% 50%; transform: translate(-50%, -50%) rotate(90deg) scale(1.65); }
 .proposal-film figcaption { position: absolute; bottom: 13px; left: 8px; right: 8px; text-align: center; font: italic 17px/1.2 var(--serif); color: var(--leaf); }
 
 .forever-section { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 90px; min-height: 0; padding: 125px max(55px, calc((100vw - 1080px) / 2)); }
@@ -70,11 +71,17 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 /* Independent transform properties retain each photograph's original angle. */
 .js-motion [data-drift] { translate: var(--drift-x, 0px) var(--drift-y, 0px); rotate: var(--drift-turn, 0deg); scale: var(--drift-scale, 1); }
 .js-motion .scene-surface::before { clip-path: inset(0 var(--scene-inset, 0%) round var(--scene-round, 0px)); }
-.js-motion .hero-scene { transform: translate3d(0, var(--garden-y, 0px), 0) scale(var(--garden-scale, 1)); }
-.js-motion .hero-copy { transform: translate3d(0, var(--hero-copy-y, 0px), 0); opacity: var(--hero-copy-opacity, 1); }
+.js-motion [data-parallax] {
+  transform: translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0) rotate(var(--parallax-turn, 0deg)) scale(var(--parallax-scale, 1));
+  will-change: auto;
+}
+.js-motion [data-parallax].is-near { will-change: transform; }
+.motion-paused [data-parallax] { transform: none; will-change: auto; }
+.js-motion .hero-copy { opacity: var(--hero-copy-opacity, 1); }
 .js-motion .hero-portrait { translate: var(--portrait-x, 0px) var(--portrait-y, 0px); rotate: var(--portrait-turn, 0deg); }
 .js-motion .chapter-copy.reveal { transition: opacity .8s ease; }
-.js-motion .joining-photos { rotate: var(--join-turn, 0deg); scale: var(--join-scale, 1); }
+.js-motion .joining-photos { translate: var(--join-pointer-x, 0px) var(--join-pointer-y, 0px); rotate: var(--join-turn, 0deg); scale: var(--join-scale, 1); }
+.motion-paused .joining-photos { translate: none; rotate: none; scale: none; }
 .motion-paused [data-drift] { translate: none; rotate: none; scale: none; }
 
 @media (max-width: 1000px) {

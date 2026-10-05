@@ -16,8 +16,23 @@
   const visibleVideos = new Set();
   const hero = document.querySelector('.hero');
   const join = document.querySelector('.joining-photos');
+  // Text follows the scenery by just a pixel or two; controls stay easy to use.
+  document.querySelectorAll('.chapter-copy, .centred-copy, .forever-copy, .closing-inner, .opening-line, .image-note, .mumbai-postscript, .city-labels, .programme, .travel-section .reveal, .hero-footnote').forEach(element => {
+    element.dataset.parallax = '';
+    element.dataset.depth = '.008';
+    element.dataset.pointer = '1.5';
+  });
   const scenes = [...document.querySelectorAll('[data-scene]')];
-  document.querySelectorAll('.memory-grid .memory').forEach((element, index) => {
+  const parallaxLayers = [...document.querySelectorAll('[data-parallax]')].map(element => ({
+    element,
+    scene: element.closest('[data-scene]'),
+    depth: Number(element.dataset.depth) || 0,
+    pointer: Number(element.dataset.pointer) || 0,
+    turn: Number(element.dataset.turn) || 0,
+    zoom: Number(element.dataset.zoom) || 1,
+    mobileZoom: Number(element.dataset.mobileZoom) || 1
+  }));
+  document.querySelectorAll('.memory-grid .memory, .playful-pair > figure').forEach((element, index) => {
     element.dataset.drift = String((index % 2 ? 1 : -1) * (0.7 + index % 3 * 0.2));
   });
   const actors = [...document.querySelectorAll('[data-drift]')];
@@ -54,8 +69,6 @@
     smoothScroll = scrollY;
     lastFrame = 0;
     if (paused) {
-      hero.style.setProperty('--leaf-x', '0px');
-      hero.style.setProperty('--leaf-y', '0px');
       join.style.setProperty('--join-gap', '0px');
     } else scheduleDepth();
   }
@@ -88,6 +101,9 @@
         const set = entry.target.hasAttribute('data-scene') ? activeScenes : activeActors;
         if (entry.isIntersecting) set.add(entry.target);
         else set.delete(entry.target);
+        parallaxLayers.forEach(layer => {
+          if (layer.scene === entry.target) layer.element.classList.toggle('is-near', entry.isIntersecting);
+        });
       });
       scheduleDepth();
     }, {rootMargin: '200px 0px'});
@@ -117,6 +133,7 @@
     document.querySelectorAll('.reveal').forEach(element => element.classList.add('is-visible'));
     scenes.forEach(element => activeScenes.add(element));
     actors.forEach(element => activeActors.add(element));
+    parallaxLayers.forEach(layer => layer.element.classList.add('is-near'));
   }
 
   const clamp = value => Math.max(0, Math.min(1, value));
@@ -134,20 +151,29 @@
     smoothPointerY += (pointerY - smoothPointerY) * damping;
     const mobile = innerWidth <= 700;
     const amplitude = mobile ? 0.55 : 1;
+    const lateralAmplitude = innerWidth <= 1000 ? 0.35 : 1;
     const heroHeight = metrics.get(hero)?.height || innerHeight;
     const retreat = Math.min(Math.max(smoothScroll, 0), heroHeight);
 
     if (activeScenes.has(hero)) {
-      hero.style.setProperty('--leaf-x', `${smoothPointerX * 9 - retreat * 0.075 * amplitude}px`);
-      hero.style.setProperty('--leaf-y', `${smoothPointerY * 7 - retreat * 0.12 * amplitude}px`);
-      hero.style.setProperty('--garden-y', `${retreat * 0.065}px`);
-      hero.style.setProperty('--garden-scale', String(1.045 + retreat / 20000));
-      hero.style.setProperty('--hero-copy-y', `${-retreat * 0.075 * amplitude}px`);
       hero.style.setProperty('--hero-copy-opacity', String(1 - clamp(retreat / heroHeight) * 0.18));
-      hero.style.setProperty('--portrait-x', `${retreat * 0.032 * amplitude}px`);
-      hero.style.setProperty('--portrait-y', `${-retreat * 0.10 * amplitude}px`);
-      hero.style.setProperty('--portrait-turn', `${retreat * 0.004 * amplitude}deg`);
+      hero.style.setProperty('--portrait-x', `${(retreat * 0.032 + smoothPointerX * 6) * amplitude}px`);
+      hero.style.setProperty('--portrait-y', `${(-retreat * 0.10 + smoothPointerY * 4) * amplitude}px`);
+      hero.style.setProperty('--portrait-turn', `${(retreat * 0.004 + smoothPointerX * .15) * amplitude}deg`);
     }
+
+    // Botanical cutouts travel faster than the garden behind them. Each section
+    // owns its depth, so the closing and celebration don't inherit hero offsets.
+    parallaxLayers.forEach(layer => {
+      if (!activeScenes.has(layer.scene)) return;
+      const metric = metrics.get(layer.scene);
+      if (!metric) return;
+      const distance = Math.max(-innerHeight, Math.min(smoothScroll - metric.top, metric.height));
+      layer.element.style.setProperty('--parallax-x', `${smoothPointerX * layer.pointer * amplitude}px`);
+      layer.element.style.setProperty('--parallax-y', `${(distance * layer.depth + smoothPointerY * layer.pointer * .65) * amplitude}px`);
+      layer.element.style.setProperty('--parallax-turn', `${smoothPointerX * layer.turn * amplitude}deg`);
+      layer.element.style.setProperty('--parallax-scale', String(mobile ? layer.mobileZoom : layer.zoom));
+    });
 
     activeScenes.forEach(scene => {
       if (!scene.classList.contains('scene-surface')) return;
@@ -164,9 +190,9 @@
       const entry = ease(clamp((innerHeight * 0.92 - top) / (innerHeight * 0.72)));
       const exit = ease(clamp(-(top + metric.height * 0.5) / (innerHeight * 0.65)));
       const direction = Number(actor.dataset.drift) || 1;
-      actor.style.setProperty('--drift-x', `${((1 - entry) * direction * 27 - exit * direction * 10) * amplitude}px`);
-      actor.style.setProperty('--drift-y', `${((1 - entry) * 52 - exit * 22) * amplitude}px`);
-      actor.style.setProperty('--drift-turn', `${((1 - entry) * direction * 4.5 - exit * direction * 1.5) * amplitude}deg`);
+      actor.style.setProperty('--drift-x', `${((1 - entry) * direction * 27 - exit * direction * 10 + smoothPointerX * 6) * lateralAmplitude}px`);
+      actor.style.setProperty('--drift-y', `${((1 - entry) * 52 - exit * 22 + smoothPointerY * 4) * amplitude}px`);
+      actor.style.setProperty('--drift-turn', `${((1 - entry) * direction * 4.5 - exit * direction * 1.5) * lateralAmplitude}deg`);
       actor.style.setProperty('--drift-scale', String(1 - (1 - entry) * 0.025 * amplitude));
     });
 
@@ -176,6 +202,8 @@
       join.style.setProperty('--join-gap', `${(mobile ? 28 : 64) * (1 - progress)}px`);
       join.style.setProperty('--join-turn', `${(1 - progress) * -2.5 * amplitude}deg`);
       join.style.setProperty('--join-scale', String(0.965 + progress * 0.035));
+      join.style.setProperty('--join-pointer-x', `${smoothPointerX * 4 * amplitude}px`);
+      join.style.setProperty('--join-pointer-y', `${smoothPointerY * 3 * amplitude}px`);
     }
     if (Math.abs(scrollY - smoothScroll) > 0.15 || Math.abs(pointerX - smoothPointerX) > 0.002 || Math.abs(pointerY - smoothPointerY) > 0.002) scheduleDepth();
   }
@@ -188,17 +216,21 @@
   }
   addEventListener('scroll', scheduleDepth, {passive: true});
   addEventListener('resize', measureScenes, {passive: true});
-  hero.addEventListener('pointermove', event => {
+  addEventListener('pointermove', event => {
     if (event.pointerType !== 'mouse') return;
     pointerX = event.clientX / innerWidth * 2 - 1;
     pointerY = event.clientY / innerHeight * 2 - 1;
     scheduleDepth();
   }, {passive: true});
-  hero.addEventListener('pointerleave', () => {
+  function resetPointer() {
     pointerX = 0;
     pointerY = 0;
     scheduleDepth();
+  }
+  addEventListener('pointerout', event => {
+    if (!event.relatedTarget) resetPointer();
   }, {passive: true});
+  addEventListener('blur', resetPointer);
   toggle.hidden = false;
   toggle.addEventListener('click', () => {
     paused = !paused;

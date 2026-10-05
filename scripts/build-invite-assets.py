@@ -40,6 +40,7 @@ PHOTO_SOURCES = {
     'japan-night': 'IMG_1524.JPG',
     'fairy-lights': 'IMG_8711.HEIC',
     'lanterns': 'IMG_9105.HEIC',
+    'proposal-photo': 'proposal-photo-2026-10-04.png',
 }
 
 
@@ -82,9 +83,8 @@ def main():
             ('garden', wiki / 'invite-images/IMG_8779.MOV', 2.1, 3.8, 4.0, None),
             ('our-song', wiki / 'invite-videos/20d7242538cf4d08a34d38db5112a987.mp4', 64.0, 3.8, 69.8, 'crop=1080:1360:0:140'),
             ('her-umbrella', wiki / 'invite-videos/IMG_0568.MOV', 2.1, 2.8, 3.5, None),
-            ('his-umbrella', wiki / 'invite-videos/WhatsApp Video 2026-10-04 at 18.09.49.mp4', 2.1, 2.8, 4.0, None),
+            ('his-umbrella', wiki / 'invite-videos/WhatsApp Video 2026-10-04 at 18.09.49.mp4', 6.8, 4.0, 9.9, None),
             ('another-song', wiki / 'invite-videos/FDB14FDE-65F3-40BB-9B09-234843B65FDC.mp4', 2.4, 3.8, 5.7, 'crop=960:800:120:890'),
-            ('proposal', wiki / 'invite-videos/IMG_1326.MOV', 237.2, 4.2, 241.0, 'hqdn3d=2:2:3:3,eq=brightness=0.035,crop=620:720:160:750'),
         ]
         for slug, source, start, duration, poster_time, crop in clips:
             if selected is not None and slug not in selected:

@@ -102,8 +102,8 @@ Push to `main`. GitHub Pages publishes within a minute or two.
 ## Invitation
 
 `invite/index.html`, `invite/invite.css`, `invite/chapters.css` and `invite/invite.js` are a dependency-free static addition.
-The page uses self-hosted fonts, responsive WebP photographs, generated garden artwork and six
-2.8–4.2-second H.264 excerpts with **no audio streams**. Each silent film plays once when its memory enters
+The page uses self-hosted fonts, responsive WebP photographs, generated garden artwork and five
+2.8–4.0-second H.264 excerpts with **no audio streams**. Each silent film plays once when its memory enters
 the viewport; reduced-motion and Save-Data begin with stills. The guest can pause or explicitly
 enable motion. Nearby photo scenes follow native scroll with eased translations and slight turns,
 chapter backgrounds open gently, and the two-city image halves join. Layout measurements are
@@ -120,7 +120,7 @@ Build selected derivatives with Python, Pillow, fonttools[woff] and imageio-ffmp
 ```sh
 python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki"
 # Rebuild only new/changed assets while retaining the rest of the manifest:
-python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki" --only proposal another-song
+python3 scripts/build-invite-assets.py --wiki "/path/to/private/wedding/wiki" --only proposal-photo his-umbrella
 ```
 
 The builder leaves sources untouched, tone-maps HLG footage to SDR, strips metadata and audio,
@@ -129,8 +129,15 @@ URLs and OFL licenses are preserved. Generated artwork provenance and exact prom
 `invite/assets/art/*-prompt.md`; the PNG originals are retained alongside WebP derivatives.
 
 The 4 October revision adds eight archive photos, a second duet, and a dedicated proposal
-chapter. Proposal footage is correctly rotated, tone-mapped and cropped around the embrace;
-the shared-future desktop portrait is limited to 390 px. Raw footage is not part of this repo.
+chapter. The proposal now uses the supplied photograph, displayed upright and cropped inside its
+frame with CSS; it contains no video. The later umbrella excerpt (6.8–10.8 seconds) shows Sidharth
+stepping toward the camera and gesturing with the umbrella, with a 9.9-second still. The shared-future
+desktop portrait is limited to 390 px. Raw footage is not part of this repo.
+
+Flowers, brass bells, the architectural garden/pillars, closing background, photographs and copy
+respond at different depths to scroll and mouse movement. Text movement stays very small;
+phone and tablet lateral movement is restrained to preserve the layout. Touch movement does not
+act as a mouse pointer, and the pause/reduced-motion composition remains fully readable.
 
 Visual review and interaction evidence, including the current browser-access status:
 [design-qa.md](design-qa.md).
