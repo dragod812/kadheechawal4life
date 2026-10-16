@@ -10,7 +10,7 @@ test.beforeAll(async () => {
   env = await initializeTestEnvironment({projectId:project,firestore:{rules:await readFile('firestore.rules','utf8')}});
   await env.clearFirestore();
   await env.withSecurityRulesDisabled(async c => {
-    await setDoc(doc(c.firestore(),'access','+15555550103'),{name:'Example Admin',role:'admin'});
+    await setDoc(doc(c.firestore(),'access','+15555550103'),{name:'Family admin (0103)',role:'admin'});
     await setDoc(doc(c.firestore(),'access','+15555550104'),{name:'Example Hotel',role:'hotel'});
   });
 });
@@ -48,6 +48,9 @@ test('complete RSVP, separate rooms, role management, edits and mobile layouts',
   await expect(guest.locator('#guest-name')).toHaveValue('Example Guest');
   await expect(guest.getByLabel('Your plus-one’s full name')).toHaveValue('Example Companion');
   await login(admin,'+15555550103','Example Admin');
+  await env.withSecurityRulesDisabled(async c => {
+    expect((await getDoc(doc(c.firestore(),'access','+15555550103'))).data().name).toBe('Example Admin');
+  });
   await admin.getByRole('button',{name:'Guests & rooms',exact:true}).click();
   await expect(admin.getByRole('heading',{name:'Example Guest',exact:true})).toBeVisible();
   await expect(admin.locator('#stats')).toContainText('2People attending');

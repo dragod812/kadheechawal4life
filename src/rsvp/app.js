@@ -70,7 +70,7 @@ async function loadRsvp() {
   if (session !== authVersion) return;
   record = next;
   $('rsvp-form').reset();
-  $('guest-name').value = record?.name || pendingName;
+  $('guest-name').value = record?.name || pendingName || user?.displayName || '';
   if (record) $('rsvp-form').elements.attending.value = record.attending;
   $('plus-one').checked = record?.plusOne || false;
   $('plus-one-name').value = record?.plusOneName || '';
@@ -207,7 +207,9 @@ else backend.watchAuth(async nextUser => {
   }
   status('Opening your guest book…'); text('signed-in-phone', `Signed in · ${user.phoneNumber}`);
   try {
+    if (pendingName) await backend.saveLoginName(user, pendingName);
     await loadRsvp(); if (session !== authVersion) return;
+    pendingName = '';
     show('account', true); status();
     accessStop = backend.watchAccess(user.phoneNumber, nextRole => {
       if (session !== authVersion) return;

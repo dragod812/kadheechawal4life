@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "esbuild src/rsvp/app.js --bundle --minify --format=esm --target=es2022 --outfile=invite/rsvp/app.js --external:./firebase-config.js",
-    "serve": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "serve": "esbuild --servedir=. --serve=127.0.0.1:4173",
     "test:rules": "firebase emulators:exec --project demo-wedding-rsvp --only firestore 'node --test tests/firestore.rules.test.js'",
     "test:e2e": "firebase emulators:exec --project demo-wedding-rsvp --only auth,firestore 'playwright test'"
   },

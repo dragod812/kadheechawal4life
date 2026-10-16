@@ -58,6 +58,12 @@ service cloud.firestore {
       allow delete: if false;
     }
     match /access/{phone} {
+      // Staff can supply their real name at login without changing their role.
+      allow update: if signedIn() && request.auth.token.phone_number == phone
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'updatedAt', 'updatedBy'])
+        && name(request.resource.data.name)
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid;
       allow get: if signedIn() && (request.auth.token.phone_number == phone || admin());
       allow list: if admin();
       allow create, update: if admin() && phone != request.auth.token.phone_number

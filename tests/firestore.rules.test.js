@@ -90,3 +90,9 @@ test('only admins can manage staff; self-removal and self-demotion are denied',a
   await assertSucceeds(deleteDoc(doc(db('admin'),'access',phones.other)));
   await assertFails(getDocs(collection(db('other'),'rsvps')));
 });
+test('staff can change their own name without changing access privileges',async () => {
+  await assertSucceeds(updateDoc(doc(db('hotel'),'access',phones.hotel),{name:'Hotel Manager',updatedBy:'hotel',updatedAt:serverTimestamp()}));
+  await assertSucceeds(updateDoc(doc(db('admin'),'access',phones.admin),{name:'Family Admin',updatedBy:'admin',updatedAt:serverTimestamp()}));
+  await assertFails(updateDoc(doc(db('hotel'),'access',phones.hotel),{role:'admin',updatedBy:'hotel',updatedAt:serverTimestamp()}));
+  await assertFails(setDoc(doc(db('guest'),'access',phones.guest),grant('guest',{role:'admin'})));
+});

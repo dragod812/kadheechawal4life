@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, connectAuthEmulator, RecaptchaVerifier, signInWithPhoneNumber, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence } from 'firebase/auth';
+import { getAuth, connectAuthEmulator, RecaptchaVerifier, signInWithPhoneNumber, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence, updateProfile } from 'firebase/auth';
 import { getFirestore, connectFirestoreEmulator, doc, collection, getDoc, getDocs, setDoc, deleteDoc, runTransaction, serverTimestamp, onSnapshot } from 'firebase/firestore';
 import { firebaseConfig } from './firebase-config.js';
 
@@ -19,6 +19,17 @@ if (configured) {
 }
 export function watchAuth(callback) { return onAuthStateChanged(auth, callback); }
 export function logout() { return signOut(auth); }
+export async function saveLoginName(user, name) {
+  await updateProfile(user, { displayName: name });
+  // A verified staff member may update their own name, never their own role.
+  const ref = doc(db, 'access', user.phoneNumber);
+  await runTransaction(db, async transaction => {
+    const entry = await transaction.get(ref);
+    if (entry.exists() && entry.data().name !== name) {
+      transaction.update(ref, { name, updatedBy: user.uid, updatedAt: serverTimestamp() });
+    }
+  });
+}
 export async function sendCode(phone) {
   await setPersistence(auth, browserSessionPersistence);
   verifier?.clear();
