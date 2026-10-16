@@ -254,7 +254,7 @@
       }).filter(Boolean);
       count.textContent = visible.length
         ? `${visible.length === 1 ? visible[0] : `${visible[0]}–${visible[visible.length - 1]}`} of ${frames.length} memories`
-        : `${frames.length} little memories`;
+        : `${frames.length} memories`;
     }
     function scheduleWall() {
       if (!wallFramePending) {
