@@ -11,7 +11,6 @@
   const completed = new WeakSet();
   const visibleVideos = new Set();
   const hero = document.querySelector('.hero');
-  const join = document.querySelector('.joining-photos');
   // Text follows the scenery by just a pixel or two; controls stay easy to use.
   document.querySelectorAll('.chapter-copy, .centred-copy, .forever-copy, .closing-inner, .opening-line, .image-note, .mumbai-postscript, .city-labels, .programme, .travel-section .reveal, .hero-footnote').forEach(element => {
     element.dataset.parallax = '';
@@ -44,7 +43,7 @@
   }
 
   function measureScenes() {
-    [...scenes, ...actors, join].forEach(element => {
+    [...scenes, ...actors].forEach(element => {
       metrics.set(element, {top: layoutTop(element), height: element.offsetHeight});
     });
     scheduleDepth();
@@ -61,14 +60,14 @@
   }
 
   function playMoment(video) {
-    if (completed.has(video)) return;
+    if (completed.has(video) || document.hidden) return;
     if (!video.src) {
       video.src = video.dataset.src;
       video.load();
     }
     video.muted = true;
     video.play().then(() => {
-      if (visibleVideos.has(video)) video.parentElement.classList.add('is-playing');
+      if (visibleVideos.has(video) && !document.hidden) video.parentElement.classList.add('is-playing');
       else video.pause();
     }).catch(() => video.parentElement.classList.remove('is-playing'));
   }
@@ -98,16 +97,22 @@
     const videoObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const video = entry.target.querySelector('video');
-        if (entry.isIntersecting && !document.hidden) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
           visibleVideos.add(video);
           playMoment(video);
         } else {
           visibleVideos.delete(video);
           video.pause();
           entry.target.classList.remove('is-playing');
+          // A complete trip offscreen starts a new visit, from either direction.
+          // Staying in view never loops a completed clip.
+          if (!entry.isIntersecting) {
+            completed.delete(video);
+            if (video.currentTime !== 0) video.currentTime = 0;
+          }
         }
       });
-    }, {threshold: 0.45});
+    }, {threshold: [0, 0.45]});
     videos.forEach(video => {
       videoObserver.observe(video.parentElement);
       video.addEventListener('ended', () => {
@@ -183,15 +188,6 @@
       actor.style.setProperty('--drift-scale', String(1 - (1 - entry) * 0.025 * amplitude));
     });
 
-    const joinMetric = metrics.get(join);
-    if (joinMetric) {
-      const progress = ease(clamp((innerHeight * 0.82 - (joinMetric.top - smoothScroll)) / (innerHeight * 0.5)));
-      join.style.setProperty('--join-gap', `${(mobile ? 28 : 64) * (1 - progress)}px`);
-      join.style.setProperty('--join-turn', `${(1 - progress) * -2.5 * amplitude}deg`);
-      join.style.setProperty('--join-scale', String(0.965 + progress * 0.035));
-      join.style.setProperty('--join-pointer-x', `${smoothPointerX * 4 * amplitude}px`);
-      join.style.setProperty('--join-pointer-y', `${smoothPointerY * 3 * amplitude}px`);
-    }
     if (Math.abs(scrollY - smoothScroll) > 0.15 || Math.abs(pointerX - smoothPointerX) > 0.002 || Math.abs(pointerY - smoothPointerY) > 0.002) scheduleDepth();
   }
 

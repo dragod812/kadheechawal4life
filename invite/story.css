@@ -1,0 +1,99 @@
+/* One continuous album, with room for the photographs and the words to breathe. */
+.our-story { padding-top: 105px; padding-bottom: 120px; }
+.story-heading { text-align: center; margin: 0 auto 80px; }
+.story-heading h2 { font-size: clamp(64px, 7.8vw, 106px); line-height: .98; letter-spacing: -.045em; margin-bottom: 25px; }
+.story-heading > p:last-child { font-size: 13px; color: var(--muted); }
+.story-beginning { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 85px; }
+.story-origins { display: grid; grid-template-columns: 1fr 1fr; gap: 25px 22px; align-items: start; }
+.story-photo { position: relative; min-width: 0; margin: 0; padding: 8px 8px 0; color: var(--leaf); background: var(--paper); box-shadow: 0 9px 24px #48371917; }
+.story-photo > .photo-open { display: block; width: 100%; padding: 0; background: transparent; overflow: hidden; }
+.story-photo img { width: 100%; height: auto; object-fit: cover; }
+.story-photo figcaption { margin: 0; padding: 12px 3px 17px; font: italic 18px/1.3 var(--serif); color: var(--leaf); text-align: center; }
+.story-origins .story-photo { transform: rotate(-3deg); }
+.story-origins .story-photo:nth-child(even) { margin-top: 35px; transform: rotate(3deg); }
+.story-origins figcaption { font-size: 17px; }
+.story-origins img { aspect-ratio: 4 / 5; }
+.story-origins .story-school img { object-position: center 70%; }
+.story-origins .story-young img, .story-origins .story-blossoms img { aspect-ratio: 4 / 3; }
+.album-early .snapshot-window { aspect-ratio: 4 / 5; }
+.album-early .snapshot-window img { height: 100%; object-position: 20% 55%; transform: scale(1.14); }
+.story-letter { font-size: 14px; line-height: 1.95; }
+.story-letter > p + p { margin-top: 20px; }
+.story-letter .story-lead { font: 400 32px/1.22 var(--serif); color: var(--leaf); margin-bottom: 26px; }
+.story-letter em { font-style: normal; color: var(--burgundy); }
+.story-letter .story-last-line { font: italic 23px/1.5 var(--serif); color: var(--brass); margin-top: 27px; }
+.album-intro { display: flex; align-items: center; gap: 30px; margin: 95px 0 65px; }
+.album-intro span { height: 1px; flex: 1; background: var(--line); opacity: .55; }
+.album-intro p { text-align: center; font: italic 27px/1.3 var(--serif); color: var(--leaf); max-width: 410px; }
+.story-album { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 55px 30px; align-items: start; }
+.story-album .story-photo img { aspect-ratio: 4 / 5; }
+.album-early { grid-column: 1 / 4; margin-top: 50px; transform: rotate(-3deg); }
+.album-evening { grid-column: 4 / 8; transform: rotate(2deg); }
+.album-embrace { grid-column: 8 / 13; margin-top: 35px; transform: rotate(-2deg); }
+.story-album .album-embrace img { aspect-ratio: 6 / 5; object-position: center 76%; }
+.album-song { grid-column: 1 / 5; transform: rotate(-2deg); }
+.album-duet { grid-column: 5 / 9; margin-top: 70px; transform: rotate(2deg); }
+.story-album .album-duet img { aspect-ratio: 6 / 5; }
+.album-picnic { grid-column: 9 / 13; margin-top: 20px; transform: rotate(-2deg); }
+.album-rain { grid-column: 1 / 7; margin-top: 15px; transform: rotate(-1deg); }
+.story-album .album-rain img { aspect-ratio: 3 / 2; object-position: 80% 50%; }
+.album-lights { grid-column: 7 / 10; margin-top: 65px; transform: rotate(-2deg); }
+.album-lanterns { grid-column: 10 / 13; margin-top: 25px; transform: rotate(2deg); }
+.story-frame { overflow: hidden; }
+.story-frame video { object-position: center; }
+.our-story .playful-pair { margin-top: 110px; margin-bottom: 110px; }
+.our-story .playful-pair figure { transform: rotate(-3deg); }
+.our-story .playful-pair figure:last-child { transform: rotate(3deg); }
+.story-ending { display: grid; grid-template-columns: 1fr 1.05fr 1fr; gap: 45px; align-items: center; border-top: 1px solid #c9b89866; padding-top: 70px; }
+.story-proposal { transform: rotate(-2deg); }
+.story-proposal .proposal-photo-window { border-radius: 0; }
+.story-home { transform: rotate(2deg); }
+.story-home img { aspect-ratio: 4 / 5; object-position: center 42%; }
+.story-school::before, .story-blossoms::before, .story-fuji::before { content: ""; position: absolute; top: -7px; left: calc(50% - 23px); width: 46px; height: 17px; background: #d6c49b80; transform: rotate(-4deg); z-index: 2; pointer-events: none; }
+.story-signoff { text-align: center; }
+.story-signoff p { font: 400 28px/1.4 var(--serif); color: var(--leaf); }
+.story-signoff em { color: var(--burgundy); }
+.story-signoff > span { display: block; font: 44px/1 var(--script); color: var(--brass); margin-top: 25px; }
+@media (max-width: 1000px) {
+  .story-beginning { gap: 50px; }
+  .story-letter { font-size: 13px; }
+  .story-letter .story-lead { font-size: 29px; }
+  .story-album { gap: 45px 24px; }
+  .story-ending { gap: 25px; }
+  .story-signoff p { font-size: 25px; }
+}
+@media (max-width: 700px) {
+  .our-story { padding-top: 70px; padding-bottom: 75px; }
+  .story-heading { margin-bottom: 50px; }
+  .story-heading h2 { font-size: clamp(55px, 15vw, 78px); }
+  .story-heading > p:last-child { font-size: 11px; }
+  .story-beginning { display: flex; flex-direction: column; gap: 45px; }
+  .story-origins { width: 100%; max-width: 430px; gap: 20px 18px; }
+  .story-origins .story-photo:nth-child(even) { margin-top: 25px; }
+  .story-origins figcaption { font-size: 16px; }
+  .story-letter { font-size: 14px; max-width: 430px; }
+  .story-letter .story-lead { font-size: 29px; }
+  .story-letter .story-last-line { font-size: 22px; }
+  .album-intro { margin: 60px 0 40px; gap: 12px; }
+  .album-intro p { font-size: 24px; max-width: 240px; }
+  .story-album { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 18px; }
+  .story-album .story-photo { grid-column: auto; margin-top: 0; }
+  .story-album .album-embrace, .story-album .album-rain { grid-column: 1 / -1; width: 88%; justify-self: center; }
+  .story-album .album-evening, .story-album .album-duet, .story-album .album-lanterns { margin-top: 30px; }
+  .story-album .album-duet img { aspect-ratio: 4 / 5; }
+  .story-photo { padding: 5px 5px 0; }
+  .story-photo figcaption { font-size: 16px; padding: 10px 2px 14px; }
+  .our-story .playful-pair { margin-top: 65px; margin-bottom: 65px; gap: 18px; }
+  .our-story .playful-pair figure { margin: 0; padding: 5px; }
+  .our-story .playful-pair video { inset: 5px; width: calc(100% - 10px); height: calc(100% - 10px); }
+  .story-ending { grid-template-columns: 1fr 1fr; gap: 35px 22px; padding-top: 45px; }
+  .story-signoff { grid-column: 1 / -1; grid-row: 1; }
+  .story-signoff p { font-size: 30px; }
+  .story-signoff > span { margin-top: 18px; }
+  .story-ending .story-photo figcaption { font-size: 15px; }
+  .story-home { margin-top: 40px; }
+}
+@media (max-width: 370px) {
+  .story-letter .story-lead { font-size: 27px; }
+  .story-origins figcaption { font-size: 14px; }
+}
