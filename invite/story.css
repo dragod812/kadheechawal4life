@@ -37,6 +37,8 @@
 .story-photo figcaption { margin: 0; padding: 11px 2px 16px; font: italic 17px/1.25 var(--serif); color: var(--leaf); text-align: center; }
 .story-school img { object-position: center 70%; }
 .story-young img, .story-blossoms img { aspect-ratio: 4 / 3; }
+/* Keep the hand-made heart upright, including when the photograph is enlarged. */
+.story-blossoms img, #enlarged-photo[src$="/blossoms-1440.webp"] { rotate: 180deg; }
 .album-embrace img { aspect-ratio: 6 / 5; object-position: center 76%; }
 .album-rain img { aspect-ratio: 3 / 2; object-position: 80% 50%; }
 .album-duet img { aspect-ratio: 6 / 5; }
