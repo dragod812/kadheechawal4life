@@ -9,6 +9,7 @@ Sacred Grove planning and décor brief.
 | Path | What it is |
 |---|---|
 | `/invite/` | Illustrated garden invitation, chronological story, silent memories, celebrations, directions and calendar download |
+| `/invite/rsvp/` | Phone sign-in, RSVP/plus-one and arrival plans, private guest/room dashboard and admin-managed team access; see [setup](docs/rsvp-setup.md) |
 | `/` | The facts, the two-function-day/two-night programme, the six things the space has to do, and the Sacred Grove mood board |
 | `/venues/` | The venue study — 67 properties across 13 regions, with verified facts, quote-backed cost analysis, outreach messages, and 618 photographs |
 | `/guest-estimation/` | Tracker-based plan, updated 25 September 2026: 143 listed guests (81 bride/common + 62 groom), 4 suites + 53 Premium Rooms / 22 extra beds for the full list. Nightly scenario clearly labels missing stays, RSVP interpretation, suite assignments and proposed sharing. |

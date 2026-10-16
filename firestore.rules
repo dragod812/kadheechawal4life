@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null
+        && request.auth.token.firebase.sign_in_provider == 'phone'
+        && request.auth.token.phone_number is string;
+    }
+    function accessPath() {
+      return /databases/$(database)/documents/access/$(request.auth.token.phone_number);
+    }
+    function admin() {
+      return signedIn() && exists(accessPath()) && get(accessPath()).data.role == 'admin';
+    }
+    function staff() {
+      return signedIn() && exists(accessPath()) && get(accessPath()).data.role in ['admin', 'hotel'];
+    }
+    function text(value, limit) { return value is string && value.size() <= limit; }
+    function name(value) { return text(value, 100) && value.matches('.*[^ ].*'); }
+    function validRsvp(d) {
+      return d.keys().hasAll(['name', 'phone', 'attending', 'plusOne', 'plusOneName', 'arrivalDate', 'arrivalTime', 'arrivalNote', 'revision', 'updatedAt'])
+        && d.keys().hasOnly(['name', 'phone', 'attending', 'plusOne', 'plusOneName', 'arrivalDate', 'arrivalTime', 'arrivalNote', 'revision', 'updatedAt'])
+        && name(d.name) && d.phone == request.auth.token.phone_number
+        && d.attending in ['yes', 'no'] && d.plusOne is bool
+        && text(d.plusOneName, 100)
+        && (d.plusOne ? d.attending == 'yes' && name(d.plusOneName) : d.plusOneName == '')
+        && text(d.arrivalDate, 10) && (d.arrivalDate == '' || d.arrivalDate.matches('2027-(0[13]-(0[1-9]|[12][0-9]|3[01])|02-(0[1-9]|1[0-9]|2[0-8]))'))
+        && text(d.arrivalTime, 5) && (d.arrivalTime == '' || (d.arrivalDate != '' && d.arrivalTime.matches('([01][0-9]|2[0-3]):[0-5][0-9]')))
+        && text(d.arrivalNote, 500)
+        && (d.attending == 'yes' || (!d.plusOne && d.arrivalDate == '' && d.arrivalTime == '' && d.arrivalNote == ''))
+        && d.revision is int && d.updatedAt == request.time;
+    }
+    match /rsvps/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || staff());
+      allow list: if staff();
+      allow create: if signedIn() && request.auth.uid == uid && validRsvp(request.resource.data)
+        && request.resource.data.revision == 1;
+      allow update: if signedIn() && request.auth.uid == uid && validRsvp(request.resource.data)
+        && request.resource.data.revision == resource.data.revision + 1;
+      allow delete: if false;
+    }
+    match /rooms/{uid} {
+      function validRooms(d) {
+        let rsvp = get(/databases/$(database)/documents/rsvps/$(uid)).data;
+        return d.keys().hasAll(['guestRoom', 'plusOneRoom', 'plusOneName', 'revision', 'updatedAt', 'updatedBy'])
+          && d.keys().hasOnly(['guestRoom', 'plusOneRoom', 'plusOneName', 'revision', 'updatedAt', 'updatedBy'])
+          && rsvp.attending == 'yes'
+          && text(d.guestRoom, 40) && text(d.plusOneRoom, 40)
+          && d.plusOneName == rsvp.plusOneName
+          && (rsvp.plusOne || d.plusOneRoom == '')
+          && d.updatedBy == request.auth.uid && d.updatedAt == request.time && d.revision is int;
+      }
+      allow get: if signedIn() && (request.auth.uid == uid || staff());
+      allow list: if staff();
+      allow create: if staff() && validRooms(request.resource.data) && request.resource.data.revision == 1;
+      allow update: if staff() && validRooms(request.resource.data)
+        && request.resource.data.revision == resource.data.revision + 1;
+      allow delete: if false;
+    }
+    match /access/{phone} {
+      allow get: if signedIn() && (request.auth.token.phone_number == phone || admin());
+      allow list: if admin();
+      allow create, update: if admin() && phone != request.auth.token.phone_number
+        && phone.matches('^[+][1-9][0-9]{7,14}$')
+        && request.resource.data.keys().hasAll(['role', 'name', 'updatedAt', 'updatedBy'])
+        && request.resource.data.keys().hasOnly(['role', 'name', 'updatedAt', 'updatedBy'])
+        && request.resource.data.role in ['admin', 'hotel'] && name(request.resource.data.name)
+        && request.resource.data.updatedAt == request.time && request.resource.data.updatedBy == request.auth.uid;
+      allow delete: if admin() && phone != request.auth.token.phone_number;
+    }
+  }
+}

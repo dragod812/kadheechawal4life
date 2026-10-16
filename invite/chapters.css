@@ -177,3 +177,8 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 @media (prefers-reduced-motion: reduce) {
   html:not(.js-motion) [data-drift], html:not(.js-motion) .joining-photos { translate: none; rotate: none; scale: none; }
 }
+:root{--rsvp-accent:#742737}
+.rsvp-invitation{text-align:center;padding-top:60px;padding-bottom:95px;border-top:1px solid var(--line)}
+.rsvp-invitation p:not(.eyebrow){max-width:480px;margin:0 auto 26px;color:var(--muted)}
+.site-header nav a.rsvp-nav{display:flex!important;color:var(--rsvp-accent);font-weight:700}
+@media(max-width:700px){.site-header nav a[href="#getting-here"]{display:none}.site-header nav{gap:14px}}
