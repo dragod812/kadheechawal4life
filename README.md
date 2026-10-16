@@ -113,7 +113,7 @@ a keyboard-accessible native dialog; the two small older snapshots stay small. N
 self-hosted Allura, with Cormorant Garamond headings and Manrope supporting text.
 
 The date-range `.ics` saves 25–27 February as all-day dates, with 28 February as the exclusive end.
-The invitation and calendar give dates and celebrations without precise ceremony hours. RSVP collection remains unconfigured.
+The invitation and calendar give dates and celebrations without precise ceremony hours. The RSVP link opens phone sign-in, editable guest details and the private admin/hotel dashboard, backed by Firebase; see [RSVP setup and operations](docs/rsvp-setup.md).
 Venue address source: [The Ummed’s official contact page](https://www.ummedhotels.com/hotel-in-ahmedabad/contact-us).
 
 Build selected derivatives with Python, Pillow, fonttools[woff] and imageio-ffmpeg installed:

@@ -18,11 +18,13 @@ Arrival details apply to the party and are stored as local Ahmedabad values (IST
 
 As of 2026-10-15, the dedicated project **`kadhee-chawal-wedding`** and its Web app exist. The default Firestore database is in **Mumbai (`asia-south1`)**, with delete protection enabled. The checked-in rules are deployed, the public Web config is populated, and the four owner-supplied admin numbers have been provisioned privately. Each admin supplies their own name at login; this updates their account and team name without changing their role.
 
-**Remaining blocker:** the project has no linked billing account. Authentication initialization returns `BILLING_NOT_ENABLED`, so live phone authentication has not been enabled. Link billing to this project, then initialize Authentication, enable Phone, allow India/US SMS and authorize the live domain. Production publication and a real SMS test are still pending. The Firebase Console has a terms-status loading error in this session; project provisioning and rule deployment used the owner's explicitly authorized Google Cloud CLI credentials.
+Billing is linked and Authentication is initialized. Phone sign-in is enabled for India and US numbers. Authorized domains are `kadheechawal4life.com`, `kadhee-chawal-wedding.firebaseapp.com` and `kadhee-chawal-wedding.web.app`. No production test-phone bypasses are configured. Setup used the owner's authorized Google Cloud CLI credentials because the Firebase Console could not load its terms-status check.
+
+Nine Firestore security tests and two browser suites pass against local emulators. Production checks verify the public API key's reCAPTCHA configuration, deployed rules and private admin grants. Actual SMS delivery still needs a first login from the live domain.
 
 The steps below document the complete setup for recovery or a new environment; do not recreate the existing project or admin records.
 
-1. Create a dedicated Firebase project in `sidharthpadhee@gmail.com`, called **Kadhee Chawal Wedding**. Do not reuse BuddysCo. Analytics is not needed.
+1. Create a dedicated Firebase project in the owner's Google account, called **Kadhee Chawal Wedding**. Analytics is not needed.
 2. Register a Web app. Put its **public web configuration** in `invite/rsvp/firebase-config.js` as `export const firebaseConfig = { ... };`. Never commit private keys, OAuth tokens, admin phone lists or guest records.
 3. Create the default **Cloud Firestore Standard** database in production mode. Prefer `asia-south1` (Mumbai); confirm the immutable database location before creation.
 4. Publish all of `firestore.rules` in Firestore → Rules. Never use open test-mode rules.
