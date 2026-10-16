@@ -17,7 +17,7 @@ function errorMessage(error) {
     'auth/captcha-check-failed': 'Phone verification could not finish. Try again in your regular browser.',
     'auth/operation-not-allowed': 'Phone sign-in isn’t available yet. Please contact Kalyani or Sidharth.',
     'auth/unauthorized-domain': 'Sign-in isn’t enabled at this address. Please use the wedding website.',
-    'auth/network-request-failed': 'We couldn’t connect. Check your connection and try again.',
+    'auth/network-request-failed': 'We couldn’t connect to phone verification. Check your connection, or open this page in Chrome or Safari if you’re using an in-app browser.',
     'permission-denied': 'Your access has changed or this action is not permitted. Refresh or sign in again.',
     'unavailable': 'We couldn’t reach the wedding guest book. Check your connection and try again.'
   };
