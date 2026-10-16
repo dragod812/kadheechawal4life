@@ -112,7 +112,7 @@ cached, mobile amplitude is reduced, and drawing stops when settled. Selected ph
 a keyboard-accessible native dialog; the two small older snapshots stay small. Names use
 self-hosted Allura, with Cormorant Garamond headings and Manrope supporting text.
 
-The date-range `.ics` saves 25–27 February as all-day dates, with 28 February as the exclusive end.
+The guest invitation, RSVP page and date-range `.ics` show **26–27 February 2027**. The calendar saves those two all-day dates, with 28 February as the exclusive end. The full family/planning schedule remains separate. Calendar revisions preserve the event UID and increment its sequence.
 The invitation and calendar give dates and celebrations without precise ceremony hours. The RSVP link opens phone sign-in, editable guest details and the private admin/hotel dashboard, backed by Firebase; see [RSVP setup and operations](docs/rsvp-setup.md).
 Venue address source: [The Ummed’s official contact page](https://www.ummedhotels.com/hotel-in-ahmedabad/contact-us).
 
