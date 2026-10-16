@@ -58,6 +58,7 @@ export async function readGuests() {
   return guests.docs.map(d => ({ id: d.id, ...d.data(), rooms: assignments.get(d.id) || null })).sort((a,b) => a.name.localeCompare(b.name));
 }
 export async function saveRooms(guest, guestRoom, plusOneRoom) {
+  // An empty companion override means they share the primary guest's room.
   const ref = doc(db, 'rooms', guest.id);
   await runTransaction(db, async transaction => {
     const [current, rooms] = await Promise.all([transaction.get(doc(db, 'rsvps', guest.id)), transaction.get(ref)]);

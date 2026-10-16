@@ -54,7 +54,11 @@ function updateAttendance() {
   for (const id of ['plus-one', 'plus-one-name', 'arrival-date', 'arrival-time', 'arrival-note']) $(id).disabled = !attending;
   $('plus-one-name').disabled = !attending || !$('plus-one').checked;
 }
-function companionRoom(guest) { return guest.plusOne && guest.rooms?.plusOneName === guest.plusOneName ? guest.rooms?.plusOneRoom || '' : ''; }
+function companionRoom(guest) {
+  if (!guest.plusOne) return '';
+  const override = guest.rooms?.plusOneName === guest.plusOneName ? guest.rooms?.plusOneRoom : '';
+  return override || guest.rooms?.guestRoom || '';
+}
 function renderMyRooms() {
   const container = $('my-rooms');
   container.replaceChildren();
@@ -123,16 +127,33 @@ function renderGuests() {
       card.append(node('p','guest-meta', date ? `Arrival: ${date}${guest.arrivalTime ? ` at ${guest.arrivalTime} IST` : ' · time to follow'}` : 'Arrival plans to follow'));
       if (guest.arrivalNote) card.append(node('p','guest-meta',guest.arrivalNote));
       const form = node('form','room-form');
-      const field = (label,value,id) => {
+      const field = (label,value,id,target = form) => {
         const group = node('div'), input = node('input'), title = node('label','',label);
         input.id = id; input.value = value; input.maxLength = 40; input.placeholder = 'Not assigned'; title.htmlFor = id;
-        group.append(title,input); form.append(group); return input;
+        group.append(title,input); target.append(group); return input;
       };
       const mainRoom = field(`Room · ${guest.name}`, guest.rooms?.guestRoom || '', `room-${guest.id}`);
-      const plusRoom = guest.plusOne ? field(`Room · ${guest.plusOneName}`, companionRoom(guest), `plus-room-${guest.id}`) : null;
+      let plusRoom = null, separateRoom = null;
+      if (guest.plusOne) {
+        const companion = node('div','companion-room'), choice = node('label','check'), extra = node('div');
+        separateRoom = node('input'); separateRoom.type = 'checkbox';
+        const override = guest.rooms?.plusOneName === guest.plusOneName ? guest.rooms?.plusOneRoom || '' : '';
+        separateRoom.checked = Boolean(override);
+        choice.append(separateRoom,node('span','',`Assign a different room for ${guest.plusOneName}`));
+        companion.append(choice,node('p','hint',`Shares ${guest.name}’s room by default.`),extra); form.append(companion);
+        plusRoom = field(`Room · ${guest.plusOneName}`,override,`plus-room-${guest.id}`,extra);
+        const updateSeparateRoom = () => {
+          extra.hidden = !separateRoom.checked;
+          plusRoom.disabled = !separateRoom.checked;
+          plusRoom.required = separateRoom.checked;
+        };
+        separateRoom.addEventListener('change',updateSeparateRoom); updateSeparateRoom();
+      }
       const submit = node('button','button secondary','Save rooms'); submit.type = 'submit'; form.append(submit);
       form.addEventListener('submit', event => { event.preventDefault(); action(form, async () => {
-        await backend.saveRooms(guest, mainRoom.value.trim(), plusRoom?.value.trim() || '');
+        const override = separateRoom?.checked ? plusRoom.value.trim() : '';
+        if (separateRoom?.checked && !override) throw new Error('Enter a separate room number, or turn off the different-room option to share the guest’s room.');
+        await backend.saveRooms(guest, mainRoom.value.trim(), override);
         await refreshGuests(); status(`Room assignments saved for ${guest.name}.`, 'success');
       }); });
       card.append(form);
