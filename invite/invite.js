@@ -228,6 +228,67 @@
   if ('ResizeObserver' in window) new ResizeObserver(measureScenes).observe(document.querySelector('main'));
   startMotion();
 
+  const memoryScroll = document.querySelector('#memory-scroll');
+  if (memoryScroll) {
+    const wall = memoryScroll.closest('.memory-wall');
+    const frames = [...memoryScroll.querySelectorAll('figure')];
+    const back = wall.querySelector('.memory-back');
+    const next = wall.querySelector('.memory-next');
+    const count = wall.querySelector('.memory-count');
+    const progress = wall.querySelector('.memory-progress');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let wallFramePending = false;
+    wall.querySelector('.memory-controls').hidden = false;
+
+    function updateWall() {
+      wallFramePending = false;
+      const limit = Math.max(0, memoryScroll.scrollHeight - memoryScroll.clientHeight);
+      back.disabled = memoryScroll.scrollTop <= 1;
+      next.disabled = memoryScroll.scrollTop >= limit - 1;
+      progress.value = limit ? memoryScroll.scrollTop / limit * 100 : 100;
+      const viewport = memoryScroll.getBoundingClientRect();
+      const visible = frames.map((frame, index) => {
+        const rect = frame.getBoundingClientRect();
+        const overlap = Math.min(rect.bottom, viewport.bottom) - Math.max(rect.top, viewport.top);
+        return overlap > Math.min(rect.height * .2, 40) ? index + 1 : null;
+      }).filter(Boolean);
+      count.textContent = visible.length
+        ? `${visible.length === 1 ? visible[0] : `${visible[0]}–${visible[visible.length - 1]}`} of ${frames.length} memories`
+        : `${frames.length} little memories`;
+    }
+    function scheduleWall() {
+      if (!wallFramePending) {
+        wallFramePending = true;
+        requestAnimationFrame(updateWall);
+      }
+    }
+    function rollBy(distance) {
+      memoryScroll.scrollBy({top: distance, behavior: reducedMotion.matches ? 'auto' : 'smooth'});
+    }
+    back.addEventListener('click', () => rollBy(-memoryScroll.clientHeight * .75));
+    next.addEventListener('click', () => rollBy(memoryScroll.clientHeight * .75));
+    memoryScroll.addEventListener('scroll', scheduleWall, {passive: true});
+    memoryScroll.addEventListener('keydown', event => {
+      if (event.target !== memoryScroll || event.altKey || event.ctrlKey || event.metaKey) return;
+      const distances = {ArrowUp: -60, ArrowDown: 60, PageUp: -memoryScroll.clientHeight * .8, PageDown: memoryScroll.clientHeight * .8};
+      if (event.key in distances) {
+        event.preventDefault();
+        rollBy(distances[event.key]);
+      } else if (event.key === 'Home' || event.key === 'End') {
+        event.preventDefault();
+        memoryScroll.scrollTo({top: event.key === 'Home' ? 0 : memoryScroll.scrollHeight, behavior: reducedMotion.matches ? 'auto' : 'smooth'});
+      }
+    });
+    if ('ResizeObserver' in window) {
+      const wallResize = new ResizeObserver(scheduleWall);
+      wallResize.observe(memoryScroll);
+      wallResize.observe(memoryScroll.firstElementChild);
+    }
+    addEventListener('resize', scheduleWall, {passive: true});
+    document.fonts.ready.then(scheduleWall);
+    updateWall();
+  }
+
   const dialog = document.querySelector('.photo-dialog');
   const enlarged = document.querySelector('#enlarged-photo');
   const caption = document.querySelector('#photo-caption');
