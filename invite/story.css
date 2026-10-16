@@ -4,13 +4,13 @@
 .story-heading h2 { font-size: clamp(64px, 7.8vw, 106px); line-height: .98; letter-spacing: -.045em; margin-bottom: 25px; }
 .story-heading > p:last-child { font-size: 13px; color: var(--muted); }
 .story-beginning { display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 75px; }
-.story-letter { font-size: 14px; line-height: 1.95; }
+.story-letter { grid-column: 2; grid-row: 1; font-size: 14px; line-height: 1.95; }
 .story-letter > p + p { margin-top: 20px; }
 .story-letter .story-lead { font: 400 32px/1.22 var(--serif); color: var(--leaf); margin-bottom: 26px; }
 .story-letter em { font-style: normal; color: var(--burgundy); }
 .story-letter .story-last-line { font: italic 23px/1.5 var(--serif); color: var(--brass); margin-top: 27px; }
 
-.memory-wall { min-width: 0; width: 100%; }
+.memory-wall { grid-column: 1; grid-row: 1; min-width: 0; width: 100%; }
 .memory-wall-heading { padding: 0 10px 25px; text-align: center; }
 .memory-wall-heading .eyebrow { font-size: 8px; margin-bottom: 5px; letter-spacing: .18em; }
 .memory-wall-heading h3 { font: 400 31px/1.15 var(--serif); color: var(--leaf); }
