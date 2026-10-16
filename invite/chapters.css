@@ -180,5 +180,24 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 :root{--rsvp-accent:#742737}
 .rsvp-invitation{text-align:center;padding-top:60px;padding-bottom:95px;border-top:1px solid var(--line)}
 .rsvp-invitation p:not(.eyebrow){max-width:480px;margin:0 auto 26px;color:var(--muted)}
-.site-header nav a.rsvp-nav{display:flex!important;color:var(--rsvp-accent);font-weight:700}
-@media(max-width:700px){.site-header nav a[href="#getting-here"]{display:none}.site-header nav{gap:14px}}
+/* A quiet ivory surface keeps navigation readable over the garden artwork. */
+.site-header nav{gap:24px;padding:6px 10px 6px 20px;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.site-header nav a{color:#34452f;font:600 12px/1.5 var(--sans);letter-spacing:.015em;white-space:nowrap}
+.site-header nav a.rsvp-nav{display:flex!important;color:var(--rsvp-accent);font-weight:600;border:1px solid #b69a91;border-radius:4px;padding:8px 15px;background:#f4e8e2}
+.site-header nav a.rsvp-nav:hover{background:#ecddd5;border-color:var(--rsvp-accent)}
+.hero-actions{display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero-actions .text-link{font-size:12px;font-weight:600;color:#34452f}
+.hero-actions .hero-rsvp{min-width:170px;min-height:50px;padding:13px 32px;border-radius:4px;background:var(--rsvp-accent);border-color:var(--rsvp-accent);color:var(--paper);font:600 13px/1.5 var(--sans);letter-spacing:.06em}
+.hero-actions .hero-rsvp:hover{background:#60202e;border-color:#60202e}
+@media(max-width:700px){
+  .site-header nav a[href="#getting-here"]{display:none}
+  .site-header nav{gap:10px;padding:4px 6px 4px 10px}
+  .site-header nav a{font-size:11px;letter-spacing:0}
+  .site-header nav a.rsvp-nav{padding:7px 10px;min-height:40px}
+}
+@media(max-width:370px){
+  .site-header{padding-inline:14px;gap:8px}
+  .site-header .wordmark{font-size:28px;padding-inline:10px}
+  .site-header nav{gap:6px;padding-inline:6px 4px}
+  .site-header nav a.rsvp-nav{padding-inline:7px}
+}

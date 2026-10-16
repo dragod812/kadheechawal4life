@@ -153,8 +153,9 @@ test('complete RSVP, shared rooms with optional override, role management, edits
 test('invitation RSVP is reachable on a phone', async ({page}) => {
   await page.setViewportSize({width:320,height:800});
   await page.goto('/invite/');
-  await expect(page.getByRole('link',{name:'RSVP',exact:true})).toBeVisible();
+  const primaryRsvp = page.locator('.hero-actions').getByRole('link',{name:'RSVP',exact:true});
+  await expect(primaryRsvp).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
-  await page.getByRole('link',{name:'RSVP',exact:true}).click();
+  await primaryRsvp.click();
   await expect(page).toHaveURL(/\/invite\/rsvp\//);
 });
