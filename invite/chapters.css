@@ -23,11 +23,9 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 .early-photo { position: absolute; width: 34%; max-width: 160px; padding: 6px 6px 30px; }
 .early-photo figcaption { bottom: 9px; font-size: 14px; }
 .early-night { left: 5%; top: 515px; transform: rotate(-7deg); }
-.early-blue { right: 7%; top: 515px; transform: rotate(5deg); }
 .snapshot-window { overflow: hidden; aspect-ratio: 4 / 5; }
 .snapshot-window img { width: 100%; height: 100%; object-fit: cover; }
 .early-night img { object-position: 20% 55%; transform: scale(1.14); }
-.early-blue img { object-position: 52% 62%; transform: scale(1.26); }
 
 .mumbai-inner { gap: 70px; }
 .mumbai-album { position: relative; height: 730px; width: 100%; max-width: 450px; justify-self: center; }
@@ -104,7 +102,6 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
   .school-photos { min-height: 730px; }
   .early-photo { width: 35%; }
   .early-night { top: 435px; }
-  .early-blue { top: 450px; }
   .mumbai-inner, .music-inner { gap: 50px; }
   .mumbai-album { height: 660px; }
   .mumbai-coffee { top: 365px; }
@@ -134,7 +131,6 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
   .young-photo { width: 55%; right: 0; top: 175px; }
   .early-photo { width: 37%; max-width: 135px; }
   .early-night { left: 6%; top: 355px; }
-  .early-blue { right: 4%; top: 370px; }
   .mumbai-inner { gap: 50px; }
   .mumbai-album { max-width: 340px; height: 590px; align-self: center; }
   .mumbai-main { width: 64%; left: 18%; }
@@ -165,7 +161,6 @@ h1 { font-size: clamp(72px, 6.6vw, 94px); line-height: 1.03; letter-spacing: -.0
 @media (max-width: 370px) {
   .school-photos { min-height: 535px; }
   .early-night { top: 330px; }
-  .early-blue { top: 340px; }
   .mumbai-album { height: 540px; }
   .mumbai-coffee { top: 295px; }
   .mumbai-ordinary { top: 330px; }
