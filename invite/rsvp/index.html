@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5eedf">
+  <meta name="robots" content="noindex,nofollow">
+  <title>RSVP · Kalyani &amp; Sidharth</title>
+  <link rel="icon" href="../assets/art/ganesha.webp" type="image/webp">
+  <link rel="stylesheet" href="../assets/fonts/fonts.css">
+  <link rel="stylesheet" href="rsvp.css">
+  <script type="module" src="bootstrap.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to RSVP</a>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="Back to our invitation">K <span>&amp;</span> S</a>
+    <nav aria-label="Wedding navigation"><a href="/">The invitation</a><button id="sign-out" class="quiet" hidden>Sign out</button></nav>
+  </header>
+  <main id="main">
+    <div class="page-intro"><p class="eyebrow">26–27 February 2027 · The Ummed, Ahmedabad</p><h1>A place for <em>you.</em></h1><p>We’d love to celebrate with you.<br>Let us know if you’ll be joining us.</p></div>
+    <p id="test-banner" class="notice" hidden>Local test environment · No real SMS messages or guest records.</p>
+    <div id="status" class="status" role="status" aria-live="polite">Getting things ready…</div>
+    <section id="unavailable" class="card narrow" hidden><h2>We’re getting ready.</h2><p>Online RSVP will open soon. In the meantime, please reach out to Kalyani or Sidharth.</p><a class="button secondary" href="/">Back to the invitation</a></section>
+    <section id="login" class="card narrow" hidden aria-labelledby="login-title">
+      <p class="eyebrow">A little before the celebration</p><h2 id="login-title">Come on in.</h2><p class="muted">Sign in with your phone. You can return anytime to update your plans.</p>
+      <form id="phone-form">
+        <label for="login-name">Your full name</label><input id="login-name" name="name" autocomplete="name" maxlength="100" required placeholder="As you’d like us to know you">
+        <label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 98765 43210" aria-describedby="phone-help"><p id="phone-help" class="hint">Include your country code, such as +91 for India or +1 for the US.</p>
+        <label class="check consent"><input id="consent" type="checkbox" required><span>I agree to receive a sign-in code by SMS. My number is shared with Google for verification and abuse prevention. Message rates may apply.</span></label>
+        <div id="recaptcha"></div><button class="button" type="submit">Send verification code</button>
+      </form>
+      <form id="code-form" hidden><p id="code-help" class="muted"></p><label for="code">Verification code</label><input id="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" required placeholder="6-digit code"><button class="button" type="submit">Verify &amp; continue</button><div class="inline-actions"><button type="button" id="resend" class="quiet">Resend code</button><button type="button" id="change-phone" class="quiet">Change number</button></div></form>
+      <p class="privacy-note">Your RSVP and arrival details are shared with our family and wedding team to plan your welcome. Other guests cannot see them.</p>
+    </section>
+    <section id="account" hidden>
+      <nav class="tabs" aria-label="Your wedding account"><button id="guest-tab" class="tab active" aria-current="page">My RSVP</button><button id="staff-tab" class="tab" hidden>Guests &amp; rooms</button><button id="access-tab" class="tab" hidden>Team access</button></nav>
+      <section id="guest-panel" class="card narrow" aria-labelledby="rsvp-title">
+        <p id="signed-in-phone" class="eyebrow"></p><h2 id="rsvp-title">Your RSVP</h2><p id="rsvp-summary" class="muted">A few little details, and we’ll take it from here.</p>
+        <form id="rsvp-form">
+          <label for="guest-name">Your full name</label><input id="guest-name" autocomplete="name" maxlength="100" required>
+          <fieldset><legend>Will you be joining us?</legend><div class="choice-grid"><label class="choice"><input type="radio" name="attending" value="yes" required><span>Joyfully accepts<small>I’ll be there</small></span></label><label class="choice"><input type="radio" name="attending" value="no" required><span>With love, declines<small>I won’t be able to make it</small></span></label></div></fieldset>
+          <div id="attendance-details" hidden><label class="check plus-one"><input id="plus-one" type="checkbox"><span>I’m bringing a plus-one</span></label><div id="companion-fields" hidden><label for="plus-one-name">Your plus-one’s full name</label><input id="plus-one-name" maxlength="100"><p class="hint">Please include their name so we can plan for both of you.</p></div>
+            <details id="arrival-section"><summary>Arrival plans <span>Optional · add these later</span></summary><p class="hint">When do you expect to arrive at The Ummed? All times are local to Ahmedabad (IST).</p><div class="field-grid"><div><label for="arrival-date">Arrival date</label><input id="arrival-date" type="date" min="2027-01-01" max="2027-03-31"></div><div><label for="arrival-time">Approximate arrival time</label><input id="arrival-time" type="time"></div></div><label for="arrival-note">Travel details or a note</label><textarea id="arrival-note" maxlength="500" rows="3" placeholder="Flight or train, or anything our team should know"></textarea><p class="hint">These arrival details apply to your party.</p></details>
+          </div>
+          <div class="save-row"><button class="button" type="submit">Save my RSVP</button><button class="quiet" id="reload-rsvp" type="button" hidden>Load latest RSVP</button></div>
+        </form>
+        <div id="my-rooms" class="room-summary" hidden></div>
+        <p class="privacy-note">Plans can change. Sign in with the same phone number to update your RSVP or add arrival details later.</p>
+      </section>
+      <section id="staff-panel" hidden aria-labelledby="staff-title"><div class="section-heading"><div><p class="eyebrow">A warm welcome, thoughtfully planned</p><h2 id="staff-title">Guests &amp; rooms</h2></div><button class="button secondary" id="refresh-guests">Refresh list</button></div><div id="stats" class="stats"></div><div class="filters"><div><label for="guest-search">Find a guest</label><input id="guest-search" type="search" placeholder="Name or phone number"></div><div><label for="guest-filter">Show</label><select id="guest-filter"><option value="all">All responses</option><option value="yes">Attending</option><option value="no">Declined</option><option value="unassigned">Rooms to assign</option></select></div></div><p class="hint">Plus-ones share their guest’s room by default. Choose “Assign a different room” only when needed. Arrival times are in IST.</p><div id="guest-list" class="guest-list"></div></section>
+      <section id="access-panel" class="card" hidden aria-labelledby="access-title"><p class="eyebrow">For the people bringing it all together</p><h2 id="access-title">Team access</h2><p class="muted">Add someone by the phone number they’ll use to sign in. Admins can manage this team; hotel and planner staff can view RSVPs and assign rooms.</p><form id="access-form" class="access-form"><div><label for="staff-name">Full name</label><input id="staff-name" required maxlength="100"></div><div><label for="staff-phone">Phone with country code</label><input id="staff-phone" type="tel" required placeholder="+91 98765 43210"></div><div><label for="staff-role">Access</label><select id="staff-role"><option value="hotel">Hotel / planner</option><option value="admin">Admin</option></select></div><button class="button" type="submit">Save team member</button></form><div id="access-list"></div><p class="hint">You cannot change or remove your own access. Another admin can help with that.</p></section>
+    </section>
+    <noscript><p class="notice">Please enable JavaScript to sign in and RSVP, or contact Kalyani or Sidharth.</p></noscript>
+  </main>
+  <footer>With love, <span>Kalyani &amp; Sidharth</span><a href="/">Back to our story</a></footer>
+</body>
+</html>
