@@ -11,7 +11,7 @@
     if (opening) return;
     opening = true;
     intro.classList.add('envelope-opening');
-    const delay = reduced.matches ? 0 : 1750;
+    const delay = reduced.matches ? 0 : 3150;
     setTimeout(() => {
       intro.classList.add('envelope-away');
       content.forEach(el => el.inert = false);
@@ -19,7 +19,7 @@
       const title = document.querySelector('#invite-title');
       title.tabIndex = -1;
       title.focus({preventScroll: true});
-      setTimeout(() => { intro.hidden = true; }, reduced.matches ? 0 : 650);
+      intro.hidden = true;
     }, delay);
   }
   seal.addEventListener('click', open);

@@ -18,24 +18,28 @@
   <link rel="stylesheet" href="/invite/invite.css?v=20261016-guest-dates">
   <link rel="stylesheet" href="/invite/chapters.css?v=20261015-story">
   <link rel="stylesheet" href="/invite/story.css?v=20261030-envelope">
-  <link rel="stylesheet" href="/invite/envelope.css?v=20261030">
-  <script src="/invite/envelope.js?v=20261030-2" defer></script>
+  <link rel="stylesheet" href="/invite/envelope.css?v=20261030-folds">
+  <script src="/invite/envelope.js?v=20261030-folds" defer></script>
   <script src="/invite/invite.js?v=20261030" defer></script>
 </head>
 <body>
   <section class="envelope-intro" hidden aria-label="Your wedding invitation">
-    <div class="envelope-liner" aria-hidden="true"></div>
-    <div class="envelope-panel envelope-left" aria-hidden="true"></div>
-    <div class="envelope-panel envelope-right" aria-hidden="true"></div>
-    <div class="envelope-flap" aria-hidden="true"></div>
-    <div class="envelope-ribbon" aria-hidden="true"></div>
+    <div class="envelope-backdrop" aria-hidden="true"></div>
     <div class="envelope-address">
-      <p class="eyebrow">A little something, sealed with love</p>
+      <p class="eyebrow">Delivered with love</p>
       <p class="envelope-names">Kalyani <span>&amp;</span> Sidharth</p>
       <p>26–27 February 2027 · Ahmedabad</p>
     </div>
-    <button class="envelope-seal" type="button" aria-label="Open Kalyani and Sidharth’s wedding invitation"><span>K &amp; S</span></button>
-    <p class="envelope-hint">Click the seal or scroll to open <span aria-hidden="true">↓</span></p>
+    <div class="envelope-shell">
+      <div class="envelope-liner" aria-hidden="true"></div>
+      <div class="envelope-letter" aria-hidden="true"><span class="letter-flower">❦</span><p>Together with our families</p><span class="letter-names">Kalyani<br><i>&amp;</i> Sidharth</span><p>Our forever begins here.</p></div>
+      <div class="envelope-panel envelope-left" aria-hidden="true"></div>
+      <div class="envelope-panel envelope-right" aria-hidden="true"></div>
+      <div class="envelope-pocket" aria-hidden="true"><span>K &amp; S</span></div>
+      <div class="envelope-flap" aria-hidden="true"><div class="flap-front"></div><div class="flap-back"></div></div>
+      <button class="envelope-seal" type="button" aria-label="Open Kalyani and Sidharth’s wedding invitation"><span>K &amp; S</span></button>
+    </div>
+    <p class="envelope-hint">An invitation to our next chapter<span>Click the seal or scroll to open ↓</span></p>
   </section>
   <a class="skip-link" href="#our-story">Skip to our story</a>
   <header class="site-header">

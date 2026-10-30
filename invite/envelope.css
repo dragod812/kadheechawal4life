@@ -1,30 +1,55 @@
-/* Folded garden stationery; hidden until its controls are ready. */
-.envelope-intro[hidden] { display: none; }
-body.envelope-closed { overflow: hidden; }
-.envelope-intro { position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #f5eedf; perspective: 1400px; color: #40513b; touch-action: pan-y; }
-.envelope-liner { position: absolute; inset: 0; background: #ede3cc url('assets/art/hero-architecture-v2.webp') center / cover; }
-.envelope-panel, .envelope-flap { position: absolute; inset: 0; backface-visibility: hidden; background: linear-gradient(#f5eedf88, #e7dbc555), url('assets/art/hero-garden.webp') center / cover; transition: transform 1.35s cubic-bezier(.22,.7,.2,1), filter 1.35s; }
-.envelope-left { clip-path: polygon(0 0, 52% 51%, 0 100%); transform-origin: left center; z-index: 2; filter: brightness(.94); }
-.envelope-right { clip-path: polygon(100% 0, 48% 51%, 100% 100%); transform-origin: right center; z-index: 2; filter: brightness(.98); }
-.envelope-flap { clip-path: polygon(0 0, 100% 0, 50% 54%); transform-origin: center top; z-index: 3; box-shadow: 0 15px 35px #493d3920; }
-.envelope-ribbon { position: absolute; z-index: 4; inset: 0; background: linear-gradient(90deg, transparent calc(50% - 17px), #f7eddbbb calc(50% - 16px), #fff9e9ee 50%, #d8c7a9bb calc(50% + 16px), transparent calc(50% + 17px)); transition: transform .65s, opacity .5s; pointer-events: none; }
-.envelope-address { position: absolute; z-index: 4; top: 13%; width: 100%; padding: 0 25px; text-align: center; transition: opacity .4s, transform .6s; }
-.envelope-address .eyebrow { font-size: 10px; letter-spacing: .16em; }
-.envelope-names { font: 400 clamp(42px, 7vw, 84px)/1.3 var(--serif); margin: 20px 0 12px; }
-.envelope-names span { font-style: italic; color: #98774b; }
-.envelope-address > p:last-child { font: 11px/1.8 var(--sans); letter-spacing: .12em; }
-.envelope-seal { position: absolute; z-index: 5; top: 51%; left: 50%; transform: translate(-50%, -50%) rotate(-8deg); width: 100px; height: 100px; border: 3px double #ddbc7c; border-radius: 46% 51% 45% 49%; color: #fae9c7; background: radial-gradient(at 32% 25%, #a76850, #763e36 70%); box-shadow: inset 0 0 0 5px #763e3655, 3px 9px 18px #39251e35; cursor: pointer; transition: transform .55s, opacity .4s; }
-.envelope-seal span { font: italic 25px var(--serif); }
-.envelope-seal:focus-visible { outline: 3px solid #40513b; outline-offset: 8px; }
-.envelope-hint { position: absolute; bottom: 12%; width: 100%; text-align: center; z-index: 4; font: 12px/2 var(--sans); letter-spacing: .06em; transition: opacity .3s; }
-.envelope-hint span { display: block; font-size: 24px; }
-.envelope-opening .envelope-seal { transform: translate(-50%,-50%) rotate(15deg) scale(1.25); opacity: 0; }
-.envelope-opening .envelope-ribbon { transform: translateY(105%); opacity: 0; }
-.envelope-opening .envelope-address, .envelope-opening .envelope-hint { opacity: 0; transform: translateY(-15px); }
-.envelope-opening .envelope-flap { transform: rotateX(-175deg); transition-delay: .25s; }
-.envelope-opening .envelope-left { transform: rotateY(-105deg); transition-delay: .55s; }
-.envelope-opening .envelope-right { transform: rotateY(105deg); transition-delay: .55s; }
-.envelope-intro { transition: opacity .65s; }
-.envelope-intro.envelope-away { opacity: 0; pointer-events: none; }
-@media (max-width: 700px) { .envelope-address { top: 18%; } .envelope-names { max-width: 290px; margin-inline: auto; } .envelope-seal { width: 86px; height: 86px; } }
-@media (prefers-reduced-motion: reduce) { .envelope-intro, .envelope-intro * { transition-duration: .01ms !important; transition-delay: 0s !important; } }
+/* A real stationery silhouette: back, inserted card, side folds, pocket, hinged flap. */
+.envelope-intro[hidden]{display:none}
+body.envelope-closed{overflow:hidden}
+.envelope-intro{position:fixed;inset:0;z-index:1000;overflow:hidden;color:#40513b;isolation:isolate;touch-action:pan-y}
+.envelope-backdrop{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,#fffcf4,#eee5d3);z-index:-1}
+.envelope-backdrop::after{content:"";position:absolute;inset:0;background:url('assets/art/hero-canopy-v3.webp') center top/cover no-repeat;opacity:.23}
+.envelope-address{position:absolute;top:9%;width:100%;padding:0 20px;text-align:center}
+.envelope-address .eyebrow{font-size:9px;letter-spacing:.23em;margin-bottom:10px}
+.envelope-names{font:400 clamp(38px,5vw,64px)/1.1 var(--serif)}
+.envelope-names span{color:#98774b;font-style:italic}
+.envelope-address>p:last-child{font:10px/1.8 var(--sans);letter-spacing:.12em;margin-top:15px}
+.envelope-shell{position:absolute;left:50%;top:53%;width:min(78vw,690px);aspect-ratio:1.58;transform:translate(-50%,-50%);perspective:1500px;filter:drop-shadow(0 24px 25px #493b292b)}
+.envelope-liner{position:absolute;inset:0;border-radius:5px;background:linear-gradient(135deg,#879279,#52664e);box-shadow:inset 0 0 0 10px #c8bc9b,inset 0 0 0 11px #e4d4b3}
+.envelope-liner::after{content:"";position:absolute;inset:15px;background:repeating-linear-gradient(45deg,transparent 0 17px,#e9dcb524 18px 19px,transparent 20px 36px)}
+.envelope-letter{position:absolute;z-index:1;inset:8% 9% 3%;background:#fffaf0;color:#40513b;text-align:center;border:1px solid #cdbc97;box-shadow:0 3px 20px #3e37281a;padding:15px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.letter-flower{font:35px/1 var(--serif);color:#98774b}
+.envelope-letter p{font:9px/1.5 var(--sans);letter-spacing:.09em;margin:12px 0}
+.letter-names{font:400 clamp(25px,4vw,46px)/.95 var(--serif)}
+.letter-names i{font-size:.6em;color:#98774b}
+.envelope-panel,.envelope-pocket{position:absolute;inset:0;z-index:3}
+.envelope-left{clip-path:polygon(0 0,55% 55%,0 100%);background:linear-gradient(135deg,#e4d5b9,#f2e7d0 65%,#d6c5a5)}
+.envelope-right{clip-path:polygon(100% 0,45% 55%,100% 100%);background:linear-gradient(225deg,#e4d5b9,#f8edda 65%,#d6c5a5)}
+.envelope-pocket{clip-path:polygon(0 100%,0 98%,50% 43%,100% 98%,100% 100%);background:linear-gradient(0deg,#e9dcc2,#f9efdb);z-index:4}
+.envelope-pocket::after{content:"";position:absolute;inset:0;background:url('assets/art/hero-ground-v3.webp') center bottom/100% auto no-repeat;opacity:.3}
+.envelope-pocket span{position:absolute;bottom:11%;width:100%;text-align:center;font:italic 22px var(--serif);color:#9d8966}
+.envelope-flap{position:absolute;inset:0;z-index:5;transform-origin:50% 0;transform-style:preserve-3d}
+.flap-front,.flap-back{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,100% 1%,50% 57%,0 1%);backface-visibility:hidden}
+.flap-front{background:linear-gradient(175deg,#fff7e6,#e7d7b7 85%)}
+.flap-front::after{content:"";position:absolute;inset:0;background:url('assets/art/hero-canopy-v3.webp') center top/100% auto no-repeat;opacity:.45}
+.flap-back{transform:rotateX(180deg);background:linear-gradient(#67785c,#9ba385);box-shadow:inset 0 0 0 8px #d8c9a8}
+.envelope-seal{position:absolute;z-index:6;top:55%;left:50%;transform:translate(-50%,-50%) rotate(-8deg);width:76px;height:76px;border:3px double #c99168;border-radius:46% 51% 45% 49%;color:#fae9c7;background:radial-gradient(at 32% 25%,#b5755a,#7c4238 70%);box-shadow:inset 0 0 0 5px #763e3655,3px 5px 7px #39251e35;cursor:pointer}
+.envelope-seal span{font:italic 22px var(--serif)}
+.envelope-seal:focus-visible{outline:2px solid #40513b;outline-offset:7px}
+.envelope-hint{position:absolute;bottom:9%;width:100%;padding:0 20px;text-align:center;font:italic 22px/1.4 var(--serif);color:#6f785e}
+.envelope-hint span{display:block;font:10px/1.8 var(--sans);letter-spacing:.08em;margin-top:12px}
+/* Choreography: break seal → hinge flap → lift letter → slide every fold away. */
+.envelope-opening .envelope-seal{animation:seal-release .55s ease-in forwards}
+.envelope-opening .envelope-flap{animation:flap-open 2.8s cubic-bezier(.4,0,.2,1) .2s forwards}
+.envelope-opening .envelope-letter{animation:letter-lift 2.6s cubic-bezier(.22,.7,.2,1) .45s forwards}
+.envelope-opening .envelope-left{animation:left-away 1.25s cubic-bezier(.5,0,.3,1) 1.55s forwards}
+.envelope-opening .envelope-right{animation:right-away 1.25s cubic-bezier(.5,0,.3,1) 1.55s forwards}
+.envelope-opening .envelope-pocket,.envelope-opening .envelope-liner{animation:pocket-away 1.35s cubic-bezier(.5,0,.3,1) 1.5s forwards}
+.envelope-opening .envelope-address,.envelope-opening .envelope-hint{animation:words-away .6s ease forwards}
+.envelope-opening .envelope-backdrop{animation:backdrop-away 1.4s ease 1.45s forwards}
+@keyframes seal-release{to{transform:translate(-50%,-80%) rotate(18deg) scale(1.12);opacity:0}}
+@keyframes flap-open{0%{transform:rotateX(0)}35%,55%{transform:rotateX(180deg)}100%{transform:translateY(-110vh) rotateX(180deg)}}
+@keyframes letter-lift{0%{transform:translateY(0)}35%,52%{transform:translateY(-43%)}78%{opacity:1}100%{transform:translateY(-110vh) scale(1.1);opacity:0}}
+@keyframes left-away{to{transform:translate(-100vw,35vh) rotate(-24deg)}}
+@keyframes right-away{to{transform:translate(100vw,35vh) rotate(24deg)}}
+@keyframes pocket-away{to{transform:translateY(110vh) rotate(5deg)}}
+@keyframes words-away{to{transform:translateY(-12px);opacity:0}}
+@keyframes backdrop-away{to{opacity:0}}
+@media(max-width:700px){.envelope-shell{width:89vw;top:54%;aspect-ratio:1.35}.envelope-address{top:15%}.envelope-seal{width:62px;height:62px}.envelope-seal span{font-size:19px}.envelope-hint{bottom:13%;font-size:20px}.envelope-letter{padding:8px}.envelope-letter p{font-size:7px;margin:8px 0}.letter-flower{font-size:24px}.letter-names{font-size:29px}}
+@media(max-height:600px) and (min-width:701px){.envelope-shell{width:46vw;top:57%}.envelope-address{top:4%}.envelope-names{font-size:32px}.envelope-hint{bottom:3%;font-size:17px}}
+@media(prefers-reduced-motion:reduce){.envelope-opening *{animation-duration:.01ms!important;animation-delay:0s!important}}
