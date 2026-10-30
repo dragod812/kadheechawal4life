@@ -27,3 +27,33 @@ body.envelope-closed{overflow:hidden}
 .envelope-opening .envelope-seal{pointer-events:none}
 @media(max-width:700px){.envelope-address{top:19%}.envelope-address .eyebrow{font-size:8px;letter-spacing:.17em}.envelope-names{font-size:clamp(36px,10vw,56px)}.envelope-address>p:last-child{font-size:9px;letter-spacing:.06em}.envelope-seal{width:80px;height:80px}.envelope-seal span{font-size:23px}.envelope-hint{bottom:20%;font-size:21px}.envelope-hint span{font-size:9px}.envelope-pocket span{font-size:22px}}
 @media(max-height:550px){.envelope-address{top:10%}.envelope-address .eyebrow{margin-bottom:8px}.envelope-names{font-size:36px}.envelope-address>p:last-child{margin-top:8px}.envelope-hint{bottom:14%;font-size:18px}.envelope-seal{width:66px;height:66px}}
+/* Cotton stock, twin foil rules and softly bevelled paper edges. */
+.envelope-left{transform-origin:left center;background-image:url('assets/stationery/paper-grain.svg'),linear-gradient(115deg,#d9c9a9,#ecdfc5 58%,#c6b28b);background-size:180px 180px,100% 100%}
+.envelope-right{transform-origin:right center;background-image:url('assets/stationery/paper-grain.svg'),linear-gradient(245deg,#e5d7bb,#f7ecd7 62%,#cfbd98);background-size:180px 180px,100% 100%}
+.envelope-pocket{background-image:url('assets/stationery/paper-grain.svg'),linear-gradient(0deg,#e9dcc1,#fff6e4);background-size:180px 180px,100% 100%;filter:drop-shadow(0 -2px 1px #6b542b2b)}
+.envelope-pocket::before{content:"";position:absolute;inset:0;background:linear-gradient(48deg,transparent 49.85%,#bda47766 50%,#fff9e899 50.12%,transparent 50.3%),linear-gradient(-48deg,transparent 49.85%,#bda47766 50%,#fff9e899 50.12%,transparent 50.3%);opacity:.3}
+.flap-front{background-image:url('assets/stationery/paper-grain.svg'),linear-gradient(170deg,#fff9eb,#eddfc3 64%,#c9b58d);background-size:180px 180px,100% 100%}
+.flap-front::before{content:"";position:absolute;inset:0;background:url('assets/stationery/flap-foil.svg') center/100% 100% no-repeat;opacity:.85}
+.envelope-flap{filter:drop-shadow(0 2px 1px #fff6df) drop-shadow(0 7px 5px #59472535)}
+.envelope-address{top:16%;left:50%;width:min(62%,850px);padding:0;transform:translateX(-50%)}
+.envelope-names{display:flex;align-items:center;justify-content:center;gap:clamp(10px,1.5vw,24px);font-size:clamp(36px,4.5vw,70px);text-shadow:0 1px 0 #fffaf0}
+.envelope-names .envelope-name{display:block;color:#40513b;font-style:normal}
+.envelope-names .envelope-amp{color:#a4834e;font-size:.78em;font-style:italic;text-shadow:0 1px 0 #fff9e2,0 -1px 0 #795d3526}
+.envelope-address .eyebrow{color:#947442;letter-spacing:.24em}
+.envelope-address>p:last-child{color:#6f7058}
+.envelope-address>p:last-child::after{content:"✦";display:block;margin-top:15px;color:#ae915b;font-size:12px;text-shadow:0 1px #fff9e6}
+.envelope-seal{border-color:#b67c5e;border-width:2px;border-radius:47% 52% 45% 50%/49% 46% 54% 47%;background:radial-gradient(ellipse at 28% 18%,#c48d6b88,transparent 45%),radial-gradient(ellipse at 52% 50%,#915342 49%,#67352d 51%,#ae7055 57%,#763d31 64%,#b57b5c 69%,#7f4435 74%);box-shadow:inset 1px 2px 2px #f0b18599,inset -2px -3px 3px #48201799,0 3px 1px #5d352333,2px 8px 11px #4e352a44}
+.envelope-seal::after{content:"";position:absolute;inset:11%;border:1px solid #d99e754f;border-radius:50%;box-shadow:inset 0 1px 1px #48231b88,0 1px 1px #e2ad8580;pointer-events:none}
+.envelope-seal span{position:relative;z-index:1;color:#e9bf93;text-shadow:0 -1px 1px #48231bcc,0 1px 1px #efc8a1bb}
+.envelope-seal:focus-visible{outline:1px solid #b19564;outline-offset:7px}
+.envelope-pocket>span{letter-spacing:.1em;text-shadow:0 1px 0 #fff9e6}
+@media(max-aspect-ratio:1/1),(max-width:800px){
+ .envelope-address{top:14%;width:60%;max-width:360px}
+ .envelope-names{flex-direction:column;gap:0;font-size:clamp(28px,7vw,52px);line-height:1.08}
+ .envelope-names .envelope-amp{font-size:.55em;line-height:1.15;margin:3px 0}
+ .envelope-address .eyebrow{font-size:clamp(7px,1.3vw,9px);letter-spacing:.13em;margin-bottom:14px}
+ .envelope-address>p:last-child{font-size:clamp(8px,1.5vw,10px);letter-spacing:.025em;line-height:1.5;margin-top:12px}
+ .envelope-address>p:last-child::after{margin-top:10px;font-size:10px}
+ .envelope-hint{max-width:72%;left:14%;font-size:clamp(17px,3.8vw,23px)}
+}
+@media(max-height:550px){.envelope-address{top:9%}.envelope-names{flex-direction:row;font-size:30px;gap:9px}.envelope-names .envelope-amp{font-size:.7em}.envelope-address .eyebrow{margin-bottom:7px}.envelope-address>p:last-child{margin-top:7px}.envelope-address>p:last-child::after{display:none}}

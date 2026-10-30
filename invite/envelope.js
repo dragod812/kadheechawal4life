@@ -32,15 +32,15 @@
     try {
         animate('.envelope-seal', [{transform: 'translate(-50%,-50%) rotate(-8deg)', opacity: 1}, {transform: 'translate(-50%,-75%) rotate(12deg) scale(1.08)', opacity: 0}], 400);
         animate('.envelope-address, .envelope-hint', [{opacity: 1}, {opacity: 0}], 400);
-        // A shallow paper fold uses ordinary transforms rather than relying on
-        // nested 3D/backface compositing in Chromium and embedded webviews.
+        // A shallow perspective hinge reveals the real page without turning
+        // the paper through a backface or relying on nested 3D surfaces.
         animate('.envelope-flap', [
-          {transform: 'translateY(0) scaleY(1)', opacity: 1, offset: 0},
-          {transform: 'translateY(0) scaleY(.02)', opacity: 1, offset: .68},
-          {transform: 'translateY(-35vh) scaleY(.02)', opacity: 0, offset: 1}
+          {transform: 'perspective(1600px) rotateX(0deg)', opacity: 1, offset: 0},
+          {transform: 'perspective(1600px) rotateX(-88deg)', opacity: 1, offset: .68},
+          {transform: 'perspective(1600px) translateY(-35vh) rotateX(-88deg)', opacity: 0, offset: 1}
         ], 1150, 200);
-        animate('.envelope-left', [{transform: 'translateX(0)'}, {transform: 'translateX(-105vw)'}], 1500, 850);
-        animate('.envelope-right', [{transform: 'translateX(0)'}, {transform: 'translateX(105vw)'}], 1500, 850);
+        animate('.envelope-left', [{transform: 'translateX(0)'}, {transform: 'perspective(1600px) translateX(-105vw) rotateY(-12deg)'}], 1500, 850);
+        animate('.envelope-right', [{transform: 'translateX(0)'}, {transform: 'perspective(1600px) translateX(105vw) rotateY(12deg)'}], 1500, 850);
         animate('.envelope-pocket', [{transform: 'translateY(0)'}, {transform: 'translateY(105vh)'}], 1650, 950);
       // A failed/cancelled individual animation cannot strand the guest.
       await Promise.race([
