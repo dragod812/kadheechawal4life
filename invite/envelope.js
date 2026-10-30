@@ -1,7 +1,7 @@
 (() => {
   const intro = document.querySelector('.envelope-intro');
-  // Deep links and restored scroll positions take guests straight to their place.
-  if (!intro || location.hash || scrollY > 10) return;
+  // Deep links take guests straight to their place.
+  if (!intro || location.hash) return;
   const seal = intro.querySelector('button');
   const content = [...document.body.children].filter(el => el !== intro && ['MAIN', 'HEADER', 'A'].includes(el.tagName));
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
