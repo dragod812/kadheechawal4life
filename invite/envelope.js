@@ -4,7 +4,6 @@
   if (!intro || location.hash) return;
   const seal = intro.querySelector('button');
   const content = [...document.body.children].filter(el => el !== intro && ['MAIN', 'HEADER', 'A'].includes(el.tagName));
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let opening = false;
   let touchStart = null;
   let wheelDistance = 0;
@@ -31,13 +30,6 @@
       })));
     };
     try {
-      if (reduced.matches) {
-        // Keep a visible reveal without large movement or 3D rotation.
-        animate('.envelope-seal, .envelope-address, .envelope-hint', [{opacity: 1}, {opacity: 0}], 300);
-        animate('.envelope-flap', [{opacity: 1}, {opacity: 0}], 500, 200);
-        animate('.envelope-left, .envelope-right', [{opacity: 1}, {opacity: 0}], 650, 350);
-        animate('.envelope-pocket, .envelope-liner', [{opacity: 1}, {opacity: 0}], 700, 500);
-      } else {
         animate('.envelope-seal', [{transform: 'translate(-50%,-50%) rotate(-8deg)', opacity: 1}, {transform: 'translate(-50%,-75%) rotate(12deg) scale(1.08)', opacity: 0}], 400);
         animate('.envelope-address, .envelope-hint', [{opacity: 1}, {opacity: 0}], 400);
         // A shallow paper fold uses ordinary transforms rather than relying on
@@ -50,7 +42,6 @@
         animate('.envelope-left', [{transform: 'translateX(0)'}, {transform: 'translateX(-105vw)'}], 1500, 850);
         animate('.envelope-right', [{transform: 'translateX(0)'}, {transform: 'translateX(105vw)'}], 1500, 850);
         animate('.envelope-pocket, .envelope-liner', [{transform: 'translateY(0)'}, {transform: 'translateY(105vh)'}], 1650, 950);
-      }
       // A failed/cancelled individual animation cannot strand the guest.
       await Promise.race([
         Promise.allSettled(animations.map(animation => animation.finished)),
