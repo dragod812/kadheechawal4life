@@ -113,17 +113,29 @@
   .memory-scroll { scroll-behavior: auto; }
 }
 
-/* One continuous photo-booth strip, with soft edges suggesting more memories. */
-.memory-wall { max-width: 370px; justify-self: center; margin-inline: auto; }
-.memory-film { grid-template-columns: minmax(0, 1fr); gap: 25px; padding: 35px 30px; background: #e9dfcb; }
+/* One continuous white photo-booth print, rather than separate mounted cards. */
+.memory-wall { max-width: 270px; justify-self: center; margin-inline: auto; }
+.memory-projector { padding-block: 0; background: #fff; box-shadow: 0 8px 25px #48371912; }
+.memory-scroll { height: clamp(440px, 68svh, 680px); border: 0; background: #fff; scrollbar-width: thin; scrollbar-color: #b5b5ae #fff; box-shadow: none; scroll-padding-block: 12px; }
+.memory-scroll::-webkit-scrollbar-track { background: #fff; }
+.memory-scroll::-webkit-scrollbar-thumb { background: #b5b5ae; border-color: #fff; }
+.memory-film { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 14px 12px; background: #fff; }
 .memory-film::before, .memory-film::after { display: none; }
-.memory-film .story-photo { margin: 0; padding: 8px 8px 0; transform: none; box-shadow: none; background: #fffaf0; }
+.memory-film .story-photo { margin: 0; padding: 0; transform: none; box-shadow: none; background: #fff; }
 .memory-film .story-photo::before { display: none; }
-.memory-film .story-photo img { aspect-ratio: 4 / 5; }
-.memory-film .story-young img, .memory-film .album-rain img { aspect-ratio: 4 / 3; }
-.memory-projector::before, .memory-projector::after { left: 0; right: 0; height: 42px; border: 0; border-radius: 0; box-shadow: none; background: linear-gradient(to bottom, var(--ivory), transparent); }
-.memory-projector::after { background: linear-gradient(to top, var(--ivory), transparent); }
-.memory-scroll { border: 0; background: #e9dfcb; scrollbar-width: thin; }
+.memory-film .story-photo img { aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
+.memory-film .story-photo figcaption { background: #fff; padding: 5px 0 7px; font-size: 13px; line-height: 1.2; }
+.memory-film .story-school img { object-position: center 70%; }
+.memory-film .story-cafe img { object-position: center 28%; }
+.memory-film .snapshot-window, .memory-film .proposal-photo-window { aspect-ratio: 4 / 3; }
+.memory-film .snapshot-window img, .memory-film .proposal-photo-window img { height: 100%; }
+.memory-projector::before, .memory-projector::after { left: 0; right: 0; height: 14px; border: 0; border-radius: 0; box-shadow: none; background: linear-gradient(to bottom, #fff, #ffffff00); }
+.memory-projector::before { top: 0; }
+.memory-projector::after { bottom: 0; background: linear-gradient(to top, #fff, #ffffff00); }
+.memory-wall-heading { margin-inline: -35px; }
+.memory-controls { gap: 10px; }
+.memory-controls button { padding-inline: 12px; }
+.film-end { background: #fff; font-size: 19px; }
 .day-events > span { display: block; margin-top: 18px; }
 .day-events small { display: block; font: 500 12px/1.8 var(--sans); letter-spacing: .05em; color: var(--muted); }
-@media (max-width: 700px) { .memory-wall { width: 100%; max-width: 330px; } .memory-film { padding: 30px 23px; } }
+@media (max-width: 700px) { .memory-wall { width: 100%; max-width: 250px; } .memory-film { padding: 12px 10px; gap: 8px; } .memory-scroll { height: clamp(440px, 68svh, 600px); } }
