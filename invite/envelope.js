@@ -41,7 +41,7 @@
         ], 1150, 200);
         animate('.envelope-left', [{transform: 'translateX(0)'}, {transform: 'translateX(-105vw)'}], 1500, 850);
         animate('.envelope-right', [{transform: 'translateX(0)'}, {transform: 'translateX(105vw)'}], 1500, 850);
-        animate('.envelope-pocket, .envelope-liner', [{transform: 'translateY(0)'}, {transform: 'translateY(105vh)'}], 1650, 950);
+        animate('.envelope-pocket', [{transform: 'translateY(0)'}, {transform: 'translateY(105vh)'}], 1650, 950);
       // A failed/cancelled individual animation cannot strand the guest.
       await Promise.race([
         Promise.allSettled(animations.map(animation => animation.finished)),
