@@ -17,10 +17,26 @@
   <link rel="stylesheet" href="/invite/assets/fonts/fonts.css?v=20261005-17">
   <link rel="stylesheet" href="/invite/invite.css?v=20261016-guest-dates">
   <link rel="stylesheet" href="/invite/chapters.css?v=20261015-story">
-  <link rel="stylesheet" href="/invite/story.css?v=20261016-blossom-rotation">
-  <script src="/invite/invite.js?v=20261017-root" defer></script>
+  <link rel="stylesheet" href="/invite/story.css?v=20261030-envelope">
+  <link rel="stylesheet" href="/invite/envelope.css?v=20261030">
+  <script src="/invite/envelope.js?v=20261030" defer></script>
+  <script src="/invite/invite.js?v=20261030" defer></script>
 </head>
 <body>
+  <section class="envelope-intro" hidden aria-label="Your wedding invitation">
+    <div class="envelope-liner" aria-hidden="true"></div>
+    <div class="envelope-panel envelope-left" aria-hidden="true"></div>
+    <div class="envelope-panel envelope-right" aria-hidden="true"></div>
+    <div class="envelope-flap" aria-hidden="true"></div>
+    <div class="envelope-ribbon" aria-hidden="true"></div>
+    <div class="envelope-address">
+      <p class="eyebrow">A little something, sealed with love</p>
+      <p class="envelope-names">Kalyani <span>&amp;</span> Sidharth</p>
+      <p>26–27 February 2027 · Ahmedabad</p>
+    </div>
+    <button class="envelope-seal" type="button" aria-label="Open Kalyani and Sidharth’s wedding invitation"><span>K &amp; S</span></button>
+    <p class="envelope-hint">Click the seal or scroll to open <span aria-hidden="true">↓</span></p>
+  </section>
   <a class="skip-link" href="#our-story">Skip to our story</a>
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Kalyani and Sidharth, back to the beginning">K <span>&amp;</span> S</a>
@@ -70,17 +86,18 @@
       </div>
       <div class="story-beginning">
         <div class="story-letter reveal">
-          <p class="story-lead">Before they knew it was a love story,<br>it was a school crush.</p>
-          <p>There were songs Sidharth wrote for Kalyani, recordings sent her way, and two people taking their sweet time to work out the obvious.</p>
-          <p>They kept talking through the years. Then came Mumbai, a broken leg, and a walk along Marine Drive. Kalyani held his hand. <em>Technically, for balance. As it turned out, for life.</em></p>
-          <p>These days, life stretches between Mumbai and San Francisco, with calls across time zones. When they’re together, there is music: she sings, he plays guitar and joins in.</p>
-          <p>Every reunion turns the colour up. More laughter, more adventure, and days when doing nothing together feels like enough. Each time, they know more surely: this is the life they want.</p>
-          <p class="story-last-line">He wrote for her again.<br>And asked her to marry him.<br>She said yes.</p>
+          <p class="story-lead">Pyaar dosti hai ❤️</p>
+          <p>Par dosti ko pyaar samajhne mein 15 saal lag gaye. Very efficient of us.</p>
+          <p>There were school corridors, secret crushes, songs Sidharth wrote for Kalyani, and recordings sent her way. Subtle hints, apparently. Very subtle, considering how long this took.</p>
+          <p>We kept talking through the years, through missed chances and wrong timing. Then came Mumbai, Sidharth’s broken leg, and a walk along Marine Drive. Kalyani held his hand to help him balance. We’ve stuck with that arrangement.</p>
+          <p>After long distance across two continents, here we are, ready for kadhi chawal for the agle pachaas saal!</p>
+          <p>Centre stage is not really our thing. But with our favourite people by our side, we think we can pull this off.</p>
+          <p class="story-last-line">Come for the shaadi, stay for the music, the madness and the memories. We’d love to have you with us.</p>
         </div>
         <div class="memory-wall">
           <div class="memory-wall-heading">
             <h3 id="memory-wall-title">Life, in frames.</h3>
-            <p id="memory-wall-help">Scroll or swipe inside the film to explore the photographs.</p>
+            <p id="memory-wall-help">A photo booth strip, fifteen years in the making. Scroll or swipe for more.</p>
           </div>
           <div class="memory-projector">
             <div class="memory-scroll" id="memory-scroll" role="region" aria-labelledby="memory-wall-title" aria-describedby="memory-wall-help" tabindex="0">
@@ -120,11 +137,11 @@
       <img class="celebration-botanical" data-parallax data-depth="-.055" data-pointer="10" data-turn="-.4" src="/invite/assets/art/foreground-botanical.webp" alt="" width="1448" height="1086" loading="lazy">
       <div class="section-wrap"><div class="centred-copy reveal"><p class="eyebrow">With the people we love</p><h2 id="celebrations-title">Come celebrate<br><em>with us.</em></h2><p>Join us from Friday, 26 February,<br>for two days of celebration at The Ummed, Ahmedabad.</p></div>
         <div class="programme">
-          <article class="day reveal"><p class="day-weekday">Friday</p><p class="day-number">26</p><p class="day-month">February 2027</p><div class="day-line"></div><h3>A day of celebration</h3><p class="day-events">Var vadhu puja &amp; engagement<br>Haldi<br>Sangeet</p><p class="day-description">Bring your dancing shoes.</p></article>
-          <article class="day reveal"><p class="day-weekday">Saturday</p><p class="day-number">27</p><p class="day-month">February 2027</p><div class="day-line"></div><h3>The wedding</h3><p class="day-description">With our families<br>and friends beside us.</p></article>
+          <article class="day reveal"><p class="day-weekday">Friday</p><p class="day-number">26</p><p class="day-month">February 2027</p><div class="day-line"></div><h3>A day of celebration</h3><p class="day-events"><span>Haldi <small>4–6 PM</small></span><span>Sangeet <small>7 PM onwards</small></span></p><p class="day-description">Bring your dancing shoes.</p></article>
+          <article class="day reveal"><p class="day-weekday">Saturday</p><p class="day-number">27</p><p class="day-month">February 2027</p><div class="day-line"></div><h3>The wedding</h3><p class="day-events"><span>Seemant Poojan <small>10 AM–12 PM</small></span><span>Vedic Wedding <small>3–5 PM</small></span><span>Var maala <small>6:30 PM</small></span></p><p class="day-description">With our families<br>and friends beside us.</p></article>
         </div>
-        <p class="programme-note">We’ll share timings closer to the wedding.</p>
-        <a class="button calendar-button" href="/invite/kalyani-sidharth-wedding.ics?v=20261017-root" download>Save our dates</a>
+        <p class="programme-note">All times are local to Ahmedabad (IST).</p>
+        <a class="button calendar-button" href="/invite/kalyani-sidharth-wedding.ics?v=20261030" download>Save our dates</a>
       </div>
     </section>
 
@@ -135,7 +152,7 @@
 
     <section class="rsvp-invitation section-wrap" aria-labelledby="rsvp-invitation-title">
       <p class="eyebrow">A place for you</p><h2 id="rsvp-invitation-title">Will you be <em>joining us?</em></h2>
-      <p>Let us know if you can join us. You can add a plus-one and update your arrival details later.</p>
+      <p>Here’s to pyaar, dosti and pachaas saal of Kadheechawal.</p><p>We took 15 years to get here. Please don’t make us wait for you to RSVP.</p>
       <a class="button" href="/invite/rsvp/">RSVP &amp; guest sign-in</a>
     </section>
 

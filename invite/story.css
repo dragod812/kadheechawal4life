@@ -112,3 +112,18 @@
 @media (prefers-reduced-motion: reduce) {
   .memory-scroll { scroll-behavior: auto; }
 }
+
+/* One continuous photo-booth strip, with soft edges suggesting more memories. */
+.memory-wall { max-width: 370px; justify-self: center; margin-inline: auto; }
+.memory-film { grid-template-columns: minmax(0, 1fr); gap: 25px; padding: 35px 30px; background: #e9dfcb; }
+.memory-film::before, .memory-film::after { display: none; }
+.memory-film .story-photo { margin: 0; padding: 8px 8px 0; transform: none; box-shadow: none; background: #fffaf0; }
+.memory-film .story-photo::before { display: none; }
+.memory-film .story-photo img { aspect-ratio: 4 / 5; }
+.memory-film .story-young img, .memory-film .album-rain img { aspect-ratio: 4 / 3; }
+.memory-projector::before, .memory-projector::after { left: 0; right: 0; height: 42px; border: 0; border-radius: 0; box-shadow: none; background: linear-gradient(to bottom, var(--ivory), transparent); }
+.memory-projector::after { background: linear-gradient(to top, var(--ivory), transparent); }
+.memory-scroll { border: 0; background: #e9dfcb; scrollbar-width: thin; }
+.day-events > span { display: block; margin-top: 18px; }
+.day-events small { display: block; font: 500 12px/1.8 var(--sans); letter-spacing: .05em; color: var(--muted); }
+@media (max-width: 700px) { .memory-wall { width: 100%; max-width: 330px; } .memory-film { padding: 30px 23px; } }
