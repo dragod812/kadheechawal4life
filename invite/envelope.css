@@ -57,3 +57,6 @@ body.envelope-closed{overflow:hidden}
  .envelope-hint{max-width:72%;left:14%;font-size:clamp(17px,3.8vw,23px)}
 }
 @media(max-height:550px){.envelope-address{top:9%}.envelope-names{flex-direction:row;font-size:30px;gap:9px}.envelope-names .envelope-amp{font-size:.7em}.envelope-address .eyebrow{margin-bottom:7px}.envelope-address>p:last-child{margin-top:7px}.envelope-address>p:last-child::after{display:none}}
+
+/* The opening hands reading focus to the heading, without drawing a control ring. */
+#invite-title:focus { outline: none; }
