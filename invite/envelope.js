@@ -2,6 +2,15 @@
   'use strict';
   const intro = document.querySelector('.envelope-intro');
   if (!intro || location.hash) return;
+  function resetOpeningPosition() {
+    const root = document.documentElement;
+    const previous = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = previous;
+  }
+  resetOpeningPosition();
+  addEventListener('pageshow', () => { if (!released) resetOpeningPosition(); });
   const seal = intro.querySelector('button');
   const content = [...document.body.children].filter(el => el !== intro && ['MAIN', 'HEADER', 'A'].includes(el.tagName));
   let opening = false;
@@ -24,6 +33,7 @@
   async function open() {
     if (opening) return;
     opening = true;
+    resetOpeningPosition();
     intro.classList.add('envelope-opening');
     // Wait for a rendered closed frame before starting; animation completion,
     // rather than a guessed dismissal timer, controls when the cover is removed.
