@@ -28,3 +28,13 @@ body.envelope-closed{overflow:hidden}
 .envelope-seal:hover{filter:drop-shadow(2px 9px 6px #4e352a55) brightness(1.07)}
 .envelope-seal:focus-visible{border-radius:50%}
 .envelope-intro:focus{outline:none}
+
+/* Photographic cotton stock with real embossed jasmine and pressed gold. */
+.envelope-left{background-image:linear-gradient(112deg,#60462b42,#7255262e 58%,#48311d3b),url('assets/stationery/cotton-jasmine-paper.webp');background-size:cover;background-position:center}
+.envelope-right{background-image:linear-gradient(244deg,#70522e29,#fff9ec08 62%,#775d3029),url('assets/stationery/cotton-jasmine-paper.webp');background-size:cover;background-position:center}
+.envelope-pocket{background-image:radial-gradient(ellipse at 55% 45%,#fffdf017,#94783f24 90%),url('assets/stationery/cotton-jasmine-paper.webp');background-size:cover;background-position:center}
+.flap-front{background-image:linear-gradient(170deg,#fff9e610,#8e6c2420),url('assets/stationery/cotton-jasmine-paper.webp');background-size:cover;background-position:center}
+.flap-front::after,.envelope-pocket::after{display:none}
+.flap-front::before{opacity:.62}
+
+.envelope-flap{filter:drop-shadow(0 2px 1px #fff9eb) drop-shadow(0 9px 6px #3e2b194d)}

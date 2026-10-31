@@ -7,8 +7,13 @@
   let opening = false;
   let touchStart = null;
   let wheelDistance = 0;
+  let clearFrame = 0;
+  let released = false;
 
   function finish() {
+    if (released) return;
+    released = true;
+    cancelAnimationFrame(clearFrame);
     intro.hidden = true;
     content.forEach(el => el.inert = false);
     document.body.classList.remove('envelope-closed');
@@ -31,10 +36,10 @@
     };
     try {
       const hero = document.querySelector('.hero');
-      if (hero) animations.push(hero.animate([
+      if (hero) hero.animate([
         {transform: 'scale(1.045)', transformOrigin: '50% 30%'},
         {transform: 'scale(1)', transformOrigin: '50% 30%'}
-      ], {duration: 3600, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'forwards'}));
+      ], {duration: 3600, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'forwards'});
       animate('.envelope-seal', [
         {transform: 'translate(-50%,-50%) rotate(-8deg)', opacity: 1, offset: 0},
         {transform: 'translate(-50%,-57%) rotate(-4deg) scale(1.06)', opacity: 1, offset: .45},
@@ -58,6 +63,22 @@
         {transform: 'perspective(1900px) translateY(0) rotateX(0deg)'},
         {transform: 'perspective(1900px) translateY(105vh) rotateX(8deg)'}
       ], 2100, 1400);
+      // Unlock on the actual visual exit, not the end of the long easing tail
+      // or the independent garden camera settle. All changes happen in one frame.
+      const left = intro.querySelector('.envelope-left');
+      const right = intro.querySelector('.envelope-right');
+      const pocket = intro.querySelector('.envelope-pocket');
+      const flap = intro.querySelector('.envelope-flap');
+      function releaseWhenClear() {
+        if (released) return;
+        const foldsClear = left.getBoundingClientRect().right <= 1
+          && right.getBoundingClientRect().left >= innerWidth - 1
+          && pocket.getBoundingClientRect().top >= innerHeight - 1;
+        const flapClear = Number(getComputedStyle(flap).opacity) <= .01;
+        if (foldsClear && flapClear) finish();
+        else clearFrame = requestAnimationFrame(releaseWhenClear);
+      }
+      clearFrame = requestAnimationFrame(releaseWhenClear);
       // A failed/cancelled individual animation cannot strand the guest.
       await Promise.race([
         Promise.allSettled(animations.map(animation => animation.finished)),
