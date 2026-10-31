@@ -139,3 +139,9 @@
 .day-events > span { display: block; margin-top: 18px; }
 .day-events small { display: block; font: 500 12px/1.8 var(--sans); letter-spacing: .05em; color: var(--muted); }
 @media (max-width: 700px) { .memory-wall { width: 100%; max-width: 250px; } .memory-film { padding: 12px 10px; gap: 8px; } .memory-scroll { height: clamp(440px, 68svh, 600px); } }
+
+/* Quiet story and uninterrupted, caption-free photo print. */
+.our-story { padding-top: 70px; }
+.story-letter .story-lead { margin: 0 0 26px; letter-spacing: normal; }
+.memory-film { gap: 12px; }
+@media(max-width:700px) { .our-story { padding-top: 55px; } }

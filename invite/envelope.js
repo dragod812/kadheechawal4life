@@ -26,26 +26,42 @@
     const animations = [];
     const animate = (selector, frames, duration, delay = 0) => {
       intro.querySelectorAll(selector).forEach(el => animations.push(el.animate(frames, {
-        duration, delay, fill: 'forwards', easing: 'cubic-bezier(.4,0,.2,1)'
+        duration, delay, fill: 'forwards', easing: 'cubic-bezier(.32,0,.16,1)'
       })));
     };
     try {
-        animate('.envelope-seal', [{transform: 'translate(-50%,-50%) rotate(-8deg)', opacity: 1}, {transform: 'translate(-50%,-75%) rotate(12deg) scale(1.08)', opacity: 0}], 400);
-        animate('.envelope-address, .envelope-hint', [{opacity: 1}, {opacity: 0}], 400);
-        // A shallow perspective hinge reveals the real page without turning
-        // the paper through a backface or relying on nested 3D surfaces.
-        animate('.envelope-flap', [
-          {transform: 'perspective(1600px) rotateX(0deg)', opacity: 1, offset: 0},
-          {transform: 'perspective(1600px) rotateX(-88deg)', opacity: 1, offset: .68},
-          {transform: 'perspective(1600px) translateY(-35vh) rotateX(-88deg)', opacity: 0, offset: 1}
-        ], 1150, 200);
-        animate('.envelope-left', [{transform: 'translateX(0)'}, {transform: 'perspective(1600px) translateX(-105vw) rotateY(-12deg)'}], 1500, 850);
-        animate('.envelope-right', [{transform: 'translateX(0)'}, {transform: 'perspective(1600px) translateX(105vw) rotateY(12deg)'}], 1500, 850);
-        animate('.envelope-pocket', [{transform: 'translateY(0)'}, {transform: 'translateY(105vh)'}], 1650, 950);
+      const hero = document.querySelector('.hero');
+      if (hero) animations.push(hero.animate([
+        {transform: 'scale(1.045)', transformOrigin: '50% 30%'},
+        {transform: 'scale(1)', transformOrigin: '50% 30%'}
+      ], {duration: 3600, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'forwards'}));
+      animate('.envelope-seal', [
+        {transform: 'translate(-50%,-50%) rotate(-8deg)', opacity: 1, offset: 0},
+        {transform: 'translate(-50%,-57%) rotate(-4deg) scale(1.06)', opacity: 1, offset: .45},
+        {transform: 'translate(-50%,-85%) rotate(9deg) scale(1.11)', opacity: 0, offset: 1}
+      ], 650);
+      animate('.envelope-flap', [
+        {transform: 'perspective(1900px) rotateX(0deg)', filter: 'drop-shadow(0 5px 4px #59472535)', opacity: 1, offset: 0},
+        {transform: 'perspective(1900px) rotateX(-48deg)', filter: 'drop-shadow(0 22px 14px #59472530)', opacity: 1, offset: .45},
+        {transform: 'perspective(1900px) rotateX(-88deg)', filter: 'drop-shadow(0 10px 8px #59472514)', opacity: 1, offset: .85},
+        {transform: 'perspective(1900px) translateY(-16vh) rotateX(-89deg)', filter: 'drop-shadow(0 0 0 transparent)', opacity: 0, offset: 1}
+      ], 1750, 280);
+      animate('.envelope-left', [
+        {transform: 'perspective(1900px) translateX(0) rotateY(0deg)'},
+        {transform: 'perspective(1900px) translateX(-105vw) rotateY(-16deg)'}
+      ], 2050, 1150);
+      animate('.envelope-right', [
+        {transform: 'perspective(1900px) translateX(0) rotateY(0deg)'},
+        {transform: 'perspective(1900px) translateX(105vw) rotateY(16deg)'}
+      ], 2050, 1210);
+      animate('.envelope-pocket', [
+        {transform: 'perspective(1900px) translateY(0) rotateX(0deg)'},
+        {transform: 'perspective(1900px) translateY(105vh) rotateX(8deg)'}
+      ], 2100, 1400);
       // A failed/cancelled individual animation cannot strand the guest.
       await Promise.race([
         Promise.allSettled(animations.map(animation => animation.finished)),
-        new Promise(resolve => setTimeout(resolve, 4500))
+        new Promise(resolve => setTimeout(resolve, 6000))
       ]);
     } finally { finish(); }
   }
@@ -59,10 +75,11 @@
     if (touchStart !== null && touchStart - event.touches[0].clientY > 24) open();
   }, {passive: true});
   intro.addEventListener('keydown', event => {
-    if (['ArrowDown', 'PageDown', ' ', 'Escape'].includes(event.key)) { event.preventDefault(); open(); }
+    if (['Enter', 'ArrowDown', 'PageDown', ' ', 'Escape'].includes(event.key)) { event.preventDefault(); open(); }
   });
   intro.hidden = false;
   content.forEach(el => el.inert = true);
   document.body.classList.add('envelope-closed');
-  seal.focus({preventScroll: true});
+  intro.tabIndex = -1;
+  intro.focus({preventScroll: true});
 })();
