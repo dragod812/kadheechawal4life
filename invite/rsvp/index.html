@@ -26,7 +26,7 @@
     <section id="account">
 
       <section id="guest-panel" class="card narrow" aria-labelledby="rsvp-title">
-        <button id="edit-response" class="quiet" type="button">Edit earlier response</button><form id="lookup-form" hidden><label for="lookup-phone">Phone number used for your RSVP</label><input id="lookup-phone" type="tel" autocomplete="tel" required placeholder="+91 98765 43210"><button class="button secondary">Retrieve response</button></form><h2 id="rsvp-title">Your details</h2>
+        <button id="forget-response" class="quiet" type="button" hidden>Use a different phone number</button> <button id="edit-response" class="quiet" type="button">Edit earlier response</button><form id="lookup-form" hidden><label for="lookup-phone">Phone number used for your RSVP</label><input id="lookup-phone" type="tel" autocomplete="tel" required placeholder="+91 98765 43210"><button class="button secondary">Retrieve response</button></form><h2 id="rsvp-title">Your details</h2>
         <form id="rsvp-form">
           <label for="guest-name">Your full name</label><input id="guest-name" autocomplete="name" maxlength="100" required>
           <label for="guest-phone">Phone number</label><input id="guest-phone" type="tel" autocomplete="tel" required placeholder="+91 98765 43210"><p class="hint">Include your country code. Use this number to edit your response later.</p><fieldset><legend>Will you be joining us?</legend><div class="choice-grid"><label class="choice"><input type="radio" name="attending" value="yes" required><span>Joyfully accepts<small>I’ll be there</small></span></label><label class="choice"><input type="radio" name="attending" value="no" required><span>With love, declines<small>I won’t be able to make it</small></span></label></div></fieldset>
@@ -36,7 +36,7 @@
           <div class="save-row"><button class="button" type="submit">Save my RSVP</button><button class="quiet" id="reload-rsvp" type="button" hidden>Load latest RSVP</button></div>
         </form>
         <div id="my-rooms" class="room-summary" hidden></div>
-        <p class="privacy-note">Use “Edit earlier response” and the same phone number to update your plans. Your details are shared with our family and wedding team.</p>
+        <p class="privacy-note">Your saved response will appear automatically on this browser. On another device, use “Edit earlier response” and the same phone number. Your details are shared with our family and wedding team.</p>
       </section>
     </section>
     <noscript><p class="notice">Please enable JavaScript to RSVP, or contact Kalyani or Sidharth.</p></noscript>
