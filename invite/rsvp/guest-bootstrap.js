@@ -1,4 +1,4 @@
-import('./guest.js').catch(() => {
+import('./guest.js?v=arrival-dates').catch(() => {
   const status = document.getElementById('status');
   status.className = 'status error';
   status.textContent = 'We couldn’t load the guest book. Check your connection and reload this page, or contact Kalyani or Sidharth.';

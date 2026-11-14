@@ -7,6 +7,7 @@
 .story-letter { grid-column: 2; grid-row: 1; font-size: 14px; line-height: 1.95; }
 .story-letter > p + p { margin-top: 20px; }
 .story-letter .story-lead { font: 400 32px/1.22 var(--serif); color: var(--leaf); margin-bottom: 26px; }
+.story-heart { color: var(--burgundy); font-family: Arial, sans-serif; }
 .story-letter em { font-style: normal; color: var(--burgundy); }
 .story-letter .story-last-line { font: italic 23px/1.5 var(--serif); color: var(--brass); margin-top: 27px; }
 
@@ -47,7 +48,6 @@
 .story-frame { overflow: hidden; }
 .story-frame video { object-position: center; }
 .story-proposal .proposal-photo-window { border-radius: 0; }
-.story-home img { object-position: center 42%; }
 /* Every photographic frame gets its own small piece of translucent paper tape. */
 .story-photo::before, .playful-pair > figure::before, .hero-portrait::after { content: ""; position: absolute; top: -8px; left: calc(50% - 23px); width: 46px; height: 18px; background: #d6c49ba8; box-shadow: 0 1px 2px #6d593312; transform: rotate(-4deg); z-index: 3; pointer-events: none; }
 .story-photo:nth-child(even)::before, .playful-pair > figure:last-child::before { transform: rotate(5deg); }

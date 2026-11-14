@@ -8,8 +8,8 @@
   <title>RSVP · Kalyani &amp; Sidharth</title>
   <link rel="icon" href="../assets/art/ganesha.webp" type="image/webp">
   <link rel="stylesheet" href="../assets/fonts/fonts.css">
-  <link rel="stylesheet" href="rsvp.css">
-  <script type="module" src="guest-bootstrap.js"></script>
+  <link rel="stylesheet" href="rsvp.css?v=confirmation">
+  <script type="module" src="guest-bootstrap.js?v=arrival-dates"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to RSVP</a>
@@ -31,7 +31,11 @@
           <label for="guest-name">Your full name</label><input id="guest-name" autocomplete="name" maxlength="100" required>
           <div class="phone-fields"><div><label for="guest-country">Country code</label><select id="guest-country" autocomplete="tel-country-code"><option value="+91">India (+91)</option><option value="+1">US (+1)</option><option value="+44">UK (+44)</option></select></div><div><label for="guest-phone">Phone number</label><input id="guest-phone" type="tel" autocomplete="tel-national" required placeholder="98765 43210"></div></div><fieldset><legend>Will you be joining us?</legend><div class="choice-grid"><label class="choice"><input type="radio" name="attending" value="yes" required><span>Joyfully accepts<small>I’ll be there</small></span></label><label class="choice"><input type="radio" name="attending" value="no" required><span>With love, declines<small>I won’t be able to make it</small></span></label></div></fieldset>
           <div id="attendance-details" hidden><label class="check plus-one"><input id="plus-one" type="checkbox"><span>I’m bringing a plus-one</span></label><div id="companion-fields" hidden><label for="plus-one-name">Your plus-one’s full name</label><input id="plus-one-name" maxlength="100"><p class="hint">Please include their name so we can plan for both of you.</p></div>
-            <details id="arrival-section"><summary>Arrival plans <span>Optional · add these later</span></summary><p class="hint">When do you expect to arrive at The Ummed? All times are local to Ahmedabad (IST).</p><div class="field-grid"><div><label for="arrival-date">Arrival date</label><input id="arrival-date" type="date" min="2027-01-01" max="2027-03-31"></div><div><label for="arrival-time">Approximate arrival time</label><input id="arrival-time" type="time"></div></div><label for="arrival-note">Travel details or a note</label><textarea id="arrival-note" maxlength="500" rows="3" placeholder="Flight or train, or anything our team should know"></textarea><p class="hint">These arrival details apply to your party.</p></details>
+            <details id="arrival-section"><summary>Arrival plans <span>Optional · add these later</span></summary><p class="hint">When do you expect to arrive at The Ummed? All times are local to Ahmedabad (IST).</p><div class="field-grid"><div><label for="arrival-date">Arrival date</label><select id="arrival-date">
+              <option value="">Select a date</option>
+              <option value="2027-02-26">Friday, 26 February 2027</option>
+              <option value="2027-02-27">Saturday, 27 February 2027</option>
+            </select></div><div><label for="arrival-time">Approximate arrival time</label><input id="arrival-time" type="time"></div></div><label for="arrival-note">Travel details or a note</label><textarea id="arrival-note" maxlength="500" rows="3" placeholder="Flight or train, or anything our team should know"></textarea><p class="hint">These arrival details apply to your party.</p></details>
           </div>
           <div class="save-row"><button class="button" type="submit">Save my RSVP</button><button class="quiet" id="reload-rsvp" type="button" hidden>Load latest RSVP</button></div>
         </form>
@@ -41,6 +45,16 @@
     </section>
     <noscript><p class="notice">Please enable JavaScript to RSVP, or contact Kalyani or Sidharth.</p></noscript>
   </main>
+  <dialog id="rsvp-confirmation" class="confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-message">
+    <button class="confirmation-close" type="button" aria-label="Close confirmation">×</button>
+    <p class="eyebrow">RSVP saved</p>
+    <h2 id="confirmation-title" tabindex="-1"></h2>
+    <p id="confirmation-message"></p>
+    <div class="confirmation-actions">
+      <a class="button" href="/">Back to the invitation</a>
+      <button id="confirmation-edit" class="button secondary" type="button">Edit my response</button>
+    </div>
+  </dialog>
   <footer>With love, <span>Kalyani &amp; Sidharth</span><a href="/">Back to our story</a></footer>
 </body>
 </html>
