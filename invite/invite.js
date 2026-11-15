@@ -10,6 +10,8 @@
   let lastFrame = 0;
   const completed = new WeakSet();
   const visibleVideos = new Set();
+  const pendingPlayback = new WeakSet();
+  const umbrellaVideos = new Set(document.querySelectorAll('#being-ourselves video[loop]'));
   const hero = document.querySelector('.hero');
   // Text follows the scenery by just a pixel or two; controls stay easy to use.
   document.querySelectorAll('.chapter-copy, .centred-copy, .forever-copy, .closing-inner, .opening-line, .image-note, .mumbai-postscript, .city-labels, .programme, .travel-section .reveal, .hero-footnote').forEach(element => {
@@ -59,17 +61,27 @@
     scheduleDepth();
   }
 
-  function playMoment(video) {
-    if (completed.has(video) || document.hidden) return;
-    if (!video.src) {
-      video.src = video.dataset.src;
-      video.load();
-    }
+  function prepareMoment(video) {
+    if (video.hasAttribute('src')) return;
     video.muted = true;
+    video.playsInline = true;
+    if (umbrellaVideos.has(video)) {
+      video.defaultPlaybackRate = 1.35;
+      video.preload = 'auto';
+    }
+    video.src = video.dataset.src;
+  }
+
+  function playMoment(video) {
+    if (completed.has(video) || document.hidden || pendingPlayback.has(video)) return;
+    prepareMoment(video);
+    pendingPlayback.add(video);
+    if (umbrellaVideos.has(video)) video.playbackRate = video.defaultPlaybackRate;
     video.play().then(() => {
       if (visibleVideos.has(video) && !document.hidden) video.parentElement.classList.add('is-playing');
       else video.pause();
-    }).catch(() => video.parentElement.classList.remove('is-playing'));
+    }).catch(() => video.parentElement.classList.remove('is-playing'))
+      .finally(() => pendingPlayback.delete(video));
   }
 
   if ('IntersectionObserver' in window) {
@@ -94,15 +106,26 @@
       scheduleDepth();
     }, {rootMargin: '200px 0px'});
     [...scenes, ...actors].forEach(element => sceneryObserver.observe(element));
+    const preloadObserver = new IntersectionObserver(entries => {
+      if (document.hidden) return;
+      entries.forEach(({target, isIntersecting}) => {
+        if (!isIntersecting) return;
+        prepareMoment(target);
+        preloadObserver.unobserve(target);
+      });
+    }, {rootMargin: '500px 0px'});
+    umbrellaVideos.forEach(video => preloadObserver.observe(video));
+
     const videoObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const video = entry.target.querySelector('video');
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+        const threshold = umbrellaVideos.has(video) ? 0.2 : 0.45;
+        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
           visibleVideos.add(video);
           playMoment(video);
         } else {
           visibleVideos.delete(video);
-          video.pause();
+          if (!pendingPlayback.has(video)) video.pause();
           entry.target.classList.remove('is-playing');
           // A complete trip offscreen starts a new visit, from either direction.
           // Staying in view never loops a completed clip.
@@ -112,9 +135,14 @@
           }
         }
       });
-    }, {threshold: [0, 0.45]});
+    }, {threshold: [0, 0.2, 0.45]});
     videos.forEach(video => {
       videoObserver.observe(video.parentElement);
+      if (umbrellaVideos.has(video)) {
+        video.addEventListener('canplay', () => {
+          if (visibleVideos.has(video) && video.paused) playMoment(video);
+        });
+      }
       video.addEventListener('ended', () => {
         completed.add(video);
         video.parentElement.classList.remove('is-playing');
@@ -198,6 +226,11 @@
     }
   }
   addEventListener('scroll', scheduleDepth, {passive: true});
+  document.addEventListener('click', () => {
+    umbrellaVideos.forEach(video => {
+      if (visibleVideos.has(video) && video.paused) playMoment(video);
+    });
+  });
   addEventListener('resize', measureScenes, {passive: true});
   addEventListener('pointermove', event => {
     if (event.pointerType !== 'mouse') return;
