@@ -10,15 +10,15 @@
 .celebrations-section::after {
   content: "";
   position: absolute;
-  inset: 12% auto 0 0;
+  inset: 0 auto 0 0;
   width: min(52%, 680px);
-  background: url("/invite/assets/art/foreground-botanical.webp") left center / 100% auto repeat-y;
+  background: url("/invite/assets/art/foreground-botanical.webp") left top / 100% auto repeat-y;
   filter: sepia(1);
   opacity: .12;
   pointer-events: none;
 }
 .celebrations-section::after {
-  inset: 22% 0 0 auto;
+  inset: 0 0 0 auto;
   transform: scaleX(-1);
 }
 .celebrations-section .section-wrap { z-index: 1; }
