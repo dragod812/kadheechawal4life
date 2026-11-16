@@ -21,8 +21,8 @@
 .memory-projector::before, .memory-projector::after { content: ""; position: absolute; z-index: 3; left: -5px; right: -5px; height: 12px; border: 1px solid #9a845c; border-radius: 7px; background: linear-gradient(#e7dbc0, #b8a17b 48%, #947d58 55%, #c7b28d); box-shadow: 0 3px 6px #53462926; pointer-events: none; }
 .memory-projector::before { top: 0; }
 .memory-projector::after { bottom: 0; }
-.memory-scroll { height: clamp(340px, 60svh, 680px); overflow-y: auto; overflow-x: hidden; overscroll-behavior-y: contain; scroll-behavior: smooth; scroll-padding-block: 25px; scrollbar-gutter: stable; scrollbar-width: auto; scrollbar-color: #917a55 #e5dbc8; background: #e5dbc8; border-inline: 1px solid #b8a788; box-shadow: 0 12px 30px #67513612; }
-.memory-scroll:focus-visible { outline: 2px solid var(--burgundy); outline-offset: 7px; }
+.memory-scroll { height: clamp(340px, 60svh, 680px); overflow-y: auto; overflow-x: hidden; scroll-behavior: smooth; scroll-padding-block: 25px; scrollbar-gutter: stable; scrollbar-width: auto; scrollbar-color: #917a55 #e5dbc8; background: #e5dbc8; border-inline: 1px solid #b8a788; box-shadow: 0 12px 30px #67513612; }
+.memory-scroll:focus-visible { outline: 1px solid #a99a82; outline-offset: -1px; }
 .memory-scroll::-webkit-scrollbar { width: 10px; }
 .memory-scroll::-webkit-scrollbar-track { background: #e5dbc8; }
 .memory-scroll::-webkit-scrollbar-thumb { background: #917a55; border: 2px solid #e5dbc8; border-radius: 8px; }
@@ -33,7 +33,6 @@
 .story-photo { position: relative; min-width: 0; margin: 0; padding: 7px 7px 0; color: var(--leaf); background: var(--paper); box-shadow: 0 9px 20px #48371920; transform: rotate(-2deg); }
 .story-photo:nth-child(even) { margin-top: 27px; transform: rotate(2.5deg); }
 .story-photo:nth-child(3n) { transform: rotate(-1deg); }
-.story-photo > .photo-open { display: block; width: 100%; padding: 0; background: transparent; overflow: hidden; }
 .story-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .story-photo figcaption { margin: 0; padding: 11px 2px 16px; font: italic 17px/1.25 var(--serif); color: var(--leaf); text-align: center; }
 .story-school img { object-position: center 70%; }
@@ -113,34 +112,49 @@
   .memory-scroll { scroll-behavior: auto; }
 }
 
-/* One continuous white photo-booth print, rather than separate mounted cards. */
+/* Warm-white album stock behind individual mounted prints. */
 .memory-wall { max-width: 270px; justify-self: center; margin-inline: auto; }
-.memory-projector { padding-block: 0; background: #fff; box-shadow: 0 8px 25px #48371912; }
-.memory-scroll { height: clamp(440px, 68svh, 680px); border: 0; background: #fff; scrollbar-width: thin; scrollbar-color: #b5b5ae #fff; box-shadow: none; scroll-padding-block: 12px; }
-.memory-scroll::-webkit-scrollbar-track { background: #fff; }
-.memory-scroll::-webkit-scrollbar-thumb { background: #b5b5ae; border-color: #fff; }
-.memory-film { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 14px 12px; background: #fff; }
+.memory-projector { padding: 3px; border: 1px solid #bfab8d58; border-radius: 3px; background: #eee6d7; box-shadow: 0 8px 22px #48371918; }
+.memory-scroll { height: clamp(440px, 68svh, 680px); border: 0; background: #faf7ef; scrollbar-width: thin; scrollbar-color: #ad9c81 #f2ede3; box-shadow: none; scroll-padding-block: 12px; }
+.memory-scroll::-webkit-scrollbar-track { background: #f2ede3; }
+.memory-scroll::-webkit-scrollbar-thumb { background: #a99a82; border-color: #f2ede3; }
+.memory-film { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 18px 15px; background: linear-gradient(#fffcf487, #fffcf487), url("assets/stationery/cotton-paper.webp") center top / 570px auto; }
 .memory-film::before, .memory-film::after { display: none; }
-.memory-film .story-photo { margin: 0; padding: 0; transform: none; box-shadow: none; background: #fff; }
-.memory-film .story-photo::before { display: none; }
+.memory-film .story-photo { margin: 0; padding: 5px 5px 12px; transform: none; box-shadow: 0 2px 6px #49372124; background: #fffdf8; }
+.memory-film .story-photo:nth-of-type(odd) { rotate: -.9deg; }
+.memory-film .story-photo:nth-of-type(even) { rotate: .9deg; }
+.memory-film .story-photo::before { display: block; height: 10px; top: -5px; opacity: .72; }
 .memory-film .story-photo img { aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
 .memory-film .story-photo figcaption { background: #fff; padding: 5px 0 7px; font-size: 13px; line-height: 1.2; }
 .memory-film .story-school img { object-position: center 70%; }
 .memory-film .story-cafe img { object-position: center 28%; }
 .memory-film .snapshot-window, .memory-film .proposal-photo-window { aspect-ratio: 4 / 3; }
 .memory-film .snapshot-window img, .memory-film .proposal-photo-window img { height: 100%; }
-.memory-projector::before, .memory-projector::after { left: 0; right: 0; height: 14px; border: 0; border-radius: 0; box-shadow: none; background: linear-gradient(to bottom, #fff, #ffffff00); }
-.memory-projector::before { top: 0; }
-.memory-projector::after { bottom: 0; background: linear-gradient(to top, #fff, #ffffff00); }
+.memory-projector::before { display: none; }
+.memory-projector::after {
+  inset: auto 8px 3px 3px;
+  height: 21px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: linear-gradient(transparent, #f4eddee6);
+}
+.album-scroll-hint {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--muted);
+  font: italic 17px/1.35 var(--serif);
+}
+.album-scroll-hint span { margin-left: .25em; font: 12px var(--sans); }
 .memory-wall-heading { margin-inline: -35px; }
 .memory-controls { gap: 10px; }
 .memory-controls button { padding-inline: 12px; }
 .film-end { background: #fff; font-size: 19px; }
 .day-events > span { display: block; margin-top: 18px; }
 .day-events small { display: block; font: 500 12px/1.8 var(--sans); letter-spacing: .05em; color: var(--muted); }
-@media (max-width: 700px) { .memory-wall { width: 100%; max-width: 250px; } .memory-film { padding: 12px 10px; gap: 8px; } .memory-scroll { height: clamp(440px, 68svh, 600px); } }
+@media (max-width: 700px) { .memory-wall { width: 100%; max-width: 250px; } .memory-film { padding: 15px 11px; gap: 12px; } .memory-scroll { height: clamp(440px, 68svh, 600px); } }
 
-/* Quiet story and uninterrupted, caption-free photo print. */
+/* Caption-free album layout. */
 .our-story { padding-top: 70px; }
 .story-letter .story-lead { margin: 0 0 26px; letter-spacing: normal; }
 .memory-film { gap: 12px; }

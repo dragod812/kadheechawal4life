@@ -243,32 +243,6 @@
     });
   }
 
-  const dialog = document.querySelector('.photo-dialog');
-  const enlarged = document.querySelector('#enlarged-photo');
-  const caption = document.querySelector('#photo-caption');
-  let returnFocus;
-  document.querySelectorAll('.photo-open').forEach(button => {
-    button.addEventListener('click', () => {
-      returnFocus = button;
-      enlarged.src = `/invite/assets/photos/${button.dataset.photo}-1440.webp`;
-      enlarged.alt = button.querySelector('img').alt;
-      caption.textContent = button.dataset.caption;
-      if (typeof dialog.showModal === 'function') {
-        dialog.showModal();
-        document.body.classList.add('dialog-open');
-      } else window.open(enlarged.src, '_blank', 'noopener');
-    });
-  });
-  document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    const rect = dialog.getBoundingClientRect();
-    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-  });
-  dialog.addEventListener('close', () => {
-    document.body.classList.remove('dialog-open');
-    returnFocus?.focus({preventScroll: true});
-  });
-
   const address = 'The Ummed, Airport Circle, Hansol, Ahmedabad, Gujarat 382475';
   const copy = document.querySelector('#copy-address');
   const status = document.querySelector('.copy-status');
