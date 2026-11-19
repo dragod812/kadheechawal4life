@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <script>if (!location.hash && 'scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+  <script>
+    if (!location.hash) {
+      document.documentElement.classList.add('envelope-pending');
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    }
+  </script>
+  <style>
+    html.envelope-pending { background: #f5eedf; overflow: hidden; }
+    .envelope-pending main, .envelope-pending .skip-link { visibility: hidden; }
+  </style>
   <meta name="theme-color" content="#f5eedf">
   <meta name="robots" content="noindex,nofollow">
   <title>Kalyani &amp; Sidharth — Wedding invitation</title>
@@ -26,7 +35,7 @@
   <link rel="stylesheet" href="/invite/chapters.css?v=20261103-rsvp">
   <link rel="stylesheet" href="/invite/story.css?v=20261116-album-scroll">
   <link rel="stylesheet" href="/invite/envelope.css?v=20261031-real-paper">
-  <script src="/invite/envelope.js?v=20261031-start-at-top" defer></script>
+  <script src="/invite/envelope.js?v=20261118-envelope-first" defer></script>
   <script src="/invite/invite.js?v=20261116-static-album" defer></script>
 </head>
 <body>

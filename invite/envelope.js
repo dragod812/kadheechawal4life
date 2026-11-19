@@ -22,6 +22,7 @@
   function finish() {
     if (released) return;
     released = true;
+    document.documentElement.classList.remove('envelope-pending');
     cancelAnimationFrame(clearFrame);
     intro.hidden = true;
     content.forEach(el => el.inert = false);
@@ -33,6 +34,7 @@
   async function open() {
     if (opening) return;
     opening = true;
+    document.documentElement.classList.remove('envelope-pending');
     resetOpeningPosition();
     intro.classList.add('envelope-opening');
     // Wait for a rendered closed frame before starting; animation completion,
